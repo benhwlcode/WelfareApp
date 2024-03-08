@@ -125,9 +125,9 @@ namespace WelfareApp
             applicantToSave = FillApplicantToSaveInfo();
             spouseToSave = FillSpouseToSaveInfo();
 
-            MessageBox.Show($"You have saved info for an {applicationToSave.applicationProgress} " +
-                $"application for {applicantToSave.firstName} {applicantToSave.lastName}, " +
-                $"and their spouse {spouseToSave.firstName} {spouseToSave.lastName}."); ;
+            SqlConnector sql = new SqlConnector();
+            sql.SaveToApplication(applicationToSave, applicantToSave, spouseToSave);
+            
 
         }
 
@@ -154,7 +154,7 @@ namespace WelfareApp
             output.paymentStatus = PaymentStatus.pending;
 
             output.signatureSigned = true;
-            output.acceptedDate = DateOnly.FromDateTime(DateTime.Now);
+            output.acceptedDate = DateOnly.FromDateTime(DateTime.Now).ToString();
                         
 
             foreach (DocumentModel p in checkedListBoxListOfDocumentsReceived.SelectedItems)
@@ -177,7 +177,7 @@ namespace WelfareApp
             output.firstName = applicantInput.applicantFirstName;
             output.lastName = applicantInput.applicationlicantLastName;
             output.gender = applicantInput.applicantGender;
-            output.birthday = DateOnly.FromDateTime(applicantInput.applicantBirthday);
+            output.birthday = DateOnly.FromDateTime(applicantInput.applicantBirthday).ToString();
             output.sinCard = applicantInput.applicantSinCard;
             output.maritalStatus = applicantInput.applicantMaritalStatus;
             output.phone = applicantInput.applicantPhone;
@@ -192,7 +192,7 @@ namespace WelfareApp
             output.streetAddress = applicantInput.address;
             output.city = applicantInput.city;
             output.province = applicantInput.province;
-            output.moveInDate = DateOnly.FromDateTime(applicantInput.moveInDate);
+            output.moveInDate = DateOnly.FromDateTime(applicantInput.moveInDate).ToString();
 
             output.familySize = Int32.Parse(applicantInput.familySize);
             output.numberOfAdults = Int32.Parse(applicantInput.numberOfAdults);
@@ -207,7 +207,7 @@ namespace WelfareApp
             output.employmentType = applicantInput.employment;
             output.employer = applicantInput.employer;
             output.position = applicantInput.position;
-            output.employmentStartDate = DateOnly.FromDateTime(applicantInput.startOfEmployment);
+            output.employmentStartDate = DateOnly.FromDateTime(applicantInput.startOfEmployment).ToString();
 
             output.employmentIncome = Int32.Parse(applicantInput.employmentIncome);
             output.spouseIncome = Int32.Parse(applicantInput.spouseIncome);
@@ -228,7 +228,7 @@ namespace WelfareApp
                 output.firstName = applicantInput.spouseFirstName;
                 output.lastName = applicantInput.spouseLastName;
                 output.gender = applicantInput.spouseGender;
-                output.birthday = DateOnly.FromDateTime(applicantInput.spouseBirthday);
+                output.birthday = DateOnly.FromDateTime(applicantInput.spouseBirthday).ToString();
                 output.sinCard = applicantInput.spouseSinCard;
 
                 output.maritalStatus = applicantInput.applicantMaritalStatus;

@@ -23,7 +23,7 @@ namespace WelfareAppClassLibrary.Models
         public PaymentStatus paymentStatus { get; set; }
 
         public bool signatureSigned { get; set; }
-        public DateOnly acceptedDate { get; set; }
+        public string acceptedDate { get; set; }
 
         public string listOfDocuments { get; set; }
 

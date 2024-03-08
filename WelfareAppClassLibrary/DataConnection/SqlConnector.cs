@@ -142,6 +142,134 @@ namespace WelfareAppClassLibrary.DataConnection
             }
         }
 
+        public void SaveToApplication(ApplicationModel applicationModel, 
+            ApplicantModel applicantModel, SpouseModel spouseModel)
+        {
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                int applicantIdGet = SaveToApplicant(applicantModel, spouseModel);
+
+                var p = new
+                {
+                    programId = applicationModel.programId,
+                    applicantId = applicantIdGet,
+                    agentId = applicationModel.agentId,
+                    officeId = applicationModel.officeId,
+                    supervisorId = applicationModel.supervisorId,
+                    applicationProgress = applicationModel.applicationProgress,
+                    eligibilityStatus = applicationModel.eligibilityStatus,
+                    approvalStatus = applicationModel.approvalStatus,
+                    paymentStatus = applicationModel.paymentStatus,
+                    signatureSigned = applicationModel.signatureSigned,
+                    acceptedDate = applicationModel.acceptedDate,
+                    listOfDocuments = applicationModel.listOfDocuments,
+                };
+
+                connection.Execute($"dbo.spApplication_Insert @programId, @applicantId, @agentId, " +
+                    $"@officeId, @supervisorId, @applicationProgress, @eligibilityStatus, " +
+                    $"@approvalStatus, @paymentStatus, @signatureSigned, @acceptedDate, " +
+                    $"@listOfDocuments", p);
+
+                //TODO this
+
+
+            }
+        }
+
+
+        public int SaveToApplicant(ApplicantModel applicantModel, SpouseModel spouseModel)
+        {
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                int spouseIdGet = SaveToSpouse(spouseModel);
+
+                var p = new
+                {
+                    firstName = applicantModel.firstName,
+                    lastName = applicantModel.lastName,
+                    gender = applicantModel.gender,
+                    birthday = applicantModel.birthday,
+                    sinCard = applicantModel.sinCard,
+                    maritalStatus = applicantModel.maritalStatus,
+                    email = applicantModel.email,
+                    phone = applicantModel.phone,
+                    isCitizen = applicantModel.isCitizen,
+                    isIndigenous = applicantModel.isIndigenous,
+                    isDisabled = applicantModel.isDisabled,
+                    spouseId = spouseIdGet,
+                    residenceStatus = applicantModel.residenceStatus,
+                    streetAddress = applicantModel.streetAddress,
+                    city = applicantModel.city,
+                    province = applicantModel.province,
+                    moveInDate = applicantModel.moveInDate,
+                    familySize = applicantModel.familySize,
+                    numberOfAdults = applicantModel.numberOfAdults,
+                    numberOfChildren = applicantModel.numberOfChildren, 
+                    numberOfElderly = applicantModel.numberOfElderly,
+                    rentalExpense = applicantModel.rentalExpense,
+                    utilityExpense = applicantModel.utilityExpense,
+                    foodExpense = applicantModel.foodExpense,
+                    tuitionExpense = applicantModel.tuitionExpense,
+                    employmentType = applicantModel.employmentType,
+                    employer = applicantModel.employer,
+                    position = applicantModel.position,
+                    employmentStartDate = applicantModel.employmentStartDate,
+                    employmentIncome = applicantModel.employmentIncome,
+                    spouseIncome = applicantModel.spouseIncome,
+                    donationIncome = applicantModel.donationIncome,
+                    cashSavings = applicantModel.cashSavings
+                };
+
+                int output = connection.QuerySingle<int>($"dbo.spApplicant_InsertAndGetId @firstName, " +
+                    $"@lastName, @gender, @birthday, @sinCard, @maritalStatus, @email, @phone, " +
+                    $"@isCitizen, @isIndigenous, @isDisabled, @spouseId, @residenceStatus, " +
+                    $"@streetAddress, @city, @province, @moveInDate, @familySize, @numberOfAdults, " +
+                    $"@numberOfChildren, @numberOfElderly, @rentalExpense, @utilityExpense, " +
+                    $"@foodExpense, @tuitionExpense, @employmentType, @employer, @position, " +
+                    $"@employmentStartDate, @employmentIncome, @spouseIncome, @donationIncome, " +
+                    $"@cashSavings", p);
+
+                return output;
+
+
+            }
+        }
+
+        public int SaveToSpouse(SpouseModel spouseModel)
+        {
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                var p = new
+                {
+                    firstName = spouseModel.firstName,
+                    lastName = spouseModel.lastName,
+                    sinCard = spouseModel.sinCard,
+                    maritalStatus = spouseModel.maritalStatus,
+                    birthday = spouseModel.birthday,
+                    gender = spouseModel.gender,
+                    email = spouseModel.email,
+                    phone = spouseModel.phone,
+                    isCitizen = spouseModel.isCitizen,
+                    isIndigenous = spouseModel.isIndigenous,
+                    isDisabled = spouseModel.isDisabled
+                };
+
+                int output = connection.QuerySingle<int>($"dbo.spSpouse_InsertAndGetId @firstName, " +
+                    $"@lastName, @sinCard, @maritalStatus, @birthday, @gender, @email, @phone, " +
+                    $"@isCitizen, @isIndigenous, @isDisabled", p);
+
+                return output;
+            }
+
+        }
+
         public string RetriveRequiredList(ProgramModel programInput)
         {
             List<ProgramModel> selectedProgram = new List<ProgramModel>();

@@ -14,7 +14,7 @@ namespace WelfareAppClassLibrary.Models
         public string lastName { get; set; }
         public string sinCard { get; set; }
         public MaritalStatus maritalStatus { get; set; }
-        public DateOnly birthday { get; set; }
+        public string birthday { get; set; }
         public GenderType gender { get; set; }
         public string email { get; set; }
         public string phone { get; set; }

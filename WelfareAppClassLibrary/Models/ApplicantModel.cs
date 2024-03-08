@@ -14,7 +14,7 @@ namespace WelfareAppClassLibrary.Models
         public string lastName { get; set; }
         public string sinCard { get; set; }
         public MaritalStatus maritalStatus { get; set; }
-        public DateOnly birthday { get; set; }
+        public string birthday { get; set; }
         public GenderType gender { get; set; }
         public string email { get; set; }
         public string phone { get; set; }
@@ -31,7 +31,7 @@ namespace WelfareAppClassLibrary.Models
         public string streetAddress { get; set; }
         public string city { get; set; }
         public ProvinceName province { get; set; }
-        public DateOnly moveInDate { get; set; }
+        public string moveInDate { get; set; }
 
         public int familySize { get; set; }
         public int numberOfAdults { get; set; }
@@ -47,7 +47,7 @@ namespace WelfareAppClassLibrary.Models
         public string employer { get; set; }
         public string position { get; set; }
         public decimal employmentIncome { get; set; }
-        public DateOnly employmentStartDate { get; set; }
+        public string employmentStartDate { get; set; }
 
         public decimal spouseIncome { get; set; }
         public decimal donationIncome { get; set; }
