@@ -10,62 +10,48 @@ namespace WelfareAppClassLibrary.Models
     public class ApplicantModel
     {
         public int applicantId { get; set; }
-        public int applicantCode { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string sinCard { get; set; }
+        public MaritalStatus maritalStatus { get; set; }
+        public string birthday { get; set; }
+        public GenderType gender { get; set; }
+        public string email { get; set; }
+        public string phone { get; set; }
 
-        public string applicantFirstName { get; set; }
-        public string applicantLastName { get; set; }
-        public int applicantSinCardNumber { get; set; }
-        public MaritalStatus applicantMaritalStatus { get; set; }
-        public DateOnly applicantBirthday { get; set; }
-        public GenderType applicantGender { get; set; }
-        public string applicantEmail { get; set; }
-        public string applicantPhoneNumber { get; set; }
-
-        public bool applicantIsCanadianResidence { get; set; }
-        public bool applicantIsIndigenousPerson { get; set; }
-        public bool applicantIsDisabledPerson { get; set; }
+        public bool isCitizen { get; set; }
+        public bool isIndigenous { get; set; }
+        public bool isDisabled { get; set; }
 
 
-        public int spouseId { get; set; }
-
-        public string spouseFirstName { get; set; }
-        public string spouseLastName { get; set; }
-        public int spouseSinCardNumber { get; set; }
-        public MaritalStatus spouseMaritalStatus { get; set; }
-        public DateOnly spouseBirthday { get; set; }
-        public GenderType spouseGender { get; set; }
-        public string spouseEmail { get; set; }
-        public string spousePhoneNumber { get; set; }
-
-        public bool spouseIsCanadianResidence { get; set; }
-        public bool spouseIsIndigenousPerson { get; set; }
-        public bool spouseIsDisabledPerson { get; set; }
+        public SpouseModel spouseId { get; set; }
+               
 
         public ResidenceStatus residenceStatus { get; set; }
         public string streetAddress { get; set; }
-        public string cityName { get; set; }
-        public ProvinceName provinceName { get; set; }
-        public DateOnly moveInDate { get; set; }
+        public string city { get; set; }
+        public ProvinceName province { get; set; }
+        public string moveInDate { get; set; }
 
         public int familySize { get; set; }
         public int numberOfAdults { get; set; }
         public int numberOfChildren { get; set; }
         public int numberOfElderly { get; set; }
 
-        public decimal rentalExpense { get; set; }
-        public decimal utilityExpense { get; set; }
-        public decimal foodExpense { get; set; }
-        public decimal tuitionExpense { get; set; }
+        public double rentalExpense { get; set; }
+        public double utilityExpense { get; set; }
+        public double foodExpense { get; set; }
+        public double tuitionExpense { get; set; }
 
         public EmploymentType employmentType { get; set; }
-        public string employerName { get; set; }
-        public string positionName { get; set; }
-        public decimal employmentIncome { get; set; }
-        public DateOnly employmentStartDate { get; set; }
+        public string employer { get; set; }
+        public string position { get; set; }
+        public double employmentIncome { get; set; }
+        public string employmentStartDate { get; set; }
 
-        public decimal spouseIncome { get; set; }
-        public decimal donationIncome { get; set; }
-        public decimal cashSavings { get; set; }
+        public double spouseIncome { get; set; }
+        public double donationIncome { get; set; }
+        public double cashSavings { get; set; }
 
 
 

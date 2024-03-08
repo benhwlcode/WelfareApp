@@ -1,16 +1,30 @@
+using Microsoft.Data.SqlClient;
+using WelfareAppClassLibrary.DataConnection;
+using WelfareAppClassLibrary.Models;
+
 namespace WelfareApp
 {
     public partial class StartupForm : Form
     {
-        public StartupForm()
+        AgentModel userAgent;
+
+        List<ProgramModel> programs= new List<ProgramModel>();
+        ProgramModel selectedProgram = new ProgramModel();
+
+        public StartupForm(AgentModel agentInput)
         {
             InitializeComponent();
+
+            userAgent = agentInput;
+
+            InitializeList();
+            UpdateBinding();
         }
 
         private void buttonCreateNewProgram_Click(object sender, EventArgs e)
         {
             CreateNewProgramForm createNewProgramForm
-                = new CreateNewProgramForm();
+                = new CreateNewProgramForm(userAgent);
             createNewProgramForm.Show();
         }
 
@@ -34,5 +48,21 @@ namespace WelfareApp
                 = new ProgramWorkForm();
             programWorkForm.Show();
         }
+
+        private void InitializeList()
+        {
+            SqlConnector sql = new SqlConnector();
+
+            programs = sql.GetAllPrograms();
+
+            
+        }
+
+        private void UpdateBinding()
+        {
+            listBoxListOfPrograms.DataSource = programs;
+            listBoxListOfPrograms.DisplayMember = "programName";
+        }
+
     }
 }

@@ -9,7 +9,6 @@ namespace WelfareAppClassLibrary.Models
     public class ProgramModel
     {
         public int programId { get; set; }
-        public int programCode { get; set; }
 
         public string programName { get; set; }
         public ProgramStatus programStatus { get; set; }
@@ -24,7 +23,7 @@ namespace WelfareAppClassLibrary.Models
         public decimal minPayment { get; set; }
         public decimal maxPayment { get; set; }
 
-        public List<DocumentModel> listOfDocumentsRequired { get; set; }
+        public string listOfDocuments { get; set; }
 
     }
 }

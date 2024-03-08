@@ -54,11 +54,11 @@
             textBoxStreetAddressValue = new TextBox();
             labelResidenceStatusText = new Label();
             panel8 = new Panel();
-            radioButtonSpouseDisabkedNo = new RadioButton();
+            radioButtonSpouseDisabledNo = new RadioButton();
             radioButtonSpouseDisabledYes = new RadioButton();
             panel7 = new Panel();
-            radioButtonSpouseIndegenousNo = new RadioButton();
-            radioButtonSpouseIndegenousYest = new RadioButton();
+            radioButtonSpouseIndigenousNo = new RadioButton();
+            radioButtonSpouseIndigenousYes = new RadioButton();
             panel6 = new Panel();
             radioButtonSpouseCitizenNo = new RadioButton();
             radioButtonSpouseCitizenYes = new RadioButton();
@@ -529,23 +529,23 @@
             // panel8
             // 
             panel8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel8.Controls.Add(radioButtonSpouseDisabkedNo);
+            panel8.Controls.Add(radioButtonSpouseDisabledNo);
             panel8.Controls.Add(radioButtonSpouseDisabledYes);
             panel8.Location = new Point(168, 693);
             panel8.Name = "panel8";
             panel8.Size = new Size(238, 24);
             panel8.TabIndex = 48;
             // 
-            // radioButtonSpouseDisabkedNo
+            // radioButtonSpouseDisabledNo
             // 
-            radioButtonSpouseDisabkedNo.AutoSize = true;
-            radioButtonSpouseDisabkedNo.Location = new Point(69, 0);
-            radioButtonSpouseDisabkedNo.Name = "radioButtonSpouseDisabkedNo";
-            radioButtonSpouseDisabkedNo.Size = new Size(49, 25);
-            radioButtonSpouseDisabkedNo.TabIndex = 1;
-            radioButtonSpouseDisabkedNo.TabStop = true;
-            radioButtonSpouseDisabkedNo.Text = "No";
-            radioButtonSpouseDisabkedNo.UseVisualStyleBackColor = true;
+            radioButtonSpouseDisabledNo.AutoSize = true;
+            radioButtonSpouseDisabledNo.Location = new Point(69, 0);
+            radioButtonSpouseDisabledNo.Name = "radioButtonSpouseDisabledNo";
+            radioButtonSpouseDisabledNo.Size = new Size(49, 25);
+            radioButtonSpouseDisabledNo.TabIndex = 1;
+            radioButtonSpouseDisabledNo.TabStop = true;
+            radioButtonSpouseDisabledNo.Text = "No";
+            radioButtonSpouseDisabledNo.UseVisualStyleBackColor = true;
             // 
             // radioButtonSpouseDisabledYes
             // 
@@ -561,34 +561,34 @@
             // panel7
             // 
             panel7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel7.Controls.Add(radioButtonSpouseIndegenousNo);
-            panel7.Controls.Add(radioButtonSpouseIndegenousYest);
+            panel7.Controls.Add(radioButtonSpouseIndigenousNo);
+            panel7.Controls.Add(radioButtonSpouseIndigenousYes);
             panel7.Location = new Point(168, 663);
             panel7.Name = "panel7";
             panel7.Size = new Size(238, 24);
             panel7.TabIndex = 47;
             // 
-            // radioButtonSpouseIndegenousNo
+            // radioButtonSpouseIndigenousNo
             // 
-            radioButtonSpouseIndegenousNo.AutoSize = true;
-            radioButtonSpouseIndegenousNo.Location = new Point(69, 0);
-            radioButtonSpouseIndegenousNo.Name = "radioButtonSpouseIndegenousNo";
-            radioButtonSpouseIndegenousNo.Size = new Size(49, 25);
-            radioButtonSpouseIndegenousNo.TabIndex = 1;
-            radioButtonSpouseIndegenousNo.TabStop = true;
-            radioButtonSpouseIndegenousNo.Text = "No";
-            radioButtonSpouseIndegenousNo.UseVisualStyleBackColor = true;
+            radioButtonSpouseIndigenousNo.AutoSize = true;
+            radioButtonSpouseIndigenousNo.Location = new Point(69, 0);
+            radioButtonSpouseIndigenousNo.Name = "radioButtonSpouseIndigenousNo";
+            radioButtonSpouseIndigenousNo.Size = new Size(49, 25);
+            radioButtonSpouseIndigenousNo.TabIndex = 1;
+            radioButtonSpouseIndigenousNo.TabStop = true;
+            radioButtonSpouseIndigenousNo.Text = "No";
+            radioButtonSpouseIndigenousNo.UseVisualStyleBackColor = true;
             // 
-            // radioButtonSpouseIndegenousYest
+            // radioButtonSpouseIndigenousYes
             // 
-            radioButtonSpouseIndegenousYest.AutoSize = true;
-            radioButtonSpouseIndegenousYest.Location = new Point(5, 0);
-            radioButtonSpouseIndegenousYest.Name = "radioButtonSpouseIndegenousYest";
-            radioButtonSpouseIndegenousYest.Size = new Size(51, 25);
-            radioButtonSpouseIndegenousYest.TabIndex = 0;
-            radioButtonSpouseIndegenousYest.TabStop = true;
-            radioButtonSpouseIndegenousYest.Text = "Yes";
-            radioButtonSpouseIndegenousYest.UseVisualStyleBackColor = true;
+            radioButtonSpouseIndigenousYes.AutoSize = true;
+            radioButtonSpouseIndigenousYes.Location = new Point(5, 0);
+            radioButtonSpouseIndigenousYes.Name = "radioButtonSpouseIndigenousYes";
+            radioButtonSpouseIndigenousYes.Size = new Size(51, 25);
+            radioButtonSpouseIndigenousYes.TabIndex = 0;
+            radioButtonSpouseIndigenousYes.TabStop = true;
+            radioButtonSpouseIndigenousYes.Text = "Yes";
+            radioButtonSpouseIndigenousYes.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
@@ -961,6 +961,7 @@
             comboBoxMaritalStatusValue.Name = "comboBoxMaritalStatusValue";
             comboBoxMaritalStatusValue.Size = new Size(238, 29);
             comboBoxMaritalStatusValue.TabIndex = 20;
+            comboBoxMaritalStatusValue.SelectedIndexChanged += comboBoxMaritalStatusValue_SelectedIndexChanged;
             // 
             // dateTimePickerDateOfBirthValue
             // 
@@ -1389,11 +1390,11 @@
         private TextBox textBoxStreetAddressValue;
         private Label labelResidenceStatusText;
         private Panel panel8;
-        private RadioButton radioButtonSpouseDisabkedNo;
+        private RadioButton radioButtonSpouseDisabledNo;
         private RadioButton radioButtonSpouseDisabledYes;
         private Panel panel7;
-        private RadioButton radioButtonSpouseIndegenousNo;
-        private RadioButton radioButtonSpouseIndegenousYest;
+        private RadioButton radioButtonSpouseIndigenousNo;
+        private RadioButton radioButtonSpouseIndigenousYes;
         private Panel panel6;
         private RadioButton radioButtonSpouseCitizenNo;
         private RadioButton radioButtonSpouseCitizenYes;

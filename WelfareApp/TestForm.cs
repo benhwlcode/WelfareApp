@@ -36,32 +36,13 @@ namespace WelfareApp
         private void buttonTestFunctionTwo_Click(object sender, EventArgs e)
         {
             
-            ShowAllForms();
+            
         }
 
         private void buttonTestFunctionThree_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void ShowAllForms()
-        {
-            StartupForm startup = new StartupForm();
-            startup.Show();
-
-            ProgramWorkForm work = new ProgramWorkForm();
-            work.Show();
-
-            CreateNewApplicationForm apps = new CreateNewApplicationForm();
-            apps.Show();
-
-            CreateNewProgramForm program = new CreateNewProgramForm();
-            program.Show();
-
-            ListOfAppsForm list = new ListOfAppsForm();
-            list.Show();
-        }
-
+        }       
 
     }
 }

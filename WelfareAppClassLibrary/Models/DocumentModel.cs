@@ -8,10 +8,9 @@ namespace WelfareAppClassLibrary.Models
 {
     public class DocumentModel
     {
-        public int documentId { get; set; }
-        public bool isNeeded { get; set; }
-        public string documentName { get; set; }
-        public DocumentStatus documentStatus { get; set; }
+        public string name { get; set; }
+        public DocumentStatus status { get; set; }
+
                 
     }
 }
