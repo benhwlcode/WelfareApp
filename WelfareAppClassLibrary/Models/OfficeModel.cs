@@ -9,7 +9,6 @@ namespace WelfareAppClassLibrary.Models
     public class OfficeModel
     {
         public int officeId { get; set; }
-        public int officeCode { get; set; }
 
         public string officeName { get; set;}
 

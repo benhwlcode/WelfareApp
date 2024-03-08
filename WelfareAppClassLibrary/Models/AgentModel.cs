@@ -9,13 +9,12 @@ namespace WelfareAppClassLibrary.Models
     public class AgentModel
     {
         public int agentId { get; set; }
-        public int agentCode { get; set; }
 
-        public string agentFirstName { get; set; }
-        public string agentLastName { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
 
-        public string agentLogin { get; set; }
-        public string agentPassword { get; set; }
+        public string login { get; set; }
+        public string password { get; set; }
 
         // insert other non essential information
 

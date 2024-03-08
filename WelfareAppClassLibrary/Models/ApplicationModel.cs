@@ -8,7 +8,6 @@ namespace WelfareAppClassLibrary.Models
     {
 
         public int applicationId { get; set; }
-        public int applicationCode { get; set; }
 
         public int programId { get; set; }
         public int applicantId { get; set; }
@@ -24,9 +23,9 @@ namespace WelfareAppClassLibrary.Models
         public PaymentStatus paymentStatus { get; set; }
 
         public bool signatureSigned { get; set; }
-        public DateOnly signatureDate { get; set; }
+        public DateOnly acceptedDate { get; set; }
 
-        public List<DocumentModel> listOfDocuments { get; set; }
+        public string listOfDocuments { get; set; }
 
     }
 }

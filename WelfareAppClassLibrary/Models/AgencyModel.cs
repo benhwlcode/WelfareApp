@@ -9,7 +9,7 @@ namespace WelfareAppClassLibrary.Models
     public class AgencyModel
     {
         public int agencyId { get; set; }
-        public int agencyCode { get; set; }
+        public string agencyCode { get; set; }
 
         public string agencyName { get; set; }
 

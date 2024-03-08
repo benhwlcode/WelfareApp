@@ -37,7 +37,7 @@
             labelOfficeText = new Label();
             labelSupervisorText = new Label();
             labelAgentNameValue = new Label();
-            comboOfficeValue = new ComboBox();
+            comboBoxOfficeValue = new ComboBox();
             groupBoxConfirmDetails = new GroupBox();
             tableLayoutPanel4 = new TableLayoutPanel();
             labelSummaryText = new Label();
@@ -153,7 +153,7 @@
             tableLayoutPanel3.Controls.Add(labelOfficeText, 0, 1);
             tableLayoutPanel3.Controls.Add(labelSupervisorText, 0, 2);
             tableLayoutPanel3.Controls.Add(labelAgentNameValue, 1, 0);
-            tableLayoutPanel3.Controls.Add(comboOfficeValue, 1, 1);
+            tableLayoutPanel3.Controls.Add(comboBoxOfficeValue, 1, 1);
             tableLayoutPanel3.Location = new Point(-3, 22);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 3;
@@ -217,15 +217,15 @@
             labelAgentNameValue.TabIndex = 3;
             labelAgentNameValue.Text = ">agent name value<";
             // 
-            // comboOfficeValue
+            // comboBoxOfficeValue
             // 
-            comboOfficeValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            comboOfficeValue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            comboOfficeValue.FormattingEnabled = true;
-            comboOfficeValue.Location = new Point(123, 35);
-            comboOfficeValue.Name = "comboOfficeValue";
-            comboOfficeValue.Size = new Size(255, 29);
-            comboOfficeValue.TabIndex = 4;
+            comboBoxOfficeValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxOfficeValue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxOfficeValue.FormattingEnabled = true;
+            comboBoxOfficeValue.Location = new Point(123, 35);
+            comboBoxOfficeValue.Name = "comboBoxOfficeValue";
+            comboBoxOfficeValue.Size = new Size(255, 29);
+            comboBoxOfficeValue.TabIndex = 4;
             // 
             // groupBoxConfirmDetails
             // 
@@ -288,6 +288,7 @@
             buttonCreateProgram.TabIndex = 0;
             buttonCreateProgram.Text = "Create Program";
             buttonCreateProgram.UseVisualStyleBackColor = true;
+            buttonCreateProgram.Click += buttonCreateProgram_Click;
             // 
             // richTextBoxSummary
             // 
@@ -496,6 +497,7 @@
             buttonDeselectAll.TabIndex = 1;
             buttonDeselectAll.Text = "Deselect All";
             buttonDeselectAll.UseVisualStyleBackColor = true;
+            buttonDeselectAll.Click += buttonDeselectAll_Click;
             // 
             // buttonSelectAll
             // 
@@ -505,6 +507,7 @@
             buttonSelectAll.TabIndex = 0;
             buttonSelectAll.Text = "Select All";
             buttonSelectAll.UseVisualStyleBackColor = true;
+            buttonSelectAll.Click += buttonSelectAll_Click;
             // 
             // checkedListBoxListOfRequiredDocuments
             // 
@@ -734,7 +737,7 @@
         private Label labelOfficeText;
         private Label labelSupervisorText;
         private Label labelAgentNameValue;
-        private ComboBox comboOfficeValue;
+        private ComboBox comboBoxOfficeValue;
         private GroupBox groupBoxConfirmDetails;
         private TableLayoutPanel tableLayoutPanel4;
         private Label labelSummaryText;

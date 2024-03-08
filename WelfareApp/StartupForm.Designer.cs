@@ -44,7 +44,6 @@
             listBoxListOfPrograms.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             listBoxListOfPrograms.FormattingEnabled = true;
             listBoxListOfPrograms.ItemHeight = 21;
-            listBoxListOfPrograms.Items.AddRange(new object[] { "name: listBoxListOfPrograms", "Dummy Program Number 1" });
             listBoxListOfPrograms.Location = new Point(13, 49);
             listBoxListOfPrograms.Margin = new Padding(4);
             listBoxListOfPrograms.Name = "listBoxListOfPrograms";

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            buttonCreateNewApplication = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             groupBoxAdministrativeInformation = new GroupBox();
@@ -67,15 +67,16 @@
             panel2.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // buttonCreateNewApplication
             // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.Location = new Point(692, 619);
-            button1.Name = "button1";
-            button1.Size = new Size(180, 30);
-            button1.TabIndex = 0;
-            button1.Text = "Create New Application";
-            button1.UseVisualStyleBackColor = true;
+            buttonCreateNewApplication.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCreateNewApplication.Location = new Point(692, 619);
+            buttonCreateNewApplication.Name = "buttonCreateNewApplication";
+            buttonCreateNewApplication.Size = new Size(180, 30);
+            buttonCreateNewApplication.TabIndex = 0;
+            buttonCreateNewApplication.Text = "Create New Application";
+            buttonCreateNewApplication.UseVisualStyleBackColor = true;
+            buttonCreateNewApplication.Click += buttonCreateNewApplication_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -197,6 +198,7 @@
             comboBoxProgramValue.Name = "comboBoxProgramValue";
             comboBoxProgramValue.Size = new Size(237, 29);
             comboBoxProgramValue.TabIndex = 4;
+            comboBoxProgramValue.SelectedIndexChanged += comboBoxProgramValue_SelectedIndexChanged;
             // 
             // comboBoxAgentValue
             // 
@@ -283,6 +285,7 @@
             buttonDeselectAll.TabIndex = 2;
             buttonDeselectAll.Text = "Deselect All";
             buttonDeselectAll.UseVisualStyleBackColor = true;
+            buttonDeselectAll.Click += buttonDeselectAll_Click;
             // 
             // buttonSelectAll
             // 
@@ -293,6 +296,7 @@
             buttonSelectAll.TabIndex = 1;
             buttonSelectAll.Text = "Select All";
             buttonSelectAll.UseVisualStyleBackColor = true;
+            buttonSelectAll.Click += buttonSelectAll_Click;
             // 
             // checkedListBoxListOfDocumentsReceived
             // 
@@ -355,9 +359,9 @@
             labelApplicantIdValue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelApplicantIdValue.Location = new Point(3, 31);
             labelApplicantIdValue.Name = "labelApplicantIdValue";
-            labelApplicantIdValue.Size = new Size(153, 21);
+            labelApplicantIdValue.Size = new Size(19, 21);
             labelApplicantIdValue.TabIndex = 1;
-            labelApplicantIdValue.Text = ">applicant id value<";
+            labelApplicantIdValue.Text = "0";
             // 
             // labelApplicantIdText
             // 
@@ -383,7 +387,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(884, 661);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(button1);
+            Controls.Add(buttonCreateNewApplication);
             Name = "CreateNewApplicationForm";
             Text = "CreateNewApplicationForm";
             tableLayoutPanel1.ResumeLayout(false);
@@ -403,7 +407,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button buttonCreateNewApplication;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
         private GroupBox groupBoxAdministrativeInformation;
