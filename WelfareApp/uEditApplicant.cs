@@ -79,7 +79,7 @@ namespace WelfareApp
                 dateTimePickerSpouseDateOfBirthValue.Visible = false;
                 textBoxSpouseSinCardValue.Visible = false;
 
-                labelSpouseMaritalStatusValue.Text = MaritalStatus.inapplicable.ToString();
+                labelSpouseMaritalStatusValue.Text = "Not Applicapable";
 
                 textBoxSpousePhoneNumberValue.Visible = false;
                 textBoxSpouseEmailAddressValue.Visible = false;
@@ -158,13 +158,13 @@ namespace WelfareApp
             }
             set
             {
-                if (radioButtonCitizenYes.Checked)
+                if (value)
                 {
-                    radioButtonCitizenYes.Checked = value;
+                    radioButtonCitizenYes.Checked = true;
                 }
                 else
                 {
-                    radioButtonCitizenNo.Checked = value;
+                    radioButtonCitizenNo.Checked = true;
                 }
             }
         }
@@ -184,13 +184,13 @@ namespace WelfareApp
             }
             set
             {
-                if (radioButtonIndigenousYes.Checked)
+                if (value)
                 {
-                    radioButtonIndigenousYes.Checked = value;
+                    radioButtonIndigenousYes.Checked = true;
                 }
                 else
                 {
-                    radioButtonIndigenousNo.Checked = value;
+                    radioButtonIndigenousNo.Checked = true;
                 }
             }
         }
@@ -210,13 +210,13 @@ namespace WelfareApp
             }
             set
             {
-                if (radioButtonDisabledYes.Checked)
+                if (value)
                 {
-                    radioButtonDisabledYes.Checked = value;
+                    radioButtonDisabledYes.Checked = true;
                 }
                 else
                 {
-                    radioButtonDisabledNo.Checked = value;
+                    radioButtonDisabledNo.Checked = true;
                 }
             }
         }
@@ -278,13 +278,13 @@ namespace WelfareApp
             }
             set
             {
-                if (radioButtonSpouseCitizenYes.Checked)
+                if (value)
                 {
-                    radioButtonSpouseCitizenYes.Checked = value;
+                    radioButtonSpouseCitizenYes.Checked = true;
                 }
                 else
                 {
-                    radioButtonSpouseCitizenNo.Checked = value;
+                    radioButtonSpouseCitizenNo.Checked = true;
                 }
             }
         }
@@ -304,13 +304,13 @@ namespace WelfareApp
             }
             set
             {
-                if (radioButtonSpouseIndigenousYes.Checked)
+                if (value)
                 {
-                    radioButtonSpouseIndigenousYes.Checked = value;
+                    radioButtonSpouseIndigenousYes.Checked = true;
                 }
                 else
                 {
-                    radioButtonSpouseIndigenousNo.Checked = value;
+                    radioButtonSpouseIndigenousNo.Checked = true;
                 }
             }
         }
@@ -330,13 +330,13 @@ namespace WelfareApp
             }
             set
             {
-                if (radioButtonSpouseDisabledYes.Checked)
+                if (value)
                 {
-                    radioButtonSpouseDisabledYes.Checked = value;
+                    radioButtonSpouseDisabledYes.Checked = true;
                 }
                 else
                 {
-                    radioButtonSpouseDisabledNo.Checked = value;
+                    radioButtonSpouseDisabledNo.Checked = true;
                 }
             }
         }

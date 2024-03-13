@@ -18,6 +18,7 @@ namespace WelfareApp
     {
         uEditApplicant applicantInput = new uEditApplicant();
 
+
         List<ProgramModel> programs = new List<ProgramModel>();
         List<AgentModel> agents = new List<AgentModel>();
         List<OfficeModel> offices = new List<OfficeModel>();
@@ -27,6 +28,8 @@ namespace WelfareApp
         ApplicationModel applicationToSave = new ApplicationModel();
         ApplicantModel applicantToSave = new ApplicantModel();
         SpouseModel spouseToSave = new SpouseModel();
+
+        public ApplicantModel loadedApplicant = new ApplicantModel();
 
 
         public CreateNewApplicationForm()
@@ -46,8 +49,8 @@ namespace WelfareApp
 
         private void buttonLoadApplicantData_Click(object sender, EventArgs e)
         {
-            LoadApplicantForm loadApplicantForm
-                = new LoadApplicantForm();
+            LoadApplicantForm loadApplicantForm = new LoadApplicantForm();
+            loadApplicantForm.parentCreateNewApp = this;
 
             loadApplicantForm.Show();
         }
@@ -60,6 +63,8 @@ namespace WelfareApp
             agents = sql.GetAllAgents();
             offices = sql.GetAllOffices();
             supervisors = sql.GetAllSupervisors();
+
+            labelApplicantIdValue.Text = "0";
         }
 
         public void UpdateInitialBindings()
@@ -83,7 +88,7 @@ namespace WelfareApp
             string documentsJson = "";
 
             SqlConnector sql = new SqlConnector();
-            documentsJson = sql.RetriveRequiredList(selectedProgram);
+            documentsJson = sql.RetrieveRequiredList(selectedProgram);
 
             documents.Clear();
             documents = JsonSerializer.Deserialize<List<DocumentModel>>(documentsJson);
@@ -121,12 +126,46 @@ namespace WelfareApp
 
         private void buttonCreateNewApplication_Click(object sender, EventArgs e)
         {
-            applicationToSave = FillApplicationToSaveInfo();
-            applicantToSave = FillApplicantToSaveInfo();
-            spouseToSave = FillSpouseToSaveInfo();
-
             SqlConnector sql = new SqlConnector();
-            sql.SaveToApplication(applicationToSave, applicantToSave, spouseToSave);
+
+
+            if (labelApplicantIdValue.Text == "0")
+            {
+                applicationToSave = FillApplicationToSaveInfo();
+                applicantToSave = FillApplicantToSaveInfo();
+                spouseToSave = FillSpouseToSaveInfo();
+                
+                sql.SaveToApplication(applicationToSave, applicantToSave, spouseToSave);
+            }
+            else
+            {
+                applicationToSave = FillApplicationToSaveInfo();
+                applicantToSave = FillApplicantToSaveInfo();
+                spouseToSave = FillSpouseToSaveInfo();
+
+                applicantToSave.applicantId = loadedApplicant.applicantId;
+
+                sql.SaveToApplicationWithReturner(applicationToSave, applicantToSave.applicantId);
+
+
+                if (spouseToSave != null && loadedApplicant.spouseId != null)
+                {
+                    spouseToSave.spouseId = loadedApplicant.spouseId.spouseId;
+                    sql.UpdateApplicantEntry(applicantToSave, spouseToSave);
+                }
+                else if (spouseToSave != null && loadedApplicant.spouseId == null)
+                {
+                    spouseToSave.spouseId = 0;
+                    sql.UpdateApplicantEntry(applicantToSave, spouseToSave);
+                }
+                else
+                {
+                    sql.UpdateApplicantEntry(applicantToSave, spouseToSave);
+                }                    
+
+            }
+
+            
             
 
         }
@@ -225,6 +264,7 @@ namespace WelfareApp
 
             if (applicantInput.applicantMaritalStatus == MaritalStatus.married)
             {
+
                 output.firstName = applicantInput.spouseFirstName;
                 output.lastName = applicantInput.spouseLastName;
                 output.gender = applicantInput.spouseGender;
@@ -245,10 +285,72 @@ namespace WelfareApp
 
             else
             {
+                output = null;
                 return output;
             }
 
             
+        }
+
+        public void LoadApplicantAndSpouseInfo()
+        {
+            labelApplicantIdValue.Text = loadedApplicant.applicantId.ToString();
+
+            applicantInput.applicantFirstName = loadedApplicant.firstName;
+            applicantInput.applicationlicantLastName = loadedApplicant.lastName;
+            applicantInput.applicantGender = loadedApplicant.gender;
+            applicantInput.applicantBirthday = DateTime.Parse(loadedApplicant.birthday);
+            applicantInput.applicantSinCard = loadedApplicant.sinCard;
+            applicantInput.applicantMaritalStatus = loadedApplicant.maritalStatus;
+            applicantInput.applicantPhone = loadedApplicant.phone;
+            applicantInput.applicantEmail = loadedApplicant.email;
+            applicantInput.applicantIsCitizen = loadedApplicant.isCitizen;
+            applicantInput.applicantIsIndigenous = loadedApplicant.isIndigenous;
+            applicantInput.applicantIsDisabled = loadedApplicant.isDisabled;
+
+            if (loadedApplicant.spouseId != null)
+            {
+                applicantInput.spouseFirstName = loadedApplicant.spouseId.firstName;
+                applicantInput.spouseLastName = loadedApplicant.spouseId.lastName;
+                applicantInput.spouseGender = loadedApplicant.spouseId.gender;
+                applicantInput.spouseBirthday = DateTime.Parse(loadedApplicant.spouseId.birthday);
+                applicantInput.spouseSinCard = loadedApplicant.spouseId.sinCard;
+                applicantInput.applicantMaritalStatus = loadedApplicant.spouseId.maritalStatus;
+                applicantInput.spousePhone = loadedApplicant.spouseId.phone;
+                applicantInput.spouseEmail = loadedApplicant.spouseId.email;
+                applicantInput.spouseIsCitizen = loadedApplicant.spouseId.isCitizen;
+                applicantInput.spouseIsIndigenous = loadedApplicant.spouseId.isIndigenous;
+                applicantInput.spouseIsDisabled = loadedApplicant.spouseId.isDisabled;
+            }
+
+            applicantInput.residence = loadedApplicant.residenceStatus;
+            applicantInput.address = loadedApplicant.streetAddress;
+            applicantInput.city = loadedApplicant.city;
+            applicantInput.province = loadedApplicant.province;
+            applicantInput.moveInDate = DateTime.Parse(loadedApplicant.moveInDate);
+
+            applicantInput.familySize = loadedApplicant.familySize.ToString();
+            applicantInput.numberOfAdults = loadedApplicant.numberOfAdults.ToString();
+            applicantInput.numberOfChildren = loadedApplicant.numberOfChildren.ToString();
+            applicantInput.numberOfElderly = loadedApplicant.numberOfElderly.ToString();
+
+            applicantInput.rentExpense = loadedApplicant.rentalExpense.ToString();
+            applicantInput.utilitiesExpense = loadedApplicant.utilityExpense.ToString();
+            applicantInput.foodExpense = loadedApplicant.foodExpense.ToString();
+            applicantInput.tuitionExpense = loadedApplicant.tuitionExpense.ToString();
+
+            applicantInput.employment = loadedApplicant.employmentType;
+            applicantInput.employer = loadedApplicant.employer;
+            applicantInput.position = loadedApplicant.position;
+            applicantInput.startOfEmployment = DateTime.Parse(loadedApplicant.employmentStartDate);
+
+            applicantInput.employmentIncome = loadedApplicant.employmentIncome.ToString();
+            applicantInput.spouseIncome = loadedApplicant.spouseIncome.ToString();
+            applicantInput.donationIncome = loadedApplicant.donationIncome.ToString();
+            applicantInput.cashSavings = loadedApplicant.cashSavings.ToString();
+
+
+
         }
     }
 }

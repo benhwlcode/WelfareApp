@@ -38,20 +38,20 @@ namespace WelfareAppClassLibrary.Models
         public int numberOfChildren { get; set; }
         public int numberOfElderly { get; set; }
 
-        public decimal rentalExpense { get; set; }
-        public decimal utilityExpense { get; set; }
-        public decimal foodExpense { get; set; }
-        public decimal tuitionExpense { get; set; }
+        public double rentalExpense { get; set; }
+        public double utilityExpense { get; set; }
+        public double foodExpense { get; set; }
+        public double tuitionExpense { get; set; }
 
         public EmploymentType employmentType { get; set; }
         public string employer { get; set; }
         public string position { get; set; }
-        public decimal employmentIncome { get; set; }
+        public double employmentIncome { get; set; }
         public string employmentStartDate { get; set; }
 
-        public decimal spouseIncome { get; set; }
-        public decimal donationIncome { get; set; }
-        public decimal cashSavings { get; set; }
+        public double spouseIncome { get; set; }
+        public double donationIncome { get; set; }
+        public double cashSavings { get; set; }
 
 
 

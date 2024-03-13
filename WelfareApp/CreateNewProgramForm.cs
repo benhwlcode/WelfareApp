@@ -24,9 +24,6 @@ namespace WelfareApp
         AgentModel userAgent = new AgentModel();
         ProgramModel programToSave = new ProgramModel();
 
-
-
-
         public CreateNewProgramForm(AgentModel agentInput)
         {
             InitializeComponent();

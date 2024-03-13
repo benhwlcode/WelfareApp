@@ -359,9 +359,9 @@
             labelApplicantIdValue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelApplicantIdValue.Location = new Point(3, 31);
             labelApplicantIdValue.Name = "labelApplicantIdValue";
-            labelApplicantIdValue.Size = new Size(19, 21);
+            labelApplicantIdValue.Size = new Size(153, 21);
             labelApplicantIdValue.TabIndex = 1;
-            labelApplicantIdValue.Text = "0";
+            labelApplicantIdValue.Text = ">applicant id value<";
             // 
             // labelApplicantIdText
             // 

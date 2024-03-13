@@ -12,6 +12,20 @@ namespace WelfareAppClassLibrary
     public class Helper
     {
 
+        public bool CheckPassword(AgentModel agentInput, string passwordInput)
+        {
+            if (agentInput.password == passwordInput)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+
         public string ListOfAllDocumentsJson()
         {
             string output = "";

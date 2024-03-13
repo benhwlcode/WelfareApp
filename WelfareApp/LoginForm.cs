@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WelfareAppClassLibrary;
 using WelfareAppClassLibrary.DataConnection;
 using WelfareAppClassLibrary.Models;
 
@@ -14,7 +15,7 @@ namespace WelfareApp
 {
     public partial class LoginForm : Form
     {
-        AgentModel userAgent;
+        AgentModel userAgent = new AgentModel();
 
         public LoginForm()
         {
@@ -26,15 +27,15 @@ namespace WelfareApp
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            SqlConnector sql = new SqlConnector();
+            Helper helper = new Helper();
+
             string userInput = textBoxUsernameValue.Text;
             string passwordInput = textBoxPasswordValue.Text;
 
-            SqlConnector sql = new SqlConnector();
-
-            userAgent = new AgentModel();
             userAgent = sql.GetAgent(userInput);
 
-            bool credientialsSuccessful = sql.CheckPassword(userAgent, passwordInput);
+            bool credientialsSuccessful = helper.CheckPassword(userAgent, passwordInput);
 
             if (credientialsSuccessful)
             {

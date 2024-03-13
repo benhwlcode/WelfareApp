@@ -21,7 +21,7 @@ namespace WelfareAppClassLibrary
     public enum DocumentStatus { waiting, received, checking, approved }
 
     public enum GenderType { male, female, undisclosed }
-    public enum MaritalStatus { single, married, divorced, widowed, inapplicable }
+    public enum MaritalStatus { single, married, divorced, widowed }
     public enum ProvinceName { AB, BC, MB, NB, NL, NS, NT, NU, ON, PR, SK, QC, YT, }
     public enum ResidenceStatus { homeowner, mortgaging, renting, guest }
     public enum EmploymentType { fulltime, parttime, unemployed, freelance, contractor, retired }

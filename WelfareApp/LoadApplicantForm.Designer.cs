@@ -31,7 +31,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             listBoxListOfApplicants = new ListBox();
             tableLayoutPanel2 = new TableLayoutPanel();
-            buttonEditApplicant = new Button();
+            buttonTestList = new Button();
             buttonLoadApplicant = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -73,7 +73,7 @@
             tableLayoutPanel2.ColumnCount = 2;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Controls.Add(buttonEditApplicant, 1, 0);
+            tableLayoutPanel2.Controls.Add(buttonTestList, 0, 0);
             tableLayoutPanel2.Controls.Add(buttonLoadApplicant, 0, 0);
             tableLayoutPanel2.Location = new Point(43, 520);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -82,15 +82,15 @@
             tableLayoutPanel2.Size = new Size(474, 74);
             tableLayoutPanel2.TabIndex = 1;
             // 
-            // buttonEditApplicant
+            // buttonTestList
             // 
-            buttonEditApplicant.Location = new Point(240, 3);
-            buttonEditApplicant.Name = "buttonEditApplicant";
-            buttonEditApplicant.Size = new Size(231, 40);
-            buttonEditApplicant.TabIndex = 1;
-            buttonEditApplicant.Text = "Edit Applicant";
-            buttonEditApplicant.UseVisualStyleBackColor = true;
-            buttonEditApplicant.Click += buttonEditApplicant_Click;
+            buttonTestList.Location = new Point(240, 3);
+            buttonTestList.Name = "buttonTestList";
+            buttonTestList.Size = new Size(231, 40);
+            buttonTestList.TabIndex = 1;
+            buttonTestList.Text = "Test List";
+            buttonTestList.UseVisualStyleBackColor = true;
+            buttonTestList.Click += buttonTestList_Click;
             // 
             // buttonLoadApplicant
             // 
@@ -100,6 +100,7 @@
             buttonLoadApplicant.TabIndex = 0;
             buttonLoadApplicant.Text = "Load Applicant";
             buttonLoadApplicant.UseVisualStyleBackColor = true;
+            buttonLoadApplicant.Click += buttonLoadApplicant_Click;
             // 
             // LoadApplicantForm
             // 
@@ -119,7 +120,7 @@
         private TableLayoutPanel tableLayoutPanel1;
         private ListBox listBoxListOfApplicants;
         private TableLayoutPanel tableLayoutPanel2;
-        private Button buttonEditApplicant;
         private Button buttonLoadApplicant;
+        private Button buttonTestList;
     }
 }
