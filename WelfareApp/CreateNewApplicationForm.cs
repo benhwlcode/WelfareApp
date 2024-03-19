@@ -126,6 +126,13 @@ namespace WelfareApp
 
         private void buttonCreateNewApplication_Click(object sender, EventArgs e)
         {
+
+            //buttonClickOldLogic();
+            buttonClickNewLogic();
+        }
+
+        private void buttonClickOldLogic()
+        {
             SqlConnector sql = new SqlConnector();
 
 
@@ -134,7 +141,7 @@ namespace WelfareApp
                 applicationToSave = FillApplicationToSaveInfo();
                 applicantToSave = FillApplicantToSaveInfo();
                 spouseToSave = FillSpouseToSaveInfo();
-                
+
                 sql.SaveToApplication(applicationToSave, applicantToSave, spouseToSave);
             }
             else
@@ -161,12 +168,41 @@ namespace WelfareApp
                 else
                 {
                     sql.UpdateApplicantEntry(applicantToSave, spouseToSave);
-                }                    
+                }
 
             }
 
+        }
+
+        private void buttonClickNewLogic()
+        {
+            SqlConnector sql = new SqlConnector();
+
+            applicationToSave = FillApplicationToSaveInfo();
+            applicantToSave = FillApplicantToSaveInfo();
+            spouseToSave = FillSpouseToSaveInfo();
+
+            if (labelApplicantIdValue.Text == "0")
+            {
+                sql.SaveToApplication(applicationToSave, applicantToSave, spouseToSave);
+                return;
+            }
+
+            applicantToSave.applicantId = loadedApplicant.applicantId;
             
-            
+            sql.SaveToApplicationWithReturner(applicationToSave, applicantToSave.applicantId);
+
+            if (spouseToSave != null && loadedApplicant.spouseId != null)
+            {
+                spouseToSave.spouseId = loadedApplicant.spouseId.spouseId;
+            }
+
+            if (spouseToSave != null && loadedApplicant.spouseId == null)
+            {
+                spouseToSave.spouseId = 0;
+            }
+
+            sql.UpdateApplicantEntry(applicantToSave, spouseToSave);
 
         }
 
