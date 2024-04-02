@@ -149,8 +149,6 @@ namespace WelfareAppClassLibrary.DataConnection
                     $"@agencyId, @agentId, @officeId, @supervisorId, " +
                     $"@paymentForm, @paymentType, @minPayment, @maxPayment, " +
                     $"@listOfDocuments", p);
-
-
             }
         }
 

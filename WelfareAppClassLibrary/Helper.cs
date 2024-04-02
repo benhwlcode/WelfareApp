@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
@@ -56,6 +57,19 @@ namespace WelfareAppClassLibrary
             output = JsonSerializer.Serialize(documents);
 
             return output;
+        }
+
+        public string TestingCheckValidation(List<ValidationResult> input)
+        {
+            string output = $"Total error = {input.Count}. ";
+
+            foreach (ValidationResult result in input)
+            {
+                output += $"\r\n {result}";
+            }
+
+            return output;
+
         }
 
 

@@ -35,13 +35,13 @@ namespace WelfareApp
         {
             bool isMarried;
 
-            if ((MaritalStatus)comboBoxMaritalStatusValue.SelectedItem == MaritalStatus.married)
+            if ((MaritalStatus)comboBoxMaritalStatusValue.SelectedItem == MaritalStatus.Married)
             {
                 isMarried = true;
             }
             else
             {
-                isMarried = false;  
+                isMarried = false;
             }
 
             CheckIfMarried(isMarried);
@@ -58,7 +58,7 @@ namespace WelfareApp
                 dateTimePickerSpouseDateOfBirthValue.Visible = true;
                 textBoxSpouseSinCardValue.Visible = true;
 
-                labelSpouseMaritalStatusValue.Text = MaritalStatus.married.ToString();
+                labelSpouseMaritalStatusValue.Text = MaritalStatus.Married.ToString();
 
                 textBoxSpousePhoneNumberValue.Visible = true;
                 textBoxSpouseEmailAddressValue.Visible = true;
@@ -93,7 +93,50 @@ namespace WelfareApp
             }
         }
 
-        
+        private void comboBoxEmploymentTypeValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+            CheckIfEmployed((EmploymentType)comboBoxEmploymentTypeValue.SelectedItem);
+        }
+
+        public void CheckIfEmployed(EmploymentType input)
+        {
+            if (input == EmploymentType.unemployed || input == EmploymentType.retired)
+            {
+                labelEmployerText.Text = "Latest Employer:";
+                labelStartOfEmploymentText.Text = "Last Day:";
+
+                textBoxEmployerValue.Visible = true;
+                textBoxPositionValue.Visible = true;
+                dateTimePickerStartOfEmploymentValue.Visible = true;
+            }
+            else if (input == EmploymentType.none)
+            {
+                labelEmployerText.Text = "Employer:";
+                labelPositionText.Text = "Position";
+                labelStartOfEmploymentText.Text = "Start Date:";
+
+                textBoxEmployerValue.Text = "Not Available";
+                textBoxPositionValue.Text = "Not Available";
+                dateTimePickerStartOfEmploymentValue.Value = dateTimePickerDateOfBirthValue.Value;
+
+                textBoxEmployerValue.Visible = false;
+                textBoxPositionValue.Visible = false;
+                dateTimePickerStartOfEmploymentValue.Visible = false;
+            }
+            else
+            {
+                labelEmployerText.Text = "Employer:";
+                labelPositionText.Text = "Position";
+                labelStartOfEmploymentText.Text = "Start Date:";
+
+                textBoxEmployerValue.Visible = true;
+                textBoxPositionValue.Visible = true;
+                dateTimePickerStartOfEmploymentValue.Visible = true;
+            }
+
+        }
 
         public string applicantFirstName
         {
