@@ -23,9 +23,9 @@ namespace WelfareApp
 
         private void buttonCreateNewProgram_Click(object sender, EventArgs e)
         {
-            CreateNewProgramForm createNewProgramForm
-                = new CreateNewProgramForm(userAgent);
-            createNewProgramForm.Show();
+            CreateNewProgramNew createNewProgramNew
+                = new CreateNewProgramNew(userAgent);
+            createNewProgramNew.Show();
         }
 
         private void buttonCreateNewApplication_Click(object sender, EventArgs e)
@@ -44,8 +44,10 @@ namespace WelfareApp
 
         private void listBoxListOfPrograms_DoubleClick(object sender, EventArgs e)
         {
-            ProgramWorkForm programWorkForm 
-                = new ProgramWorkForm();
+            selectedProgram = (ProgramModel)listBoxListOfPrograms.SelectedItem;
+
+            ProgramWorkFormNew programWorkForm
+                = new ProgramWorkFormNew(selectedProgram);
             programWorkForm.Show();
         }
 

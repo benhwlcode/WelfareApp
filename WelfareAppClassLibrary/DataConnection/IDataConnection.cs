@@ -32,6 +32,50 @@ namespace WelfareAppClassLibrary.DataConnection
 
         public string RetrieveRequiredList(ProgramModel programModel);
 
-              
+        public List<ApplicationModel> GetAllApplications(int programId);
+
+        public string GetDocuments(int applicationId);
+
+        public void UpdateApplication(ApplicationModel applicationModel);
+
+        public void UpdateEligibility(int programIdInput, string conditionInput);
+
+        public void ResetEligibility(int programIdInput);
+
+        public List<ApplicationModel> ListAllApplications();
+
+        public string GetProgramName(int appIdInput);
+
+        public string GetAgencyName(int appIdInput);
+        public string GetAgentName(int appIdInput);
+        public string GetOfficeName(int appIdInput);
+        public string GetSupervisorName(int appIdInput);
+
+        public List<ApplicationModel> GetAppsAdults();
+        public List<ApplicantModel> GetPeopleAdults();
+
+        public List<ApplicationModel> GetAppsElderly();
+        public List<ApplicantModel> GetPeopleElderly();
+
+        public List<ApplicationModel> GetAppsSingle();
+        public List<ApplicantModel> GetPeopleSingle();
+
+        public List<ApplicationModel> GetAppsMarried();
+        public List<ApplicantModel> GetPeopleMarried();
+
+        public List<ApplicationModel> GetAppsEmployed();
+        public List<ApplicantModel> GetPeopleEmployed();
+
+        public List<ApplicationModel> GetAppsUnemployed();
+        public List<ApplicantModel> GetPeopleUnemployed();
+
+        public List<ApplicationModel> GetAppsWithChildren();
+        public List<ApplicantModel> GetPeopleWithChildren ();
+
+        public List<ApplicationModel> GetAppsWithoutChildren();
+        public List<ApplicantModel> GetPeopleWithoutChildren();
+
+
+
     }
 }

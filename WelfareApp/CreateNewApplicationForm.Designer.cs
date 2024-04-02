@@ -70,9 +70,10 @@
             // buttonCreateNewApplication
             // 
             buttonCreateNewApplication.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonCreateNewApplication.Location = new Point(692, 619);
+            buttonCreateNewApplication.Location = new Point(791, 825);
+            buttonCreateNewApplication.Margin = new Padding(3, 4, 3, 4);
             buttonCreateNewApplication.Name = "buttonCreateNewApplication";
-            buttonCreateNewApplication.Size = new Size(180, 30);
+            buttonCreateNewApplication.Size = new Size(206, 40);
             buttonCreateNewApplication.TabIndex = 0;
             buttonCreateNewApplication.Text = "Create New Application";
             buttonCreateNewApplication.UseVisualStyleBackColor = true;
@@ -86,11 +87,12 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 55F));
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 0);
             tableLayoutPanel1.Controls.Add(groupBoxApplicantInformation, 1, 0);
-            tableLayoutPanel1.Location = new Point(12, 12);
+            tableLayoutPanel1.Location = new Point(14, 16);
+            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(860, 601);
+            tableLayoutPanel1.Size = new Size(983, 801);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -100,21 +102,24 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Controls.Add(groupBoxAdministrativeInformation, 0, 0);
             tableLayoutPanel2.Controls.Add(groupBoxDocumentsReceived, 0, 1);
-            tableLayoutPanel2.Location = new Point(3, 3);
+            tableLayoutPanel2.Location = new Point(3, 4);
+            tableLayoutPanel2.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 250F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 333F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(381, 595);
+            tableLayoutPanel2.Size = new Size(436, 793);
             tableLayoutPanel2.TabIndex = 0;
             // 
             // groupBoxAdministrativeInformation
             // 
             groupBoxAdministrativeInformation.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBoxAdministrativeInformation.Controls.Add(tableLayoutPanel3);
-            groupBoxAdministrativeInformation.Location = new Point(3, 3);
+            groupBoxAdministrativeInformation.Location = new Point(3, 4);
+            groupBoxAdministrativeInformation.Margin = new Padding(3, 4, 3, 4);
             groupBoxAdministrativeInformation.Name = "groupBoxAdministrativeInformation";
-            groupBoxAdministrativeInformation.Size = new Size(375, 244);
+            groupBoxAdministrativeInformation.Padding = new Padding(3, 4, 3, 4);
+            groupBoxAdministrativeInformation.Size = new Size(430, 325);
             groupBoxAdministrativeInformation.TabIndex = 0;
             groupBoxAdministrativeInformation.TabStop = false;
             groupBoxAdministrativeInformation.Text = "Administrative Information";
@@ -123,7 +128,7 @@
             // 
             tableLayoutPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel3.ColumnCount = 2;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel3.Controls.Add(labelProgramText, 0, 0);
             tableLayoutPanel3.Controls.Add(labelAgentText, 0, 2);
@@ -134,15 +139,16 @@
             tableLayoutPanel3.Controls.Add(comboBoxOfficeValue, 1, 3);
             tableLayoutPanel3.Controls.Add(comboBoxSupervisorValue, 1, 4);
             tableLayoutPanel3.Controls.Add(labelReceivedByText, 0, 1);
-            tableLayoutPanel3.Location = new Point(6, 22);
+            tableLayoutPanel3.Location = new Point(7, 29);
+            tableLayoutPanel3.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 5;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.Size = new Size(363, 216);
+            tableLayoutPanel3.Size = new Size(416, 288);
             tableLayoutPanel3.TabIndex = 0;
             // 
             // labelProgramText
@@ -150,9 +156,9 @@
             labelProgramText.Anchor = AnchorStyles.Right;
             labelProgramText.AutoSize = true;
             labelProgramText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelProgramText.Location = new Point(43, 14);
+            labelProgramText.Location = new Point(42, 18);
             labelProgramText.Name = "labelProgramText";
-            labelProgramText.Size = new Size(74, 21);
+            labelProgramText.Size = new Size(92, 28);
             labelProgramText.TabIndex = 0;
             labelProgramText.Text = "Program:";
             // 
@@ -161,9 +167,9 @@
             labelAgentText.Anchor = AnchorStyles.Right;
             labelAgentText.AutoSize = true;
             labelAgentText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelAgentText.Location = new Point(63, 83);
+            labelAgentText.Location = new Point(65, 110);
             labelAgentText.Name = "labelAgentText";
-            labelAgentText.Size = new Size(54, 21);
+            labelAgentText.Size = new Size(69, 28);
             labelAgentText.TabIndex = 1;
             labelAgentText.Text = "Agent:";
             // 
@@ -172,9 +178,9 @@
             labelOfficeText.Anchor = AnchorStyles.Right;
             labelOfficeText.AutoSize = true;
             labelOfficeText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelOfficeText.Location = new Point(63, 132);
+            labelOfficeText.Location = new Point(67, 175);
             labelOfficeText.Name = "labelOfficeText";
-            labelOfficeText.Size = new Size(54, 21);
+            labelOfficeText.Size = new Size(67, 28);
             labelOfficeText.TabIndex = 2;
             labelOfficeText.Text = "Office:";
             // 
@@ -183,9 +189,9 @@
             labelSupervisorText.Anchor = AnchorStyles.Right;
             labelSupervisorText.AutoSize = true;
             labelSupervisorText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelSupervisorText.Location = new Point(29, 181);
+            labelSupervisorText.Location = new Point(25, 241);
             labelSupervisorText.Name = "labelSupervisorText";
-            labelSupervisorText.Size = new Size(88, 21);
+            labelSupervisorText.Size = new Size(109, 28);
             labelSupervisorText.TabIndex = 3;
             labelSupervisorText.Text = "Supervisor:";
             // 
@@ -194,9 +200,10 @@
             comboBoxProgramValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             comboBoxProgramValue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxProgramValue.FormattingEnabled = true;
-            comboBoxProgramValue.Location = new Point(123, 10);
+            comboBoxProgramValue.Location = new Point(140, 14);
+            comboBoxProgramValue.Margin = new Padding(3, 4, 3, 4);
             comboBoxProgramValue.Name = "comboBoxProgramValue";
-            comboBoxProgramValue.Size = new Size(237, 29);
+            comboBoxProgramValue.Size = new Size(273, 36);
             comboBoxProgramValue.TabIndex = 4;
             comboBoxProgramValue.SelectedIndexChanged += comboBoxProgramValue_SelectedIndexChanged;
             // 
@@ -205,9 +212,10 @@
             comboBoxAgentValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             comboBoxAgentValue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxAgentValue.FormattingEnabled = true;
-            comboBoxAgentValue.Location = new Point(123, 79);
+            comboBoxAgentValue.Location = new Point(140, 106);
+            comboBoxAgentValue.Margin = new Padding(3, 4, 3, 4);
             comboBoxAgentValue.Name = "comboBoxAgentValue";
-            comboBoxAgentValue.Size = new Size(237, 29);
+            comboBoxAgentValue.Size = new Size(273, 36);
             comboBoxAgentValue.TabIndex = 5;
             // 
             // comboBoxOfficeValue
@@ -215,9 +223,10 @@
             comboBoxOfficeValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             comboBoxOfficeValue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxOfficeValue.FormattingEnabled = true;
-            comboBoxOfficeValue.Location = new Point(123, 128);
+            comboBoxOfficeValue.Location = new Point(140, 171);
+            comboBoxOfficeValue.Margin = new Padding(3, 4, 3, 4);
             comboBoxOfficeValue.Name = "comboBoxOfficeValue";
-            comboBoxOfficeValue.Size = new Size(237, 29);
+            comboBoxOfficeValue.Size = new Size(273, 36);
             comboBoxOfficeValue.TabIndex = 6;
             // 
             // comboBoxSupervisorValue
@@ -225,18 +234,19 @@
             comboBoxSupervisorValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             comboBoxSupervisorValue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxSupervisorValue.FormattingEnabled = true;
-            comboBoxSupervisorValue.Location = new Point(123, 177);
+            comboBoxSupervisorValue.Location = new Point(140, 237);
+            comboBoxSupervisorValue.Margin = new Padding(3, 4, 3, 4);
             comboBoxSupervisorValue.Name = "comboBoxSupervisorValue";
-            comboBoxSupervisorValue.Size = new Size(237, 29);
+            comboBoxSupervisorValue.Size = new Size(273, 36);
             comboBoxSupervisorValue.TabIndex = 7;
             // 
             // labelReceivedByText
             // 
             labelReceivedByText.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             labelReceivedByText.AutoSize = true;
-            labelReceivedByText.Location = new Point(3, 54);
+            labelReceivedByText.Location = new Point(3, 72);
             labelReceivedByText.Name = "labelReceivedByText";
-            labelReceivedByText.Size = new Size(70, 15);
+            labelReceivedByText.Size = new Size(89, 20);
             labelReceivedByText.TabIndex = 8;
             labelReceivedByText.Text = "Received By";
             // 
@@ -244,9 +254,11 @@
             // 
             groupBoxDocumentsReceived.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBoxDocumentsReceived.Controls.Add(tableLayoutPanel4);
-            groupBoxDocumentsReceived.Location = new Point(3, 253);
+            groupBoxDocumentsReceived.Location = new Point(3, 337);
+            groupBoxDocumentsReceived.Margin = new Padding(3, 4, 3, 4);
             groupBoxDocumentsReceived.Name = "groupBoxDocumentsReceived";
-            groupBoxDocumentsReceived.Size = new Size(375, 339);
+            groupBoxDocumentsReceived.Padding = new Padding(3, 4, 3, 4);
+            groupBoxDocumentsReceived.Size = new Size(430, 452);
             groupBoxDocumentsReceived.TabIndex = 1;
             groupBoxDocumentsReceived.TabStop = false;
             groupBoxDocumentsReceived.Text = "Documents Received";
@@ -258,12 +270,13 @@
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel4.Controls.Add(panel1, 0, 1);
             tableLayoutPanel4.Controls.Add(checkedListBoxListOfDocumentsReceived, 0, 0);
-            tableLayoutPanel4.Location = new Point(9, 22);
+            tableLayoutPanel4.Location = new Point(10, 29);
+            tableLayoutPanel4.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 2;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
-            tableLayoutPanel4.Size = new Size(360, 311);
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tableLayoutPanel4.Size = new Size(412, 415);
             tableLayoutPanel4.TabIndex = 0;
             // 
             // panel1
@@ -271,17 +284,19 @@
             panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             panel1.Controls.Add(buttonDeselectAll);
             panel1.Controls.Add(buttonSelectAll);
-            panel1.Location = new Point(164, 269);
+            panel1.Location = new Point(188, 359);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(193, 39);
+            panel1.Size = new Size(221, 52);
             panel1.TabIndex = 0;
             // 
             // buttonDeselectAll
             // 
             buttonDeselectAll.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonDeselectAll.Location = new Point(100, 6);
+            buttonDeselectAll.Location = new Point(114, 8);
+            buttonDeselectAll.Margin = new Padding(3, 4, 3, 4);
             buttonDeselectAll.Name = "buttonDeselectAll";
-            buttonDeselectAll.Size = new Size(90, 30);
+            buttonDeselectAll.Size = new Size(103, 40);
             buttonDeselectAll.TabIndex = 2;
             buttonDeselectAll.Text = "Deselect All";
             buttonDeselectAll.UseVisualStyleBackColor = true;
@@ -290,9 +305,10 @@
             // buttonSelectAll
             // 
             buttonSelectAll.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonSelectAll.Location = new Point(4, 6);
+            buttonSelectAll.Location = new Point(5, 8);
+            buttonSelectAll.Margin = new Padding(3, 4, 3, 4);
             buttonSelectAll.Name = "buttonSelectAll";
-            buttonSelectAll.Size = new Size(90, 30);
+            buttonSelectAll.Size = new Size(103, 40);
             buttonSelectAll.TabIndex = 1;
             buttonSelectAll.Text = "Select All";
             buttonSelectAll.UseVisualStyleBackColor = true;
@@ -302,18 +318,21 @@
             // 
             checkedListBoxListOfDocumentsReceived.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             checkedListBoxListOfDocumentsReceived.FormattingEnabled = true;
-            checkedListBoxListOfDocumentsReceived.Location = new Point(3, 3);
+            checkedListBoxListOfDocumentsReceived.Location = new Point(3, 4);
+            checkedListBoxListOfDocumentsReceived.Margin = new Padding(3, 4, 3, 4);
             checkedListBoxListOfDocumentsReceived.Name = "checkedListBoxListOfDocumentsReceived";
-            checkedListBoxListOfDocumentsReceived.Size = new Size(354, 256);
+            checkedListBoxListOfDocumentsReceived.Size = new Size(406, 334);
             checkedListBoxListOfDocumentsReceived.TabIndex = 1;
             // 
             // groupBoxApplicantInformation
             // 
             groupBoxApplicantInformation.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBoxApplicantInformation.Controls.Add(tableLayoutPanel5);
-            groupBoxApplicantInformation.Location = new Point(390, 3);
+            groupBoxApplicantInformation.Location = new Point(445, 4);
+            groupBoxApplicantInformation.Margin = new Padding(3, 4, 3, 4);
             groupBoxApplicantInformation.Name = "groupBoxApplicantInformation";
-            groupBoxApplicantInformation.Size = new Size(467, 595);
+            groupBoxApplicantInformation.Padding = new Padding(3, 4, 3, 4);
+            groupBoxApplicantInformation.Size = new Size(535, 793);
             groupBoxApplicantInformation.TabIndex = 1;
             groupBoxApplicantInformation.TabStop = false;
             groupBoxApplicantInformation.Text = "Applicant Information";
@@ -325,12 +344,13 @@
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel5.Controls.Add(panel2, 0, 0);
             tableLayoutPanel5.Controls.Add(panelPlaceholder, 0, 1);
-            tableLayoutPanel5.Location = new Point(6, 22);
+            tableLayoutPanel5.Location = new Point(7, 29);
+            tableLayoutPanel5.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 2;
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 133F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel5.Size = new Size(455, 570);
+            tableLayoutPanel5.Size = new Size(521, 760);
             tableLayoutPanel5.TabIndex = 0;
             // 
             // panel2
@@ -338,16 +358,18 @@
             panel2.Controls.Add(buttonLoadApplicantData);
             panel2.Controls.Add(labelApplicantIdValue);
             panel2.Controls.Add(labelApplicantIdText);
-            panel2.Location = new Point(3, 3);
+            panel2.Location = new Point(3, 4);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(320, 80);
+            panel2.Size = new Size(366, 107);
             panel2.TabIndex = 0;
             // 
             // buttonLoadApplicantData
             // 
-            buttonLoadApplicantData.Location = new Point(171, 31);
+            buttonLoadApplicantData.Location = new Point(195, 41);
+            buttonLoadApplicantData.Margin = new Padding(3, 4, 3, 4);
             buttonLoadApplicantData.Name = "buttonLoadApplicantData";
-            buttonLoadApplicantData.Size = new Size(146, 23);
+            buttonLoadApplicantData.Size = new Size(167, 31);
             buttonLoadApplicantData.TabIndex = 2;
             buttonLoadApplicantData.Text = "Load Applicant Data";
             buttonLoadApplicantData.UseVisualStyleBackColor = true;
@@ -357,9 +379,9 @@
             // 
             labelApplicantIdValue.AutoSize = true;
             labelApplicantIdValue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelApplicantIdValue.Location = new Point(3, 31);
+            labelApplicantIdValue.Location = new Point(3, 41);
             labelApplicantIdValue.Name = "labelApplicantIdValue";
-            labelApplicantIdValue.Size = new Size(153, 21);
+            labelApplicantIdValue.Size = new Size(194, 28);
             labelApplicantIdValue.TabIndex = 1;
             labelApplicantIdValue.Text = ">applicant id value<";
             // 
@@ -367,27 +389,29 @@
             // 
             labelApplicantIdText.AutoSize = true;
             labelApplicantIdText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelApplicantIdText.Location = new Point(3, 10);
+            labelApplicantIdText.Location = new Point(3, 13);
             labelApplicantIdText.Name = "labelApplicantIdText";
-            labelApplicantIdText.Size = new Size(97, 21);
+            labelApplicantIdText.Size = new Size(124, 28);
             labelApplicantIdText.TabIndex = 0;
             labelApplicantIdText.Text = "Applicant ID:";
             // 
             // panelPlaceholder
             // 
             panelPlaceholder.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelPlaceholder.Location = new Point(3, 103);
+            panelPlaceholder.Location = new Point(3, 137);
+            panelPlaceholder.Margin = new Padding(3, 4, 3, 4);
             panelPlaceholder.Name = "panelPlaceholder";
-            panelPlaceholder.Size = new Size(449, 464);
+            panelPlaceholder.Size = new Size(515, 619);
             panelPlaceholder.TabIndex = 1;
             // 
             // CreateNewApplicationForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(884, 661);
+            ClientSize = new Size(1010, 881);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(buttonCreateNewApplication);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CreateNewApplicationForm";
             Text = "CreateNewApplicationForm";
             tableLayoutPanel1.ResumeLayout(false);

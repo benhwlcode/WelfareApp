@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -11,6 +12,7 @@ using System.Windows.Forms;
 using WelfareAppClassLibrary;
 using WelfareAppClassLibrary.DataConnection;
 using WelfareAppClassLibrary.Models;
+using WelfareAppClassLibrary.Validations;
 
 namespace WelfareApp
 {
@@ -24,6 +26,7 @@ namespace WelfareApp
         List<OfficeModel> offices = new List<OfficeModel>();
         List<SupervisorModel> supervisors = new List<SupervisorModel>();
         List<DocumentModel> documents = new List<DocumentModel>();
+        List<ValidationResult> results = new List<ValidationResult>();
 
         ApplicationModel applicationToSave = new ApplicationModel();
         ApplicantModel applicantToSave = new ApplicantModel();
@@ -126,9 +129,31 @@ namespace WelfareApp
 
         private void buttonCreateNewApplication_Click(object sender, EventArgs e)
         {
+            Logic logic = new Logic();
 
-            //buttonClickOldLogic();
-            buttonClickNewLogic();
+            applicationToSave = FillApplicationToSaveInfo();
+            applicantToSave = FillApplicantToSaveInfo();
+            spouseToSave = FillSpouseToSaveInfo();
+
+            results.Clear();
+
+            results.AddRange(ValidationHelper.Validate(applicantToSave));
+            results.AddRange(ValidationHelper.Validate(spouseToSave));
+
+            if (results.Count != 0)
+            {
+                Helper helper = new Helper();
+                string errors = helper.TestingCheckValidation(results);
+                                
+                MessageBox.Show(errors);
+
+                return;
+            }
+
+
+            logic.ApplicationInsertAndUpdate(labelApplicantIdValue.Text, applicationToSave,
+                applicantToSave, spouseToSave, loadedApplicant);
+            
         }
 
         private void buttonClickOldLogic()
@@ -298,7 +323,7 @@ namespace WelfareApp
         {
             SpouseModel output = new SpouseModel();
 
-            if (applicantInput.applicantMaritalStatus == MaritalStatus.married)
+            if (applicantInput.applicantMaritalStatus == MaritalStatus.Married)
             {
 
                 output.firstName = applicantInput.spouseFirstName;

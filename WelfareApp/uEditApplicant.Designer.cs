@@ -151,8 +151,8 @@
             tableLayoutPanel7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel7.AutoScroll = true;
             tableLayoutPanel7.ColumnCount = 2;
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 165F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 212F));
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 189F));
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 287F));
             tableLayoutPanel7.Controls.Add(labelCashSavingsText, 0, 49);
             tableLayoutPanel7.Controls.Add(labelEmployerText, 0, 42);
             tableLayoutPanel7.Controls.Add(labelEmploymentTypeText, 0, 41);
@@ -247,72 +247,73 @@
             tableLayoutPanel7.Controls.Add(labelMonthlyIncomeAndSavingsText, 1, 45);
             tableLayoutPanel7.Controls.Add(labelSpouseMaritalStatusValue, 1, 18);
             tableLayoutPanel7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            tableLayoutPanel7.Location = new Point(3, 33);
+            tableLayoutPanel7.Location = new Point(3, 44);
+            tableLayoutPanel7.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
-            tableLayoutPanel7.Padding = new Padding(0, 0, 10, 0);
+            tableLayoutPanel7.Padding = new Padding(0, 0, 11, 0);
             tableLayoutPanel7.RowCount = 51;
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel7.Size = new Size(436, 553);
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
+            tableLayoutPanel7.Size = new Size(499, 737);
             tableLayoutPanel7.TabIndex = 1;
             // 
             // labelCashSavingsText
             // 
             labelCashSavingsText.Anchor = AnchorStyles.Right;
             labelCashSavingsText.AutoSize = true;
-            labelCashSavingsText.Location = new Point(57, 1474);
+            labelCashSavingsText.Location = new Point(57, 1966);
             labelCashSavingsText.Name = "labelCashSavingsText";
-            labelCashSavingsText.Size = new Size(105, 21);
+            labelCashSavingsText.Size = new Size(129, 28);
             labelCashSavingsText.TabIndex = 103;
             labelCashSavingsText.Text = "Cash Savings:";
             // 
@@ -320,9 +321,9 @@
             // 
             labelEmployerText.Anchor = AnchorStyles.Right;
             labelEmployerText.AutoSize = true;
-            labelEmployerText.Location = new Point(83, 1264);
+            labelEmployerText.Location = new Point(87, 1686);
             labelEmployerText.Name = "labelEmployerText";
-            labelEmployerText.Size = new Size(79, 21);
+            labelEmployerText.Size = new Size(99, 28);
             labelEmployerText.TabIndex = 94;
             labelEmployerText.Text = "Employer:";
             // 
@@ -330,9 +331,9 @@
             // 
             labelEmploymentTypeText.Anchor = AnchorStyles.Right;
             labelEmploymentTypeText.AutoSize = true;
-            labelEmploymentTypeText.Location = new Point(25, 1234);
+            labelEmploymentTypeText.Location = new Point(13, 1646);
             labelEmploymentTypeText.Name = "labelEmploymentTypeText";
-            labelEmploymentTypeText.Size = new Size(137, 21);
+            labelEmploymentTypeText.Size = new Size(173, 28);
             labelEmploymentTypeText.TabIndex = 92;
             labelEmploymentTypeText.Text = "Employment Type:";
             // 
@@ -341,51 +342,55 @@
             labelEmploymentInformationText.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             labelEmploymentInformationText.AutoSize = true;
             labelEmploymentInformationText.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelEmploymentInformationText.Location = new Point(168, 1209);
+            labelEmploymentInformationText.Location = new Point(192, 1612);
             labelEmploymentInformationText.Name = "labelEmploymentInformationText";
-            labelEmploymentInformationText.Size = new Size(193, 21);
+            labelEmploymentInformationText.Size = new Size(241, 28);
             labelEmploymentInformationText.TabIndex = 91;
             labelEmploymentInformationText.Text = "Employment Information";
             // 
             // textBoxTuitionValue
             // 
             textBoxTuitionValue.Anchor = AnchorStyles.Left;
-            textBoxTuitionValue.Location = new Point(168, 1173);
+            textBoxTuitionValue.Location = new Point(192, 1564);
+            textBoxTuitionValue.Margin = new Padding(3, 4, 3, 4);
             textBoxTuitionValue.Name = "textBoxTuitionValue";
-            textBoxTuitionValue.Size = new Size(100, 29);
+            textBoxTuitionValue.Size = new Size(114, 34);
             textBoxTuitionValue.TabIndex = 89;
             // 
             // textBoxFoodValue
             // 
             textBoxFoodValue.Anchor = AnchorStyles.Left;
-            textBoxFoodValue.Location = new Point(168, 1143);
+            textBoxFoodValue.Location = new Point(192, 1524);
+            textBoxFoodValue.Margin = new Padding(3, 4, 3, 4);
             textBoxFoodValue.Name = "textBoxFoodValue";
-            textBoxFoodValue.Size = new Size(100, 29);
+            textBoxFoodValue.Size = new Size(114, 34);
             textBoxFoodValue.TabIndex = 88;
             // 
             // textBoxUtilitiesValue
             // 
             textBoxUtilitiesValue.Anchor = AnchorStyles.Left;
-            textBoxUtilitiesValue.Location = new Point(168, 1113);
+            textBoxUtilitiesValue.Location = new Point(192, 1484);
+            textBoxUtilitiesValue.Margin = new Padding(3, 4, 3, 4);
             textBoxUtilitiesValue.Name = "textBoxUtilitiesValue";
-            textBoxUtilitiesValue.Size = new Size(100, 29);
+            textBoxUtilitiesValue.Size = new Size(114, 34);
             textBoxUtilitiesValue.TabIndex = 87;
             // 
             // textBoxRentMortgageValue
             // 
             textBoxRentMortgageValue.Anchor = AnchorStyles.Left;
-            textBoxRentMortgageValue.Location = new Point(168, 1083);
+            textBoxRentMortgageValue.Location = new Point(192, 1444);
+            textBoxRentMortgageValue.Margin = new Padding(3, 4, 3, 4);
             textBoxRentMortgageValue.Name = "textBoxRentMortgageValue";
-            textBoxRentMortgageValue.Size = new Size(100, 29);
+            textBoxRentMortgageValue.Size = new Size(114, 34);
             textBoxRentMortgageValue.TabIndex = 86;
             // 
             // labelUtilitiesText
             // 
             labelUtilitiesText.Anchor = AnchorStyles.Right;
             labelUtilitiesText.AutoSize = true;
-            labelUtilitiesText.Location = new Point(97, 1114);
+            labelUtilitiesText.Location = new Point(104, 1486);
             labelUtilitiesText.Name = "labelUtilitiesText";
-            labelUtilitiesText.Size = new Size(65, 21);
+            labelUtilitiesText.Size = new Size(82, 28);
             labelUtilitiesText.TabIndex = 84;
             labelUtilitiesText.Text = "Utilities:";
             // 
@@ -393,9 +398,9 @@
             // 
             labelRentMortgageText.Anchor = AnchorStyles.Right;
             labelRentMortgageText.AutoSize = true;
-            labelRentMortgageText.Location = new Point(43, 1084);
+            labelRentMortgageText.Location = new Point(35, 1446);
             labelRentMortgageText.Name = "labelRentMortgageText";
-            labelRentMortgageText.Size = new Size(119, 21);
+            labelRentMortgageText.Size = new Size(151, 28);
             labelRentMortgageText.TabIndex = 82;
             labelRentMortgageText.Text = "Rent/Mortgage:";
             // 
@@ -404,51 +409,55 @@
             labelExpenseInformationText.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             labelExpenseInformationText.AutoSize = true;
             labelExpenseInformationText.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelExpenseInformationText.Location = new Point(168, 1059);
+            labelExpenseInformationText.Location = new Point(192, 1412);
             labelExpenseInformationText.Name = "labelExpenseInformationText";
-            labelExpenseInformationText.Size = new Size(161, 21);
+            labelExpenseInformationText.Size = new Size(201, 28);
             labelExpenseInformationText.TabIndex = 81;
             labelExpenseInformationText.Text = "Expense Information";
             // 
             // textBoxNumberOfElderlyValue
             // 
             textBoxNumberOfElderlyValue.Anchor = AnchorStyles.Left;
-            textBoxNumberOfElderlyValue.Location = new Point(168, 1023);
+            textBoxNumberOfElderlyValue.Location = new Point(192, 1364);
+            textBoxNumberOfElderlyValue.Margin = new Padding(3, 4, 3, 4);
             textBoxNumberOfElderlyValue.Name = "textBoxNumberOfElderlyValue";
-            textBoxNumberOfElderlyValue.Size = new Size(100, 29);
+            textBoxNumberOfElderlyValue.Size = new Size(114, 34);
             textBoxNumberOfElderlyValue.TabIndex = 79;
             // 
             // textBoxNumberOfChildrenValue
             // 
             textBoxNumberOfChildrenValue.Anchor = AnchorStyles.Left;
-            textBoxNumberOfChildrenValue.Location = new Point(168, 993);
+            textBoxNumberOfChildrenValue.Location = new Point(192, 1324);
+            textBoxNumberOfChildrenValue.Margin = new Padding(3, 4, 3, 4);
             textBoxNumberOfChildrenValue.Name = "textBoxNumberOfChildrenValue";
-            textBoxNumberOfChildrenValue.Size = new Size(100, 29);
+            textBoxNumberOfChildrenValue.Size = new Size(114, 34);
             textBoxNumberOfChildrenValue.TabIndex = 78;
             // 
             // textBoxNumberOfAdultsValue
             // 
             textBoxNumberOfAdultsValue.Anchor = AnchorStyles.Left;
-            textBoxNumberOfAdultsValue.Location = new Point(168, 963);
+            textBoxNumberOfAdultsValue.Location = new Point(192, 1284);
+            textBoxNumberOfAdultsValue.Margin = new Padding(3, 4, 3, 4);
             textBoxNumberOfAdultsValue.Name = "textBoxNumberOfAdultsValue";
-            textBoxNumberOfAdultsValue.Size = new Size(100, 29);
+            textBoxNumberOfAdultsValue.Size = new Size(114, 34);
             textBoxNumberOfAdultsValue.TabIndex = 77;
             // 
             // textBoxFamilySizeValue
             // 
             textBoxFamilySizeValue.Anchor = AnchorStyles.Left;
-            textBoxFamilySizeValue.Location = new Point(168, 933);
+            textBoxFamilySizeValue.Location = new Point(192, 1244);
+            textBoxFamilySizeValue.Margin = new Padding(3, 4, 3, 4);
             textBoxFamilySizeValue.Name = "textBoxFamilySizeValue";
-            textBoxFamilySizeValue.Size = new Size(100, 29);
+            textBoxFamilySizeValue.Size = new Size(114, 34);
             textBoxFamilySizeValue.TabIndex = 76;
             // 
             // labelNumberOfAdultsText
             // 
             labelNumberOfAdultsText.Anchor = AnchorStyles.Right;
             labelNumberOfAdultsText.AutoSize = true;
-            labelNumberOfAdultsText.Location = new Point(25, 964);
+            labelNumberOfAdultsText.Location = new Point(14, 1286);
             labelNumberOfAdultsText.Name = "labelNumberOfAdultsText";
-            labelNumberOfAdultsText.Size = new Size(137, 21);
+            labelNumberOfAdultsText.Size = new Size(172, 28);
             labelNumberOfAdultsText.TabIndex = 74;
             labelNumberOfAdultsText.Text = "Number of Adults:";
             // 
@@ -456,9 +465,9 @@
             // 
             labelFamilySizeText.Anchor = AnchorStyles.Right;
             labelFamilySizeText.AutoSize = true;
-            labelFamilySizeText.Location = new Point(72, 934);
+            labelFamilySizeText.Location = new Point(74, 1246);
             labelFamilySizeText.Name = "labelFamilySizeText";
-            labelFamilySizeText.Size = new Size(90, 21);
+            labelFamilySizeText.Size = new Size(112, 28);
             labelFamilySizeText.TabIndex = 72;
             labelFamilySizeText.Text = "Family Size:";
             // 
@@ -467,35 +476,37 @@
             labelFamilyInformationText.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             labelFamilyInformationText.AutoSize = true;
             labelFamilyInformationText.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelFamilyInformationText.Location = new Point(168, 909);
+            labelFamilyInformationText.Location = new Point(192, 1212);
             labelFamilyInformationText.Name = "labelFamilyInformationText";
-            labelFamilyInformationText.Size = new Size(146, 21);
+            labelFamilyInformationText.Size = new Size(183, 28);
             labelFamilyInformationText.TabIndex = 71;
             labelFamilyInformationText.Text = "Family Information";
             // 
             // dateTimePickerMoveInDateValue
             // 
             dateTimePickerMoveInDateValue.Anchor = AnchorStyles.Left;
-            dateTimePickerMoveInDateValue.Location = new Point(168, 873);
+            dateTimePickerMoveInDateValue.Location = new Point(192, 1164);
+            dateTimePickerMoveInDateValue.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerMoveInDateValue.Name = "dateTimePickerMoveInDateValue";
-            dateTimePickerMoveInDateValue.Size = new Size(238, 29);
+            dateTimePickerMoveInDateValue.Size = new Size(271, 34);
             dateTimePickerMoveInDateValue.TabIndex = 69;
             // 
             // textBoxCityValue
             // 
             textBoxCityValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBoxCityValue.Location = new Point(168, 813);
+            textBoxCityValue.Location = new Point(192, 1084);
+            textBoxCityValue.Margin = new Padding(3, 4, 3, 4);
             textBoxCityValue.Name = "textBoxCityValue";
-            textBoxCityValue.Size = new Size(238, 29);
+            textBoxCityValue.Size = new Size(281, 34);
             textBoxCityValue.TabIndex = 68;
             // 
             // labelCityText
             // 
             labelCityText.Anchor = AnchorStyles.Right;
             labelCityText.AutoSize = true;
-            labelCityText.Location = new Point(122, 814);
+            labelCityText.Location = new Point(136, 1086);
             labelCityText.Name = "labelCityText";
-            labelCityText.Size = new Size(40, 21);
+            labelCityText.Size = new Size(50, 28);
             labelCityText.TabIndex = 66;
             labelCityText.Text = "City:";
             // 
@@ -503,26 +514,28 @@
             // 
             comboBoxResidenceStatusValue.Anchor = AnchorStyles.Left;
             comboBoxResidenceStatusValue.FormattingEnabled = true;
-            comboBoxResidenceStatusValue.Location = new Point(168, 753);
+            comboBoxResidenceStatusValue.Location = new Point(192, 1004);
+            comboBoxResidenceStatusValue.Margin = new Padding(3, 4, 3, 4);
             comboBoxResidenceStatusValue.Name = "comboBoxResidenceStatusValue";
-            comboBoxResidenceStatusValue.Size = new Size(238, 29);
+            comboBoxResidenceStatusValue.Size = new Size(271, 36);
             comboBoxResidenceStatusValue.TabIndex = 59;
             // 
             // textBoxStreetAddressValue
             // 
             textBoxStreetAddressValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBoxStreetAddressValue.Location = new Point(168, 783);
+            textBoxStreetAddressValue.Location = new Point(192, 1044);
+            textBoxStreetAddressValue.Margin = new Padding(3, 4, 3, 4);
             textBoxStreetAddressValue.Name = "textBoxStreetAddressValue";
-            textBoxStreetAddressValue.Size = new Size(238, 29);
+            textBoxStreetAddressValue.Size = new Size(281, 34);
             textBoxStreetAddressValue.TabIndex = 58;
             // 
             // labelResidenceStatusText
             // 
             labelResidenceStatusText.Anchor = AnchorStyles.Right;
             labelResidenceStatusText.AutoSize = true;
-            labelResidenceStatusText.Location = new Point(33, 754);
+            labelResidenceStatusText.Location = new Point(26, 1006);
             labelResidenceStatusText.Name = "labelResidenceStatusText";
-            labelResidenceStatusText.Size = new Size(129, 21);
+            labelResidenceStatusText.Size = new Size(160, 28);
             labelResidenceStatusText.TabIndex = 51;
             labelResidenceStatusText.Text = "Residence Status:";
             // 
@@ -531,17 +544,19 @@
             panel8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel8.Controls.Add(radioButtonSpouseDisabledNo);
             panel8.Controls.Add(radioButtonSpouseDisabledYes);
-            panel8.Location = new Point(168, 693);
+            panel8.Location = new Point(192, 924);
+            panel8.Margin = new Padding(3, 4, 3, 4);
             panel8.Name = "panel8";
-            panel8.Size = new Size(238, 24);
+            panel8.Size = new Size(281, 32);
             panel8.TabIndex = 48;
             // 
             // radioButtonSpouseDisabledNo
             // 
             radioButtonSpouseDisabledNo.AutoSize = true;
-            radioButtonSpouseDisabledNo.Location = new Point(69, 0);
+            radioButtonSpouseDisabledNo.Location = new Point(79, 0);
+            radioButtonSpouseDisabledNo.Margin = new Padding(3, 4, 3, 4);
             radioButtonSpouseDisabledNo.Name = "radioButtonSpouseDisabledNo";
-            radioButtonSpouseDisabledNo.Size = new Size(49, 25);
+            radioButtonSpouseDisabledNo.Size = new Size(60, 32);
             radioButtonSpouseDisabledNo.TabIndex = 1;
             radioButtonSpouseDisabledNo.TabStop = true;
             radioButtonSpouseDisabledNo.Text = "No";
@@ -550,9 +565,10 @@
             // radioButtonSpouseDisabledYes
             // 
             radioButtonSpouseDisabledYes.AutoSize = true;
-            radioButtonSpouseDisabledYes.Location = new Point(5, 0);
+            radioButtonSpouseDisabledYes.Location = new Point(6, 0);
+            radioButtonSpouseDisabledYes.Margin = new Padding(3, 4, 3, 4);
             radioButtonSpouseDisabledYes.Name = "radioButtonSpouseDisabledYes";
-            radioButtonSpouseDisabledYes.Size = new Size(51, 25);
+            radioButtonSpouseDisabledYes.Size = new Size(60, 32);
             radioButtonSpouseDisabledYes.TabIndex = 0;
             radioButtonSpouseDisabledYes.TabStop = true;
             radioButtonSpouseDisabledYes.Text = "Yes";
@@ -563,17 +579,19 @@
             panel7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel7.Controls.Add(radioButtonSpouseIndigenousNo);
             panel7.Controls.Add(radioButtonSpouseIndigenousYes);
-            panel7.Location = new Point(168, 663);
+            panel7.Location = new Point(192, 884);
+            panel7.Margin = new Padding(3, 4, 3, 4);
             panel7.Name = "panel7";
-            panel7.Size = new Size(238, 24);
+            panel7.Size = new Size(281, 32);
             panel7.TabIndex = 47;
             // 
             // radioButtonSpouseIndigenousNo
             // 
             radioButtonSpouseIndigenousNo.AutoSize = true;
-            radioButtonSpouseIndigenousNo.Location = new Point(69, 0);
+            radioButtonSpouseIndigenousNo.Location = new Point(79, 0);
+            radioButtonSpouseIndigenousNo.Margin = new Padding(3, 4, 3, 4);
             radioButtonSpouseIndigenousNo.Name = "radioButtonSpouseIndigenousNo";
-            radioButtonSpouseIndigenousNo.Size = new Size(49, 25);
+            radioButtonSpouseIndigenousNo.Size = new Size(60, 32);
             radioButtonSpouseIndigenousNo.TabIndex = 1;
             radioButtonSpouseIndigenousNo.TabStop = true;
             radioButtonSpouseIndigenousNo.Text = "No";
@@ -582,9 +600,10 @@
             // radioButtonSpouseIndigenousYes
             // 
             radioButtonSpouseIndigenousYes.AutoSize = true;
-            radioButtonSpouseIndigenousYes.Location = new Point(5, 0);
+            radioButtonSpouseIndigenousYes.Location = new Point(6, 0);
+            radioButtonSpouseIndigenousYes.Margin = new Padding(3, 4, 3, 4);
             radioButtonSpouseIndigenousYes.Name = "radioButtonSpouseIndigenousYes";
-            radioButtonSpouseIndigenousYes.Size = new Size(51, 25);
+            radioButtonSpouseIndigenousYes.Size = new Size(60, 32);
             radioButtonSpouseIndigenousYes.TabIndex = 0;
             radioButtonSpouseIndigenousYes.TabStop = true;
             radioButtonSpouseIndigenousYes.Text = "Yes";
@@ -595,17 +614,19 @@
             panel6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel6.Controls.Add(radioButtonSpouseCitizenNo);
             panel6.Controls.Add(radioButtonSpouseCitizenYes);
-            panel6.Location = new Point(168, 633);
+            panel6.Location = new Point(192, 844);
+            panel6.Margin = new Padding(3, 4, 3, 4);
             panel6.Name = "panel6";
-            panel6.Size = new Size(238, 24);
+            panel6.Size = new Size(281, 32);
             panel6.TabIndex = 46;
             // 
             // radioButtonSpouseCitizenNo
             // 
             radioButtonSpouseCitizenNo.AutoSize = true;
-            radioButtonSpouseCitizenNo.Location = new Point(69, 0);
+            radioButtonSpouseCitizenNo.Location = new Point(79, 0);
+            radioButtonSpouseCitizenNo.Margin = new Padding(3, 4, 3, 4);
             radioButtonSpouseCitizenNo.Name = "radioButtonSpouseCitizenNo";
-            radioButtonSpouseCitizenNo.Size = new Size(49, 25);
+            radioButtonSpouseCitizenNo.Size = new Size(60, 32);
             radioButtonSpouseCitizenNo.TabIndex = 1;
             radioButtonSpouseCitizenNo.TabStop = true;
             radioButtonSpouseCitizenNo.Text = "No";
@@ -614,9 +635,10 @@
             // radioButtonSpouseCitizenYes
             // 
             radioButtonSpouseCitizenYes.AutoSize = true;
-            radioButtonSpouseCitizenYes.Location = new Point(5, 0);
+            radioButtonSpouseCitizenYes.Location = new Point(6, 0);
+            radioButtonSpouseCitizenYes.Margin = new Padding(3, 4, 3, 4);
             radioButtonSpouseCitizenYes.Name = "radioButtonSpouseCitizenYes";
-            radioButtonSpouseCitizenYes.Size = new Size(51, 25);
+            radioButtonSpouseCitizenYes.Size = new Size(60, 32);
             radioButtonSpouseCitizenYes.TabIndex = 0;
             radioButtonSpouseCitizenYes.TabStop = true;
             radioButtonSpouseCitizenYes.Text = "Yes";
@@ -626,45 +648,47 @@
             // 
             labelSpouseIsCitizen.Anchor = AnchorStyles.Right;
             labelSpouseIsCitizen.AutoSize = true;
-            labelSpouseIsCitizen.Location = new Point(87, 634);
+            labelSpouseIsCitizen.Location = new Point(93, 846);
             labelSpouseIsCitizen.Name = "labelSpouseIsCitizen";
-            labelSpouseIsCitizen.Size = new Size(75, 21);
+            labelSpouseIsCitizen.Size = new Size(93, 28);
             labelSpouseIsCitizen.TabIndex = 43;
             labelSpouseIsCitizen.Text = "Is Citizen:";
             // 
             // textBoxSpouseEmailAddressValue
             // 
             textBoxSpouseEmailAddressValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBoxSpouseEmailAddressValue.Location = new Point(168, 603);
+            textBoxSpouseEmailAddressValue.Location = new Point(192, 804);
+            textBoxSpouseEmailAddressValue.Margin = new Padding(3, 4, 3, 4);
             textBoxSpouseEmailAddressValue.Name = "textBoxSpouseEmailAddressValue";
-            textBoxSpouseEmailAddressValue.Size = new Size(238, 29);
+            textBoxSpouseEmailAddressValue.Size = new Size(281, 34);
             textBoxSpouseEmailAddressValue.TabIndex = 42;
             // 
             // labelSpouseEmailAddressText
             // 
             labelSpouseEmailAddressText.Anchor = AnchorStyles.Right;
             labelSpouseEmailAddressText.AutoSize = true;
-            labelSpouseEmailAddressText.Location = new Point(51, 604);
+            labelSpouseEmailAddressText.Location = new Point(48, 806);
             labelSpouseEmailAddressText.Name = "labelSpouseEmailAddressText";
-            labelSpouseEmailAddressText.Size = new Size(111, 21);
+            labelSpouseEmailAddressText.Size = new Size(138, 28);
             labelSpouseEmailAddressText.TabIndex = 41;
             labelSpouseEmailAddressText.Text = "Email Address:";
             // 
             // textBoxSpousePhoneNumberValue
             // 
             textBoxSpousePhoneNumberValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBoxSpousePhoneNumberValue.Location = new Point(168, 573);
+            textBoxSpousePhoneNumberValue.Location = new Point(192, 764);
+            textBoxSpousePhoneNumberValue.Margin = new Padding(3, 4, 3, 4);
             textBoxSpousePhoneNumberValue.Name = "textBoxSpousePhoneNumberValue";
-            textBoxSpousePhoneNumberValue.Size = new Size(238, 29);
+            textBoxSpousePhoneNumberValue.Size = new Size(281, 34);
             textBoxSpousePhoneNumberValue.TabIndex = 40;
             // 
             // labelSpousePhoneNumberText
             // 
             labelSpousePhoneNumberText.Anchor = AnchorStyles.Right;
             labelSpousePhoneNumberText.AutoSize = true;
-            labelSpousePhoneNumberText.Location = new Point(43, 574);
+            labelSpousePhoneNumberText.Location = new Point(38, 766);
             labelSpousePhoneNumberText.Name = "labelSpousePhoneNumberText";
-            labelSpousePhoneNumberText.Size = new Size(119, 21);
+            labelSpousePhoneNumberText.Size = new Size(148, 28);
             labelSpousePhoneNumberText.TabIndex = 39;
             labelSpousePhoneNumberText.Text = "Phone Number:";
             // 
@@ -672,45 +696,47 @@
             // 
             labelSpouseMaritalStatusText.Anchor = AnchorStyles.Right;
             labelSpouseMaritalStatusText.AutoSize = true;
-            labelSpouseMaritalStatusText.Location = new Point(54, 544);
+            labelSpouseMaritalStatusText.Location = new Point(50, 726);
             labelSpouseMaritalStatusText.Name = "labelSpouseMaritalStatusText";
-            labelSpouseMaritalStatusText.Size = new Size(108, 21);
+            labelSpouseMaritalStatusText.Size = new Size(136, 28);
             labelSpouseMaritalStatusText.TabIndex = 37;
             labelSpouseMaritalStatusText.Text = "Marital Status:";
             // 
             // textBoxSpouseSinCardValue
             // 
             textBoxSpouseSinCardValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBoxSpouseSinCardValue.Location = new Point(168, 513);
+            textBoxSpouseSinCardValue.Location = new Point(192, 684);
+            textBoxSpouseSinCardValue.Margin = new Padding(3, 4, 3, 4);
             textBoxSpouseSinCardValue.Name = "textBoxSpouseSinCardValue";
-            textBoxSpouseSinCardValue.Size = new Size(238, 29);
+            textBoxSpouseSinCardValue.Size = new Size(281, 34);
             textBoxSpouseSinCardValue.TabIndex = 36;
             // 
             // labelSpouseSinCardText
             // 
             labelSpouseSinCardText.Anchor = AnchorStyles.Right;
             labelSpouseSinCardText.AutoSize = true;
-            labelSpouseSinCardText.Location = new Point(87, 514);
+            labelSpouseSinCardText.Location = new Point(93, 686);
             labelSpouseSinCardText.Name = "labelSpouseSinCardText";
-            labelSpouseSinCardText.Size = new Size(75, 21);
+            labelSpouseSinCardText.Size = new Size(93, 28);
             labelSpouseSinCardText.TabIndex = 35;
             labelSpouseSinCardText.Text = "SIN Card:";
             // 
             // dateTimePickerSpouseDateOfBirthValue
             // 
             dateTimePickerSpouseDateOfBirthValue.Anchor = AnchorStyles.Left;
-            dateTimePickerSpouseDateOfBirthValue.Location = new Point(168, 483);
+            dateTimePickerSpouseDateOfBirthValue.Location = new Point(192, 644);
+            dateTimePickerSpouseDateOfBirthValue.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerSpouseDateOfBirthValue.Name = "dateTimePickerSpouseDateOfBirthValue";
-            dateTimePickerSpouseDateOfBirthValue.Size = new Size(238, 29);
+            dateTimePickerSpouseDateOfBirthValue.Size = new Size(271, 34);
             dateTimePickerSpouseDateOfBirthValue.TabIndex = 34;
             // 
             // labelSpouseDateOfBirth
             // 
             labelSpouseDateOfBirth.Anchor = AnchorStyles.Right;
             labelSpouseDateOfBirth.AutoSize = true;
-            labelSpouseDateOfBirth.Location = new Point(62, 484);
+            labelSpouseDateOfBirth.Location = new Point(60, 646);
             labelSpouseDateOfBirth.Name = "labelSpouseDateOfBirth";
-            labelSpouseDateOfBirth.Size = new Size(100, 21);
+            labelSpouseDateOfBirth.Size = new Size(126, 28);
             labelSpouseDateOfBirth.TabIndex = 33;
             labelSpouseDateOfBirth.Text = "Date of Birth:";
             // 
@@ -718,25 +744,28 @@
             // 
             comboBoxSpouseGenderValue.Anchor = AnchorStyles.Left;
             comboBoxSpouseGenderValue.FormattingEnabled = true;
-            comboBoxSpouseGenderValue.Location = new Point(168, 453);
+            comboBoxSpouseGenderValue.Location = new Point(192, 604);
+            comboBoxSpouseGenderValue.Margin = new Padding(3, 4, 3, 4);
             comboBoxSpouseGenderValue.Name = "comboBoxSpouseGenderValue";
-            comboBoxSpouseGenderValue.Size = new Size(238, 29);
+            comboBoxSpouseGenderValue.Size = new Size(271, 36);
             comboBoxSpouseGenderValue.TabIndex = 32;
             // 
             // textBoxSpouseLastNameValue
             // 
             textBoxSpouseLastNameValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBoxSpouseLastNameValue.Location = new Point(168, 423);
+            textBoxSpouseLastNameValue.Location = new Point(192, 564);
+            textBoxSpouseLastNameValue.Margin = new Padding(3, 4, 3, 4);
             textBoxSpouseLastNameValue.Name = "textBoxSpouseLastNameValue";
-            textBoxSpouseLastNameValue.Size = new Size(238, 29);
+            textBoxSpouseLastNameValue.Size = new Size(281, 34);
             textBoxSpouseLastNameValue.TabIndex = 31;
             // 
             // textBoxSpouseFirstNameValue
             // 
             textBoxSpouseFirstNameValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBoxSpouseFirstNameValue.Location = new Point(168, 393);
+            textBoxSpouseFirstNameValue.Location = new Point(192, 524);
+            textBoxSpouseFirstNameValue.Margin = new Padding(3, 4, 3, 4);
             textBoxSpouseFirstNameValue.Name = "textBoxSpouseFirstNameValue";
-            textBoxSpouseFirstNameValue.Size = new Size(238, 29);
+            textBoxSpouseFirstNameValue.Size = new Size(281, 34);
             textBoxSpouseFirstNameValue.TabIndex = 30;
             // 
             // panel5
@@ -744,17 +773,19 @@
             panel5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel5.Controls.Add(radioButtonDisabledNo);
             panel5.Controls.Add(radioButtonDisabledYes);
-            panel5.Location = new Point(168, 333);
+            panel5.Location = new Point(192, 444);
+            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(238, 24);
+            panel5.Size = new Size(281, 32);
             panel5.TabIndex = 28;
             // 
             // radioButtonDisabledNo
             // 
             radioButtonDisabledNo.AutoSize = true;
-            radioButtonDisabledNo.Location = new Point(69, 0);
+            radioButtonDisabledNo.Location = new Point(79, 0);
+            radioButtonDisabledNo.Margin = new Padding(3, 4, 3, 4);
             radioButtonDisabledNo.Name = "radioButtonDisabledNo";
-            radioButtonDisabledNo.Size = new Size(49, 25);
+            radioButtonDisabledNo.Size = new Size(60, 32);
             radioButtonDisabledNo.TabIndex = 1;
             radioButtonDisabledNo.TabStop = true;
             radioButtonDisabledNo.Text = "No";
@@ -763,9 +794,10 @@
             // radioButtonDisabledYes
             // 
             radioButtonDisabledYes.AutoSize = true;
-            radioButtonDisabledYes.Location = new Point(5, 0);
+            radioButtonDisabledYes.Location = new Point(6, 0);
+            radioButtonDisabledYes.Margin = new Padding(3, 4, 3, 4);
             radioButtonDisabledYes.Name = "radioButtonDisabledYes";
-            radioButtonDisabledYes.Size = new Size(51, 25);
+            radioButtonDisabledYes.Size = new Size(60, 32);
             radioButtonDisabledYes.TabIndex = 0;
             radioButtonDisabledYes.TabStop = true;
             radioButtonDisabledYes.Text = "Yes";
@@ -776,17 +808,19 @@
             panel4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel4.Controls.Add(radioButtonIndigenousNo);
             panel4.Controls.Add(radioButtonIndigenousYes);
-            panel4.Location = new Point(168, 303);
+            panel4.Location = new Point(192, 404);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(238, 24);
+            panel4.Size = new Size(281, 32);
             panel4.TabIndex = 27;
             // 
             // radioButtonIndigenousNo
             // 
             radioButtonIndigenousNo.AutoSize = true;
-            radioButtonIndigenousNo.Location = new Point(69, 0);
+            radioButtonIndigenousNo.Location = new Point(79, 0);
+            radioButtonIndigenousNo.Margin = new Padding(3, 4, 3, 4);
             radioButtonIndigenousNo.Name = "radioButtonIndigenousNo";
-            radioButtonIndigenousNo.Size = new Size(49, 25);
+            radioButtonIndigenousNo.Size = new Size(60, 32);
             radioButtonIndigenousNo.TabIndex = 1;
             radioButtonIndigenousNo.TabStop = true;
             radioButtonIndigenousNo.Text = "No";
@@ -795,9 +829,10 @@
             // radioButtonIndigenousYes
             // 
             radioButtonIndigenousYes.AutoSize = true;
-            radioButtonIndigenousYes.Location = new Point(5, 0);
+            radioButtonIndigenousYes.Location = new Point(6, 0);
+            radioButtonIndigenousYes.Margin = new Padding(3, 4, 3, 4);
             radioButtonIndigenousYes.Name = "radioButtonIndigenousYes";
-            radioButtonIndigenousYes.Size = new Size(51, 25);
+            radioButtonIndigenousYes.Size = new Size(60, 32);
             radioButtonIndigenousYes.TabIndex = 0;
             radioButtonIndigenousYes.TabStop = true;
             radioButtonIndigenousYes.Text = "Yes";
@@ -807,9 +842,9 @@
             // 
             labelIsCitizenText.Anchor = AnchorStyles.Right;
             labelIsCitizenText.AutoSize = true;
-            labelIsCitizenText.Location = new Point(87, 274);
+            labelIsCitizenText.Location = new Point(93, 366);
             labelIsCitizenText.Name = "labelIsCitizenText";
-            labelIsCitizenText.Size = new Size(75, 21);
+            labelIsCitizenText.Size = new Size(93, 28);
             labelIsCitizenText.TabIndex = 23;
             labelIsCitizenText.Text = "Is Citizen:";
             // 
@@ -817,9 +852,9 @@
             // 
             labelFirstNameText.Anchor = AnchorStyles.Right;
             labelFirstNameText.AutoSize = true;
-            labelFirstNameText.Location = new Point(73, 34);
+            labelFirstNameText.Location = new Point(76, 46);
             labelFirstNameText.Name = "labelFirstNameText";
-            labelFirstNameText.Size = new Size(89, 21);
+            labelFirstNameText.Size = new Size(110, 28);
             labelFirstNameText.TabIndex = 0;
             labelFirstNameText.Text = "First Name:";
             // 
@@ -827,9 +862,9 @@
             // 
             labelLastNameText.Anchor = AnchorStyles.Right;
             labelLastNameText.AutoSize = true;
-            labelLastNameText.Location = new Point(75, 64);
+            labelLastNameText.Location = new Point(79, 86);
             labelLastNameText.Name = "labelLastNameText";
-            labelLastNameText.Size = new Size(87, 21);
+            labelLastNameText.Size = new Size(107, 28);
             labelLastNameText.TabIndex = 1;
             labelLastNameText.Text = "Last Name:";
             // 
@@ -837,9 +872,9 @@
             // 
             labelGenderText.Anchor = AnchorStyles.Right;
             labelGenderText.AutoSize = true;
-            labelGenderText.Location = new Point(98, 94);
+            labelGenderText.Location = new Point(106, 126);
             labelGenderText.Name = "labelGenderText";
-            labelGenderText.Size = new Size(64, 21);
+            labelGenderText.Size = new Size(80, 28);
             labelGenderText.TabIndex = 2;
             labelGenderText.Text = "Gender:";
             // 
@@ -847,9 +882,9 @@
             // 
             labelDateOfBirthText.Anchor = AnchorStyles.Right;
             labelDateOfBirthText.AutoSize = true;
-            labelDateOfBirthText.Location = new Point(62, 124);
+            labelDateOfBirthText.Location = new Point(60, 166);
             labelDateOfBirthText.Name = "labelDateOfBirthText";
-            labelDateOfBirthText.Size = new Size(100, 21);
+            labelDateOfBirthText.Size = new Size(126, 28);
             labelDateOfBirthText.TabIndex = 3;
             labelDateOfBirthText.Text = "Date of Birth:";
             // 
@@ -857,9 +892,9 @@
             // 
             labelSinCardText.Anchor = AnchorStyles.Right;
             labelSinCardText.AutoSize = true;
-            labelSinCardText.Location = new Point(87, 154);
+            labelSinCardText.Location = new Point(93, 206);
             labelSinCardText.Name = "labelSinCardText";
-            labelSinCardText.Size = new Size(75, 21);
+            labelSinCardText.Size = new Size(93, 28);
             labelSinCardText.TabIndex = 4;
             labelSinCardText.Text = "SIN Card:";
             // 
@@ -867,9 +902,9 @@
             // 
             labelMaritalStatusText.Anchor = AnchorStyles.Right;
             labelMaritalStatusText.AutoSize = true;
-            labelMaritalStatusText.Location = new Point(54, 184);
+            labelMaritalStatusText.Location = new Point(50, 246);
             labelMaritalStatusText.Name = "labelMaritalStatusText";
-            labelMaritalStatusText.Size = new Size(108, 21);
+            labelMaritalStatusText.Size = new Size(136, 28);
             labelMaritalStatusText.TabIndex = 5;
             labelMaritalStatusText.Text = "Marital Status:";
             // 
@@ -877,9 +912,9 @@
             // 
             labelPhoneNumberText.Anchor = AnchorStyles.Right;
             labelPhoneNumberText.AutoSize = true;
-            labelPhoneNumberText.Location = new Point(43, 214);
+            labelPhoneNumberText.Location = new Point(38, 286);
             labelPhoneNumberText.Name = "labelPhoneNumberText";
-            labelPhoneNumberText.Size = new Size(119, 21);
+            labelPhoneNumberText.Size = new Size(148, 28);
             labelPhoneNumberText.TabIndex = 6;
             labelPhoneNumberText.Text = "Phone Number:";
             // 
@@ -887,9 +922,9 @@
             // 
             labelEmailAddress.Anchor = AnchorStyles.Right;
             labelEmailAddress.AutoSize = true;
-            labelEmailAddress.Location = new Point(51, 244);
+            labelEmailAddress.Location = new Point(48, 326);
             labelEmailAddress.Name = "labelEmailAddress";
-            labelEmailAddress.Size = new Size(111, 21);
+            labelEmailAddress.Size = new Size(138, 28);
             labelEmailAddress.TabIndex = 7;
             labelEmailAddress.Text = "Email Address:";
             // 
@@ -898,77 +933,85 @@
             label1ApplicantInformationText.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label1ApplicantInformationText.AutoSize = true;
             label1ApplicantInformationText.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1ApplicantInformationText.Location = new Point(168, 9);
+            label1ApplicantInformationText.Location = new Point(192, 12);
             label1ApplicantInformationText.Name = "label1ApplicantInformationText";
-            label1ApplicantInformationText.Size = new Size(171, 21);
+            label1ApplicantInformationText.Size = new Size(211, 28);
             label1ApplicantInformationText.TabIndex = 9;
             label1ApplicantInformationText.Text = "Applicant Information";
             // 
             // textBoxFirstNameValue
             // 
             textBoxFirstNameValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBoxFirstNameValue.Location = new Point(168, 33);
+            textBoxFirstNameValue.Location = new Point(192, 44);
+            textBoxFirstNameValue.Margin = new Padding(3, 4, 3, 4);
             textBoxFirstNameValue.Name = "textBoxFirstNameValue";
-            textBoxFirstNameValue.Size = new Size(238, 29);
+            textBoxFirstNameValue.Size = new Size(281, 34);
             textBoxFirstNameValue.TabIndex = 14;
             // 
             // textBoxLastNameValue
             // 
             textBoxLastNameValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBoxLastNameValue.Location = new Point(168, 63);
+            textBoxLastNameValue.Location = new Point(192, 84);
+            textBoxLastNameValue.Margin = new Padding(3, 4, 3, 4);
             textBoxLastNameValue.Name = "textBoxLastNameValue";
-            textBoxLastNameValue.Size = new Size(238, 29);
+            textBoxLastNameValue.Size = new Size(281, 34);
             textBoxLastNameValue.TabIndex = 15;
             // 
             // textBoxSinCardValue
             // 
             textBoxSinCardValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBoxSinCardValue.Location = new Point(168, 153);
+            textBoxSinCardValue.Location = new Point(192, 204);
+            textBoxSinCardValue.Margin = new Padding(3, 4, 3, 4);
             textBoxSinCardValue.Name = "textBoxSinCardValue";
-            textBoxSinCardValue.Size = new Size(238, 29);
+            textBoxSinCardValue.Size = new Size(281, 34);
             textBoxSinCardValue.TabIndex = 16;
             // 
             // textBoxPhoneNumberValue
             // 
             textBoxPhoneNumberValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBoxPhoneNumberValue.Location = new Point(168, 213);
+            textBoxPhoneNumberValue.Location = new Point(192, 284);
+            textBoxPhoneNumberValue.Margin = new Padding(3, 4, 3, 4);
             textBoxPhoneNumberValue.Name = "textBoxPhoneNumberValue";
-            textBoxPhoneNumberValue.Size = new Size(238, 29);
+            textBoxPhoneNumberValue.Size = new Size(281, 34);
             textBoxPhoneNumberValue.TabIndex = 17;
             // 
             // textBoxEmailAddressValue
             // 
             textBoxEmailAddressValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBoxEmailAddressValue.Location = new Point(168, 243);
+            textBoxEmailAddressValue.Location = new Point(192, 324);
+            textBoxEmailAddressValue.Margin = new Padding(3, 4, 3, 4);
             textBoxEmailAddressValue.Name = "textBoxEmailAddressValue";
-            textBoxEmailAddressValue.Size = new Size(238, 29);
+            textBoxEmailAddressValue.Size = new Size(281, 34);
             textBoxEmailAddressValue.TabIndex = 18;
             // 
             // comboBoxGenderValue
             // 
             comboBoxGenderValue.Anchor = AnchorStyles.Left;
             comboBoxGenderValue.FormattingEnabled = true;
-            comboBoxGenderValue.Location = new Point(168, 93);
+            comboBoxGenderValue.Location = new Point(192, 124);
+            comboBoxGenderValue.Margin = new Padding(3, 4, 3, 4);
             comboBoxGenderValue.Name = "comboBoxGenderValue";
-            comboBoxGenderValue.Size = new Size(238, 29);
+            comboBoxGenderValue.Size = new Size(271, 36);
             comboBoxGenderValue.TabIndex = 19;
             // 
             // comboBoxMaritalStatusValue
             // 
             comboBoxMaritalStatusValue.Anchor = AnchorStyles.Left;
             comboBoxMaritalStatusValue.FormattingEnabled = true;
-            comboBoxMaritalStatusValue.Location = new Point(168, 183);
+            comboBoxMaritalStatusValue.Location = new Point(192, 244);
+            comboBoxMaritalStatusValue.Margin = new Padding(3, 4, 3, 4);
             comboBoxMaritalStatusValue.Name = "comboBoxMaritalStatusValue";
-            comboBoxMaritalStatusValue.Size = new Size(238, 29);
+            comboBoxMaritalStatusValue.Size = new Size(271, 36);
             comboBoxMaritalStatusValue.TabIndex = 20;
             comboBoxMaritalStatusValue.SelectedIndexChanged += comboBoxMaritalStatusValue_SelectedIndexChanged;
             // 
             // dateTimePickerDateOfBirthValue
             // 
             dateTimePickerDateOfBirthValue.Anchor = AnchorStyles.Left;
-            dateTimePickerDateOfBirthValue.Location = new Point(168, 123);
+            dateTimePickerDateOfBirthValue.Location = new Point(192, 164);
+            dateTimePickerDateOfBirthValue.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerDateOfBirthValue.Name = "dateTimePickerDateOfBirthValue";
-            dateTimePickerDateOfBirthValue.Size = new Size(238, 29);
+            dateTimePickerDateOfBirthValue.Size = new Size(271, 34);
             dateTimePickerDateOfBirthValue.TabIndex = 21;
             // 
             // labelSpouseInformationText
@@ -976,9 +1019,9 @@
             labelSpouseInformationText.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             labelSpouseInformationText.AutoSize = true;
             labelSpouseInformationText.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelSpouseInformationText.Location = new Point(168, 369);
+            labelSpouseInformationText.Location = new Point(192, 492);
             labelSpouseInformationText.Name = "labelSpouseInformationText";
-            labelSpouseInformationText.Size = new Size(155, 21);
+            labelSpouseInformationText.Size = new Size(193, 28);
             labelSpouseInformationText.TabIndex = 10;
             labelSpouseInformationText.Text = "Spouse Information";
             // 
@@ -986,9 +1029,9 @@
             // 
             labelSpouseGenderText.Anchor = AnchorStyles.Right;
             labelSpouseGenderText.AutoSize = true;
-            labelSpouseGenderText.Location = new Point(98, 454);
+            labelSpouseGenderText.Location = new Point(106, 606);
             labelSpouseGenderText.Name = "labelSpouseGenderText";
-            labelSpouseGenderText.Size = new Size(64, 21);
+            labelSpouseGenderText.Size = new Size(80, 28);
             labelSpouseGenderText.TabIndex = 13;
             labelSpouseGenderText.Text = "Gender:";
             // 
@@ -996,9 +1039,9 @@
             // 
             labelSpouseLastNameText.Anchor = AnchorStyles.Right;
             labelSpouseLastNameText.AutoSize = true;
-            labelSpouseLastNameText.Location = new Point(75, 424);
+            labelSpouseLastNameText.Location = new Point(79, 566);
             labelSpouseLastNameText.Name = "labelSpouseLastNameText";
-            labelSpouseLastNameText.Size = new Size(87, 21);
+            labelSpouseLastNameText.Size = new Size(107, 28);
             labelSpouseLastNameText.TabIndex = 12;
             labelSpouseLastNameText.Text = "Last Name:";
             // 
@@ -1006,9 +1049,9 @@
             // 
             labelSpouseFirstNameText.Anchor = AnchorStyles.Right;
             labelSpouseFirstNameText.AutoSize = true;
-            labelSpouseFirstNameText.Location = new Point(73, 394);
+            labelSpouseFirstNameText.Location = new Point(76, 526);
             labelSpouseFirstNameText.Name = "labelSpouseFirstNameText";
-            labelSpouseFirstNameText.Size = new Size(89, 21);
+            labelSpouseFirstNameText.Size = new Size(110, 28);
             labelSpouseFirstNameText.TabIndex = 11;
             labelSpouseFirstNameText.Text = "First Name:";
             // 
@@ -1016,9 +1059,9 @@
             // 
             labelIsIndigenousText.Anchor = AnchorStyles.Right;
             labelIsIndigenousText.AutoSize = true;
-            labelIsIndigenousText.Location = new Point(57, 304);
+            labelIsIndigenousText.Location = new Point(55, 406);
             labelIsIndigenousText.Name = "labelIsIndigenousText";
-            labelIsIndigenousText.Size = new Size(105, 21);
+            labelIsIndigenousText.Size = new Size(131, 28);
             labelIsIndigenousText.TabIndex = 24;
             labelIsIndigenousText.Text = "Is Indigenous:";
             // 
@@ -1026,9 +1069,9 @@
             // 
             labelIsDisabled.Anchor = AnchorStyles.Right;
             labelIsDisabled.AutoSize = true;
-            labelIsDisabled.Location = new Point(74, 334);
+            labelIsDisabled.Location = new Point(76, 446);
             labelIsDisabled.Name = "labelIsDisabled";
-            labelIsDisabled.Size = new Size(88, 21);
+            labelIsDisabled.Size = new Size(110, 28);
             labelIsDisabled.TabIndex = 25;
             labelIsDisabled.Text = "Is Disabled:";
             // 
@@ -1037,17 +1080,19 @@
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel3.Controls.Add(radioButtonCitizenNo);
             panel3.Controls.Add(radioButtonCitizenYes);
-            panel3.Location = new Point(168, 273);
+            panel3.Location = new Point(192, 364);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(238, 24);
+            panel3.Size = new Size(281, 32);
             panel3.TabIndex = 26;
             // 
             // radioButtonCitizenNo
             // 
             radioButtonCitizenNo.AutoSize = true;
-            radioButtonCitizenNo.Location = new Point(69, 0);
+            radioButtonCitizenNo.Location = new Point(79, 0);
+            radioButtonCitizenNo.Margin = new Padding(3, 4, 3, 4);
             radioButtonCitizenNo.Name = "radioButtonCitizenNo";
-            radioButtonCitizenNo.Size = new Size(49, 25);
+            radioButtonCitizenNo.Size = new Size(60, 32);
             radioButtonCitizenNo.TabIndex = 1;
             radioButtonCitizenNo.TabStop = true;
             radioButtonCitizenNo.Text = "No";
@@ -1056,9 +1101,10 @@
             // radioButtonCitizenYes
             // 
             radioButtonCitizenYes.AutoSize = true;
-            radioButtonCitizenYes.Location = new Point(5, 0);
+            radioButtonCitizenYes.Location = new Point(6, 0);
+            radioButtonCitizenYes.Margin = new Padding(3, 4, 3, 4);
             radioButtonCitizenYes.Name = "radioButtonCitizenYes";
-            radioButtonCitizenYes.Size = new Size(51, 25);
+            radioButtonCitizenYes.Size = new Size(60, 32);
             radioButtonCitizenYes.TabIndex = 0;
             radioButtonCitizenYes.TabStop = true;
             radioButtonCitizenYes.Text = "Yes";
@@ -1068,9 +1114,9 @@
             // 
             labelSpouseIsDisabled.Anchor = AnchorStyles.Right;
             labelSpouseIsDisabled.AutoSize = true;
-            labelSpouseIsDisabled.Location = new Point(74, 694);
+            labelSpouseIsDisabled.Location = new Point(76, 926);
             labelSpouseIsDisabled.Name = "labelSpouseIsDisabled";
-            labelSpouseIsDisabled.Size = new Size(88, 21);
+            labelSpouseIsDisabled.Size = new Size(110, 28);
             labelSpouseIsDisabled.TabIndex = 45;
             labelSpouseIsDisabled.Text = "Is Disabled:";
             // 
@@ -1078,9 +1124,9 @@
             // 
             labelSpouseIsIndigenousText.Anchor = AnchorStyles.Right;
             labelSpouseIsIndigenousText.AutoSize = true;
-            labelSpouseIsIndigenousText.Location = new Point(57, 664);
+            labelSpouseIsIndigenousText.Location = new Point(55, 886);
             labelSpouseIsIndigenousText.Name = "labelSpouseIsIndigenousText";
-            labelSpouseIsIndigenousText.Size = new Size(105, 21);
+            labelSpouseIsIndigenousText.Size = new Size(131, 28);
             labelSpouseIsIndigenousText.TabIndex = 44;
             labelSpouseIsIndigenousText.Text = "Is Indigenous:";
             // 
@@ -1089,9 +1135,9 @@
             labelAddressInformationText.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             labelAddressInformationText.AutoSize = true;
             labelAddressInformationText.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelAddressInformationText.Location = new Point(168, 729);
+            labelAddressInformationText.Location = new Point(192, 972);
             labelAddressInformationText.Name = "labelAddressInformationText";
-            labelAddressInformationText.Size = new Size(165, 21);
+            labelAddressInformationText.Size = new Size(204, 28);
             labelAddressInformationText.TabIndex = 49;
             labelAddressInformationText.Text = "Address Information:";
             // 
@@ -1099,9 +1145,9 @@
             // 
             labelStreetAddressText.Anchor = AnchorStyles.Right;
             labelStreetAddressText.AutoSize = true;
-            labelStreetAddressText.Location = new Point(49, 784);
+            labelStreetAddressText.Location = new Point(44, 1046);
             labelStreetAddressText.Name = "labelStreetAddressText";
-            labelStreetAddressText.Size = new Size(113, 21);
+            labelStreetAddressText.Size = new Size(142, 28);
             labelStreetAddressText.TabIndex = 54;
             labelStreetAddressText.Text = "Street Address:";
             // 
@@ -1109,9 +1155,9 @@
             // 
             labelProvinceText.Anchor = AnchorStyles.Right;
             labelProvinceText.AutoSize = true;
-            labelProvinceText.Location = new Point(89, 844);
+            labelProvinceText.Location = new Point(95, 1126);
             labelProvinceText.Name = "labelProvinceText";
-            labelProvinceText.Size = new Size(73, 21);
+            labelProvinceText.Size = new Size(91, 28);
             labelProvinceText.TabIndex = 64;
             labelProvinceText.Text = "Province:";
             // 
@@ -1119,9 +1165,9 @@
             // 
             labelMoveInDateText.Anchor = AnchorStyles.Right;
             labelMoveInDateText.AutoSize = true;
-            labelMoveInDateText.Location = new Point(55, 874);
+            labelMoveInDateText.Location = new Point(50, 1166);
             labelMoveInDateText.Name = "labelMoveInDateText";
-            labelMoveInDateText.Size = new Size(107, 21);
+            labelMoveInDateText.Size = new Size(136, 28);
             labelMoveInDateText.TabIndex = 65;
             labelMoveInDateText.Text = "Move-in Date:";
             // 
@@ -1129,18 +1175,19 @@
             // 
             comboBoxProvinceValue.Anchor = AnchorStyles.Left;
             comboBoxProvinceValue.FormattingEnabled = true;
-            comboBoxProvinceValue.Location = new Point(168, 843);
+            comboBoxProvinceValue.Location = new Point(192, 1124);
+            comboBoxProvinceValue.Margin = new Padding(3, 4, 3, 4);
             comboBoxProvinceValue.Name = "comboBoxProvinceValue";
-            comboBoxProvinceValue.Size = new Size(238, 29);
+            comboBoxProvinceValue.Size = new Size(271, 36);
             comboBoxProvinceValue.TabIndex = 67;
             // 
             // labelNumberOfChildrenText
             // 
             labelNumberOfChildrenText.Anchor = AnchorStyles.Right;
             labelNumberOfChildrenText.AutoSize = true;
-            labelNumberOfChildrenText.Location = new Point(10, 994);
+            labelNumberOfChildrenText.Location = new Point(74, 1320);
             labelNumberOfChildrenText.Name = "labelNumberOfChildrenText";
-            labelNumberOfChildrenText.Size = new Size(152, 21);
+            labelNumberOfChildrenText.Size = new Size(112, 40);
             labelNumberOfChildrenText.TabIndex = 73;
             labelNumberOfChildrenText.Text = "Number of Children:";
             // 
@@ -1148,9 +1195,9 @@
             // 
             labelNumberOfElderlyText.Anchor = AnchorStyles.Right;
             labelNumberOfElderlyText.AutoSize = true;
-            labelNumberOfElderlyText.Location = new Point(22, 1024);
+            labelNumberOfElderlyText.Location = new Point(11, 1366);
             labelNumberOfElderlyText.Name = "labelNumberOfElderlyText";
-            labelNumberOfElderlyText.Size = new Size(140, 21);
+            labelNumberOfElderlyText.Size = new Size(175, 28);
             labelNumberOfElderlyText.TabIndex = 75;
             labelNumberOfElderlyText.Text = "Number of Elderly:";
             // 
@@ -1158,9 +1205,9 @@
             // 
             labelFoodText.Anchor = AnchorStyles.Right;
             labelFoodText.AutoSize = true;
-            labelFoodText.Location = new Point(114, 1144);
+            labelFoodText.Location = new Point(124, 1526);
             labelFoodText.Name = "labelFoodText";
-            labelFoodText.Size = new Size(48, 21);
+            labelFoodText.Size = new Size(62, 28);
             labelFoodText.TabIndex = 83;
             labelFoodText.Text = "Food:";
             // 
@@ -1168,9 +1215,9 @@
             // 
             labelTuitionText.Anchor = AnchorStyles.Right;
             labelTuitionText.AutoSize = true;
-            labelTuitionText.Location = new Point(101, 1174);
+            labelTuitionText.Location = new Point(109, 1566);
             labelTuitionText.Name = "labelTuitionText";
-            labelTuitionText.Size = new Size(61, 21);
+            labelTuitionText.Size = new Size(77, 28);
             labelTuitionText.TabIndex = 85;
             labelTuitionText.Text = "Tuition:";
             // 
@@ -1178,9 +1225,9 @@
             // 
             labelPositionText.Anchor = AnchorStyles.Right;
             labelPositionText.AutoSize = true;
-            labelPositionText.Location = new Point(94, 1294);
+            labelPositionText.Location = new Point(100, 1726);
             labelPositionText.Name = "labelPositionText";
-            labelPositionText.Size = new Size(68, 21);
+            labelPositionText.Size = new Size(86, 28);
             labelPositionText.TabIndex = 95;
             labelPositionText.Text = "Position:";
             // 
@@ -1188,19 +1235,19 @@
             // 
             labelStartOfEmploymentText.Anchor = AnchorStyles.Right;
             labelStartOfEmploymentText.AutoSize = true;
-            labelStartOfEmploymentText.Location = new Point(7, 1324);
+            labelStartOfEmploymentText.Location = new Point(83, 1766);
             labelStartOfEmploymentText.Name = "labelStartOfEmploymentText";
-            labelStartOfEmploymentText.Size = new Size(155, 21);
+            labelStartOfEmploymentText.Size = new Size(103, 28);
             labelStartOfEmploymentText.TabIndex = 93;
-            labelStartOfEmploymentText.Text = "Start of Employment:";
+            labelStartOfEmploymentText.Text = "Start Date:";
             // 
             // labelSpouseIncomeText
             // 
             labelSpouseIncomeText.Anchor = AnchorStyles.Right;
             labelSpouseIncomeText.AutoSize = true;
-            labelSpouseIncomeText.Location = new Point(43, 1414);
+            labelSpouseIncomeText.Location = new Point(37, 1886);
             labelSpouseIncomeText.Name = "labelSpouseIncomeText";
-            labelSpouseIncomeText.Size = new Size(119, 21);
+            labelSpouseIncomeText.Size = new Size(149, 28);
             labelSpouseIncomeText.TabIndex = 97;
             labelSpouseIncomeText.Text = "Spouse Income:";
             // 
@@ -1208,9 +1255,9 @@
             // 
             labelEmploymentIncomeText.Anchor = AnchorStyles.Right;
             labelEmploymentIncomeText.AutoSize = true;
-            labelEmploymentIncomeText.Location = new Point(6, 1384);
+            labelEmploymentIncomeText.Location = new Point(58, 1840);
             labelEmploymentIncomeText.Name = "labelEmploymentIncomeText";
-            labelEmploymentIncomeText.Size = new Size(156, 21);
+            labelEmploymentIncomeText.Size = new Size(128, 40);
             labelEmploymentIncomeText.TabIndex = 98;
             labelEmploymentIncomeText.Text = "Employment Income:";
             // 
@@ -1218,75 +1265,84 @@
             // 
             labelDonationIncomeText.Anchor = AnchorStyles.Right;
             labelDonationIncomeText.AutoSize = true;
-            labelDonationIncomeText.Location = new Point(30, 1444);
+            labelDonationIncomeText.Location = new Point(19, 1926);
             labelDonationIncomeText.Name = "labelDonationIncomeText";
-            labelDonationIncomeText.Size = new Size(132, 21);
+            labelDonationIncomeText.Size = new Size(167, 28);
             labelDonationIncomeText.TabIndex = 99;
             labelDonationIncomeText.Text = "Donation Income:";
             // 
             // textBoxCashSavingsValue
             // 
             textBoxCashSavingsValue.Anchor = AnchorStyles.Left;
-            textBoxCashSavingsValue.Location = new Point(168, 1473);
+            textBoxCashSavingsValue.Location = new Point(192, 1964);
+            textBoxCashSavingsValue.Margin = new Padding(3, 4, 3, 4);
             textBoxCashSavingsValue.Name = "textBoxCashSavingsValue";
-            textBoxCashSavingsValue.Size = new Size(100, 29);
+            textBoxCashSavingsValue.Size = new Size(114, 34);
             textBoxCashSavingsValue.TabIndex = 104;
             // 
             // textBoxDonationIncomeValue
             // 
             textBoxDonationIncomeValue.Anchor = AnchorStyles.Left;
-            textBoxDonationIncomeValue.Location = new Point(168, 1443);
+            textBoxDonationIncomeValue.Location = new Point(192, 1924);
+            textBoxDonationIncomeValue.Margin = new Padding(3, 4, 3, 4);
             textBoxDonationIncomeValue.Name = "textBoxDonationIncomeValue";
-            textBoxDonationIncomeValue.Size = new Size(100, 29);
+            textBoxDonationIncomeValue.Size = new Size(114, 34);
             textBoxDonationIncomeValue.TabIndex = 105;
             // 
             // textBoxSpouseIncomeValue
             // 
             textBoxSpouseIncomeValue.Anchor = AnchorStyles.Left;
-            textBoxSpouseIncomeValue.Location = new Point(168, 1413);
+            textBoxSpouseIncomeValue.Location = new Point(192, 1884);
+            textBoxSpouseIncomeValue.Margin = new Padding(3, 4, 3, 4);
             textBoxSpouseIncomeValue.Name = "textBoxSpouseIncomeValue";
-            textBoxSpouseIncomeValue.Size = new Size(100, 29);
+            textBoxSpouseIncomeValue.Size = new Size(114, 34);
             textBoxSpouseIncomeValue.TabIndex = 106;
             // 
             // textBoxEmploymentIncomeValue
             // 
             textBoxEmploymentIncomeValue.Anchor = AnchorStyles.Left;
-            textBoxEmploymentIncomeValue.Location = new Point(168, 1383);
+            textBoxEmploymentIncomeValue.Location = new Point(192, 1844);
+            textBoxEmploymentIncomeValue.Margin = new Padding(3, 4, 3, 4);
             textBoxEmploymentIncomeValue.Name = "textBoxEmploymentIncomeValue";
-            textBoxEmploymentIncomeValue.Size = new Size(100, 29);
+            textBoxEmploymentIncomeValue.Size = new Size(114, 34);
             textBoxEmploymentIncomeValue.TabIndex = 107;
             // 
             // textBoxPositionValue
             // 
             textBoxPositionValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBoxPositionValue.Location = new Point(168, 1293);
+            textBoxPositionValue.Location = new Point(192, 1724);
+            textBoxPositionValue.Margin = new Padding(3, 4, 3, 4);
             textBoxPositionValue.Name = "textBoxPositionValue";
-            textBoxPositionValue.Size = new Size(238, 29);
+            textBoxPositionValue.Size = new Size(281, 34);
             textBoxPositionValue.TabIndex = 109;
             // 
             // textBoxEmployerValue
             // 
             textBoxEmployerValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBoxEmployerValue.Location = new Point(168, 1263);
+            textBoxEmployerValue.Location = new Point(192, 1684);
+            textBoxEmployerValue.Margin = new Padding(3, 4, 3, 4);
             textBoxEmployerValue.Name = "textBoxEmployerValue";
-            textBoxEmployerValue.Size = new Size(238, 29);
+            textBoxEmployerValue.Size = new Size(281, 34);
             textBoxEmployerValue.TabIndex = 110;
             // 
             // comboBoxEmploymentTypeValue
             // 
             comboBoxEmploymentTypeValue.Anchor = AnchorStyles.Left;
             comboBoxEmploymentTypeValue.FormattingEnabled = true;
-            comboBoxEmploymentTypeValue.Location = new Point(168, 1233);
+            comboBoxEmploymentTypeValue.Location = new Point(192, 1644);
+            comboBoxEmploymentTypeValue.Margin = new Padding(3, 4, 3, 4);
             comboBoxEmploymentTypeValue.Name = "comboBoxEmploymentTypeValue";
-            comboBoxEmploymentTypeValue.Size = new Size(238, 29);
+            comboBoxEmploymentTypeValue.Size = new Size(271, 36);
             comboBoxEmploymentTypeValue.TabIndex = 111;
+            comboBoxEmploymentTypeValue.SelectedIndexChanged += comboBoxEmploymentTypeValue_SelectedIndexChanged;
             // 
             // dateTimePickerStartOfEmploymentValue
             // 
             dateTimePickerStartOfEmploymentValue.Anchor = AnchorStyles.Left;
-            dateTimePickerStartOfEmploymentValue.Location = new Point(168, 1323);
+            dateTimePickerStartOfEmploymentValue.Location = new Point(192, 1764);
+            dateTimePickerStartOfEmploymentValue.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerStartOfEmploymentValue.Name = "dateTimePickerStartOfEmploymentValue";
-            dateTimePickerStartOfEmploymentValue.Size = new Size(238, 29);
+            dateTimePickerStartOfEmploymentValue.Size = new Size(271, 34);
             dateTimePickerStartOfEmploymentValue.TabIndex = 112;
             // 
             // labelMonthlyIncomeAndSavingsText
@@ -1294,9 +1350,9 @@
             labelMonthlyIncomeAndSavingsText.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             labelMonthlyIncomeAndSavingsText.AutoSize = true;
             labelMonthlyIncomeAndSavingsText.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelMonthlyIncomeAndSavingsText.Location = new Point(168, 1359);
+            labelMonthlyIncomeAndSavingsText.Location = new Point(192, 1812);
             labelMonthlyIncomeAndSavingsText.Name = "labelMonthlyIncomeAndSavingsText";
-            labelMonthlyIncomeAndSavingsText.Size = new Size(220, 21);
+            labelMonthlyIncomeAndSavingsText.Size = new Size(277, 28);
             labelMonthlyIncomeAndSavingsText.TabIndex = 96;
             labelMonthlyIncomeAndSavingsText.Text = "Monthly Income and Savings";
             // 
@@ -1304,9 +1360,9 @@
             // 
             labelSpouseMaritalStatusValue.Anchor = AnchorStyles.Left;
             labelSpouseMaritalStatusValue.AutoSize = true;
-            labelSpouseMaritalStatusValue.Location = new Point(168, 544);
+            labelSpouseMaritalStatusValue.Location = new Point(192, 726);
             labelSpouseMaritalStatusValue.Name = "labelSpouseMaritalStatusValue";
-            labelSpouseMaritalStatusValue.Size = new Size(167, 21);
+            labelSpouseMaritalStatusValue.Size = new Size(208, 28);
             labelSpouseMaritalStatusValue.TabIndex = 113;
             labelSpouseMaritalStatusValue.Text = ">marital status value<";
             // 
@@ -1315,9 +1371,9 @@
             labelEnterInformationText.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             labelEnterInformationText.AutoSize = true;
             labelEnterInformationText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelEnterInformationText.Location = new Point(3, 9);
+            labelEnterInformationText.Location = new Point(3, 12);
             labelEnterInformationText.Name = "labelEnterInformationText";
-            labelEnterInformationText.Size = new Size(132, 21);
+            labelEnterInformationText.Size = new Size(165, 28);
             labelEnterInformationText.TabIndex = 0;
             labelEnterInformationText.Text = "Enter Information";
             // 
@@ -1328,21 +1384,23 @@
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel6.Controls.Add(labelEnterInformationText, 0, 0);
             tableLayoutPanel6.Controls.Add(tableLayoutPanel7, 0, 1);
-            tableLayoutPanel6.Location = new Point(3, 3);
+            tableLayoutPanel6.Location = new Point(3, 4);
+            tableLayoutPanel6.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel6.Name = "tableLayoutPanel6";
             tableLayoutPanel6.RowCount = 2;
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel6.Size = new Size(442, 589);
+            tableLayoutPanel6.Size = new Size(505, 785);
             tableLayoutPanel6.TabIndex = 2;
             // 
             // uEditApplicant
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel6);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "uEditApplicant";
-            Size = new Size(450, 600);
+            Size = new Size(514, 800);
             tableLayoutPanel7.ResumeLayout(false);
             tableLayoutPanel7.PerformLayout();
             panel8.ResumeLayout(false);

@@ -28,9 +28,9 @@ namespace WelfareApp
 
         private void buttonEditApplicant_Click(object sender, EventArgs e)
         {
-            EditApplicantForm editApplicantForm 
-                = new EditApplicantForm();
-            editApplicantForm.Show();
+            //EditApplicantForm editApplicantForm 
+                //= new EditApplicantForm();
+            //editApplicantForm.Show();
         }
     }
 }

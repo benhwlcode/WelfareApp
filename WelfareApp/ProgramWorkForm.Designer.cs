@@ -109,9 +109,9 @@
             // 
             checkBoxShowAll.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             checkBoxShowAll.AutoSize = true;
-            checkBoxShowAll.Location = new Point(325, 66);
+            checkBoxShowAll.Location = new Point(315, 47);
             checkBoxShowAll.Name = "checkBoxShowAll";
-            checkBoxShowAll.Size = new Size(47, 25);
+            checkBoxShowAll.Size = new Size(57, 32);
             checkBoxShowAll.TabIndex = 5;
             checkBoxShowAll.Text = "All";
             checkBoxShowAll.UseVisualStyleBackColor = true;
@@ -120,9 +120,9 @@
             // 
             checkBoxShowDisqualified.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             checkBoxShowDisqualified.AutoSize = true;
-            checkBoxShowDisqualified.Location = new Point(146, 66);
+            checkBoxShowDisqualified.Location = new Point(146, 47);
             checkBoxShowDisqualified.Name = "checkBoxShowDisqualified";
-            checkBoxShowDisqualified.Size = new Size(111, 25);
+            checkBoxShowDisqualified.Size = new Size(137, 32);
             checkBoxShowDisqualified.TabIndex = 4;
             checkBoxShowDisqualified.Text = "Disqualified";
             checkBoxShowDisqualified.UseVisualStyleBackColor = true;
@@ -131,9 +131,9 @@
             // 
             checkBoxShowEligible.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             checkBoxShowEligible.AutoSize = true;
-            checkBoxShowEligible.Location = new Point(61, 66);
+            checkBoxShowEligible.Location = new Point(61, 47);
             checkBoxShowEligible.Name = "checkBoxShowEligible";
-            checkBoxShowEligible.Size = new Size(79, 25);
+            checkBoxShowEligible.Size = new Size(98, 32);
             checkBoxShowEligible.TabIndex = 3;
             checkBoxShowEligible.Text = "Eligible";
             checkBoxShowEligible.UseVisualStyleBackColor = true;
@@ -142,18 +142,18 @@
             // 
             labelShowApplicationsText.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             labelShowApplicationsText.AutoSize = true;
-            labelShowApplicationsText.Location = new Point(3, 67);
+            labelShowApplicationsText.Location = new Point(3, 59);
             labelShowApplicationsText.Name = "labelShowApplicationsText";
-            labelShowApplicationsText.Size = new Size(52, 21);
+            labelShowApplicationsText.Size = new Size(64, 28);
             labelShowApplicationsText.TabIndex = 2;
             labelShowApplicationsText.Text = "Show:";
             // 
             // buttonEditProgram
             // 
             buttonEditProgram.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonEditProgram.Location = new Point(99, 3);
+            buttonEditProgram.Location = new Point(126, 3);
             buttonEditProgram.Name = "buttonEditProgram";
-            buttonEditProgram.Size = new Size(90, 30);
+            buttonEditProgram.Size = new Size(107, 43);
             buttonEditProgram.TabIndex = 1;
             buttonEditProgram.Text = "Edit Program";
             buttonEditProgram.UseVisualStyleBackColor = true;
@@ -164,7 +164,7 @@
             buttonEditEligibility.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             buttonEditEligibility.Location = new Point(3, 3);
             buttonEditEligibility.Name = "buttonEditEligibility";
-            buttonEditEligibility.Size = new Size(90, 30);
+            buttonEditEligibility.Size = new Size(117, 43);
             buttonEditEligibility.TabIndex = 0;
             buttonEditEligibility.Text = "Edit Eligibility";
             buttonEditEligibility.UseVisualStyleBackColor = true;
@@ -173,10 +173,10 @@
             // 
             listBoxListOfApplications.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listBoxListOfApplications.FormattingEnabled = true;
-            listBoxListOfApplications.ItemHeight = 21;
+            listBoxListOfApplications.ItemHeight = 28;
             listBoxListOfApplications.Location = new Point(3, 97);
             listBoxListOfApplications.Name = "listBoxListOfApplications";
-            listBoxListOfApplications.Size = new Size(375, 529);
+            listBoxListOfApplications.Size = new Size(375, 508);
             listBoxListOfApplications.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -215,10 +215,10 @@
             // 
             listBoxListOfDocuments.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listBoxListOfDocuments.FormattingEnabled = true;
-            listBoxListOfDocuments.ItemHeight = 21;
+            listBoxListOfDocuments.ItemHeight = 28;
             listBoxListOfDocuments.Location = new Point(3, 217);
             listBoxListOfDocuments.Name = "listBoxListOfDocuments";
-            listBoxListOfDocuments.Size = new Size(461, 361);
+            listBoxListOfDocuments.Size = new Size(461, 368);
             listBoxListOfDocuments.TabIndex = 1;
             // 
             // groupBoxSelectedApplicant
@@ -237,9 +237,9 @@
             // 
             buttonEditApplicant.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonEditApplicant.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonEditApplicant.Location = new Point(365, 42);
+            buttonEditApplicant.Location = new Point(356, 16);
             buttonEditApplicant.Name = "buttonEditApplicant";
-            buttonEditApplicant.Size = new Size(90, 30);
+            buttonEditApplicant.Size = new Size(99, 52);
             buttonEditApplicant.TabIndex = 6;
             buttonEditApplicant.Text = "Edit Applicant";
             buttonEditApplicant.UseVisualStyleBackColor = true;
@@ -250,9 +250,9 @@
             labelApplicantNameAndIdValue.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             labelApplicantNameAndIdValue.AutoSize = true;
             labelApplicantNameAndIdValue.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            labelApplicantNameAndIdValue.Location = new Point(6, 45);
+            labelApplicantNameAndIdValue.Location = new Point(6, 19);
             labelApplicantNameAndIdValue.Name = "labelApplicantNameAndIdValue";
-            labelApplicantNameAndIdValue.Size = new Size(248, 30);
+            labelApplicantNameAndIdValue.Size = new Size(318, 37);
             labelApplicantNameAndIdValue.TabIndex = 0;
             labelApplicantNameAndIdValue.Text = ">applicant name and id<";
             // 
@@ -278,9 +278,9 @@
             // 
             labelApplicationStatusValue.Anchor = AnchorStyles.Left;
             labelApplicationStatusValue.AutoSize = true;
-            labelApplicationStatusValue.Location = new Point(3, 11);
+            labelApplicationStatusValue.Location = new Point(3, 0);
             labelApplicationStatusValue.Name = "labelApplicationStatusValue";
-            labelApplicationStatusValue.Size = new Size(194, 21);
+            labelApplicationStatusValue.Size = new Size(185, 44);
             labelApplicationStatusValue.TabIndex = 0;
             labelApplicationStatusValue.Text = ">application status value<";
             // 
@@ -288,9 +288,9 @@
             // 
             labelApprovalStatusValue.Anchor = AnchorStyles.Left;
             labelApprovalStatusValue.AutoSize = true;
-            labelApprovalStatusValue.Location = new Point(233, 55);
+            labelApprovalStatusValue.Location = new Point(233, 52);
             labelApprovalStatusValue.Name = "labelApprovalStatusValue";
-            labelApprovalStatusValue.Size = new Size(179, 21);
+            labelApprovalStatusValue.Size = new Size(225, 28);
             labelApprovalStatusValue.TabIndex = 3;
             labelApprovalStatusValue.Text = ">approval status value<";
             // 
@@ -298,9 +298,9 @@
             // 
             labelEligibilityStatusValue.Anchor = AnchorStyles.Left;
             labelEligibilityStatusValue.AutoSize = true;
-            labelEligibilityStatusValue.Location = new Point(3, 55);
+            labelEligibilityStatusValue.Location = new Point(3, 44);
             labelEligibilityStatusValue.Name = "labelEligibilityStatusValue";
-            labelEligibilityStatusValue.Size = new Size(181, 21);
+            labelEligibilityStatusValue.Size = new Size(168, 44);
             labelEligibilityStatusValue.TabIndex = 2;
             labelEligibilityStatusValue.Text = ">eligibility status value<";
             // 
@@ -308,9 +308,9 @@
             // 
             labelPaymentStatusValue.Anchor = AnchorStyles.Left;
             labelPaymentStatusValue.AutoSize = true;
-            labelPaymentStatusValue.Location = new Point(233, 11);
+            labelPaymentStatusValue.Location = new Point(233, 8);
             labelPaymentStatusValue.Name = "labelPaymentStatusValue";
-            labelPaymentStatusValue.Size = new Size(179, 21);
+            labelPaymentStatusValue.Size = new Size(224, 28);
             labelPaymentStatusValue.TabIndex = 1;
             labelPaymentStatusValue.Text = ">payment status value<";
             // 
@@ -329,9 +329,9 @@
             checkBoxShowPending.Anchor = AnchorStyles.Right;
             checkBoxShowPending.AutoSize = true;
             checkBoxShowPending.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBoxShowPending.Location = new Point(359, 12);
+            checkBoxShowPending.Location = new Point(337, 12);
             checkBoxShowPending.Name = "checkBoxShowPending";
-            checkBoxShowPending.Size = new Size(102, 19);
+            checkBoxShowPending.Size = new Size(124, 24);
             checkBoxShowPending.TabIndex = 1;
             checkBoxShowPending.Text = "Show Pending";
             checkBoxShowPending.UseVisualStyleBackColor = true;
@@ -342,13 +342,13 @@
             labelListOfDocumentsText.AutoSize = true;
             labelListOfDocumentsText.Location = new Point(0, 8);
             labelListOfDocumentsText.Name = "labelListOfDocumentsText";
-            labelListOfDocumentsText.Size = new Size(135, 21);
+            labelListOfDocumentsText.Size = new Size(168, 28);
             labelListOfDocumentsText.TabIndex = 0;
             labelListOfDocumentsText.Text = "List of Documents";
             // 
             // ProgramWorkForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(884, 661);
             Controls.Add(tableLayoutPanel1);
