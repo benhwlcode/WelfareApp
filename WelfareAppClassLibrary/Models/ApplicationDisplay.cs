@@ -8,20 +8,47 @@ namespace WelfareAppClassLibrary.Models
 {
     public class ApplicationDisplay
     {
-        public ApplicationModel application { get; set; }
-        public ApplicantModel applicant { get; set; }
+        public ApplicationModel inputApplication { get; set; }
+        public ApplicantModel inputApplicant { get; set; }
 
-        public int Application { get { return application.applicationId; } }
-        public EligibilityStatus Eligibility {get {return application.eligibilityStatus;} }
-        public ApplicationProgress Progress { get { return application.applicationProgress;} }
+        public int Application { get { return inputApplication.applicationId; } }
+        public EligibilityStatus Eligibility {get {return inputApplication.eligibilityStatus;} }
+        public ApplicationProgress Progress { get { return inputApplication.applicationProgress;} }
 
-        public int Applicant { get { return applicant.applicantId; } }
-        public string FirstName { get { return applicant.firstName; } }
-        public string LastName { get { return applicant.lastName; } }
+        public int Applicant { get { return inputApplication.applicantId; } }
+        public string FirstName { get { return inputApplicant.firstName; } }
+        public string LastName { get { return inputApplicant.lastName; } }
 
-        public int Spouse { get { return applicant.spouseId.spouseId; } }   
-        public string SpouseName 
-        { get { return $"{applicant.spouseId.firstName} {applicant.spouseId.lastName}"; } }
+        public int Spouse
+        {
+            get
+            {
+                if (inputApplicant.spouseId != null)
+                {
+                    return inputApplicant.spouseId.spouseId;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
+
+        public string SpouseName
+        {
+            get
+            {
+                if (inputApplicant.spouseId != null)
+                {
+                    return $"{inputApplicant.spouseId.firstName} {inputApplicant.spouseId.lastName}";
+                }
+                else
+                {
+                    return "No Spouse";
+                }
+            }
+        }
+
 
 
 

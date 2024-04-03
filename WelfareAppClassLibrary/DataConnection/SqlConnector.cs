@@ -122,6 +122,43 @@ namespace WelfareAppClassLibrary.DataConnection
             
         }
 
+        public List<ApplicationModel> GetAllApplications(int programId)
+        {
+            List<ApplicationModel> output = new List<ApplicationModel>();
+
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                string sql = "dbo.spApplication_ReturnAll @programId";
+
+                var id = new {programId = programId};
+
+
+                var selected = connection.Query<ApplicationModel, ApplicantModel, SpouseModel,
+                    ApplicationModel>(sql, (app, ap, spo) => 
+                    { app.applicantId = ap.applicantId;  app.applicant = ap;
+                        app.applicant.spouseId = spo;  return app; }, id,
+                        splitOn: "applicantId, spouseId");
+
+
+
+                /*var selected = connection.Query<ApplicationModel, ApplicantModel, SpouseModel,
+                    ApplicationModel>(sql, (app, ap, spo) =>
+                    { app.applicantId = ap.applicantId, ap.spouseId = spo; return app; },
+                    splitOn: "applicantId", "spouseId");*/
+
+                foreach (var p in selected)
+                {
+                    output.Add(p);
+                }
+
+                return output;
+
+            }
+        }
+
         public void SaveToProgram(ProgramModel model)
         {
 
@@ -442,6 +479,25 @@ namespace WelfareAppClassLibrary.DataConnection
                     $"@officeId, @supervisorId, @applicationProgress, @eligibilityStatus, " +
                     $"@approvalStatus, @paymentStatus, @signatureSigned, @acceptedDate, " +
                     $"@listOfDocuments", p);
+            }
+        }
+
+        public string GetDocuments(int applicationId)
+        {
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                string output = "";
+
+                var p = new { applicationId = applicationId };
+
+
+                output = connection.QuerySingle<string>($"dbo.spApplication_GetListOfDocuments " +
+                    $"@applicationId", p);
+
+                return output;
+
             }
         }
     }

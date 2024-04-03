@@ -32,6 +32,10 @@ namespace WelfareAppClassLibrary.DataConnection
 
         public string RetrieveRequiredList(ProgramModel programModel);
 
+        public List<ApplicationModel> GetAllApplications(int programId);
+
+        public string GetDocuments(int applicationId);
+
               
     }
 }

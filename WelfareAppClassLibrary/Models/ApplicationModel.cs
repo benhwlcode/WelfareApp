@@ -27,5 +27,8 @@ namespace WelfareAppClassLibrary.Models
 
         public string listOfDocuments { get; set; }
 
+        public ApplicantModel applicant { get; set; }   
+
+
     }
 }

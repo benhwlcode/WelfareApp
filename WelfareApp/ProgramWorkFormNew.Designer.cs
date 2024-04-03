@@ -34,11 +34,13 @@
             tableLayoutPanel4 = new TableLayoutPanel();
             buttonEditEligibility = new Button();
             buttonEditProgram = new Button();
+            buttonTest = new Button();
             tableLayoutPanel5 = new TableLayoutPanel();
             panel1 = new Panel();
             radioButtonShowDisqualified = new RadioButton();
             radioButtonShowAll = new RadioButton();
             radioButtonShowEligible = new RadioButton();
+            richTextBoxTest = new RichTextBox();
             dataGridViewAppDisplay = new DataGridView();
             tableLayoutPanel6 = new TableLayoutPanel();
             tableLayoutPanel7 = new TableLayoutPanel();
@@ -47,12 +49,16 @@
             tableLayoutPanel12 = new TableLayoutPanel();
             buttonUpdateSelected = new Button();
             comboBoxDocumentStatus = new ComboBox();
+            checkedListBoxDocuments = new CheckedListBox();
             tableLayoutPanel8 = new TableLayoutPanel();
             tableLayoutPanel9 = new TableLayoutPanel();
+            labelAppProgress = new Label();
+            labelApprovalStatus = new Label();
+            labelEligibility = new Label();
+            labelPayment = new Label();
             tableLayoutPanel10 = new TableLayoutPanel();
             buttonEditApplicant = new Button();
-            label1 = new Label();
-            dataGridViewDocuments = new DataGridView();
+            labelAppInfo = new Label();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -65,8 +71,8 @@
             tableLayoutPanel11.SuspendLayout();
             tableLayoutPanel12.SuspendLayout();
             tableLayoutPanel8.SuspendLayout();
+            tableLayoutPanel9.SuspendLayout();
             tableLayoutPanel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewDocuments).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -122,6 +128,7 @@
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel4.Controls.Add(buttonEditEligibility, 0, 0);
             tableLayoutPanel4.Controls.Add(buttonEditProgram, 1, 0);
+            tableLayoutPanel4.Controls.Add(buttonTest, 2, 0);
             tableLayoutPanel4.Dock = DockStyle.Fill;
             tableLayoutPanel4.Location = new Point(3, 3);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -150,12 +157,24 @@
             buttonEditProgram.Text = "Edit Program";
             buttonEditProgram.UseVisualStyleBackColor = true;
             // 
+            // buttonTest
+            // 
+            buttonTest.Anchor = AnchorStyles.Right;
+            buttonTest.Location = new Point(594, 11);
+            buttonTest.Name = "buttonTest";
+            buttonTest.Size = new Size(94, 29);
+            buttonTest.TabIndex = 2;
+            buttonTest.Text = "Test";
+            buttonTest.UseVisualStyleBackColor = true;
+            buttonTest.Click += buttonTest_Click;
+            // 
             // tableLayoutPanel5
             // 
             tableLayoutPanel5.ColumnCount = 2;
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 280F));
             tableLayoutPanel5.Controls.Add(panel1, 1, 0);
+            tableLayoutPanel5.Controls.Add(richTextBoxTest, 0, 0);
             tableLayoutPanel5.Dock = DockStyle.Fill;
             tableLayoutPanel5.Location = new Point(3, 60);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -208,10 +227,21 @@
             radioButtonShowEligible.Text = "Eligible";
             radioButtonShowEligible.UseVisualStyleBackColor = true;
             // 
+            // richTextBoxTest
+            // 
+            richTextBoxTest.BackColor = SystemColors.Control;
+            richTextBoxTest.Dock = DockStyle.Fill;
+            richTextBoxTest.Location = new Point(3, 3);
+            richTextBoxTest.Name = "richTextBoxTest";
+            richTextBoxTest.Size = new Size(405, 45);
+            richTextBoxTest.TabIndex = 1;
+            richTextBoxTest.Text = "";
+            // 
             // dataGridViewAppDisplay
             // 
             dataGridViewAppDisplay.AllowUserToAddRows = false;
             dataGridViewAppDisplay.AllowUserToDeleteRows = false;
+            dataGridViewAppDisplay.AllowUserToResizeRows = false;
             dataGridViewAppDisplay.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewAppDisplay.Dock = DockStyle.Fill;
             dataGridViewAppDisplay.Location = new Point(3, 123);
@@ -219,8 +249,10 @@
             dataGridViewAppDisplay.ReadOnly = true;
             dataGridViewAppDisplay.RowHeadersWidth = 51;
             dataGridViewAppDisplay.RowTemplate.Height = 29;
+            dataGridViewAppDisplay.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewAppDisplay.Size = new Size(697, 521);
             dataGridViewAppDisplay.TabIndex = 1;
+            dataGridViewAppDisplay.CellDoubleClick += dataGridViewAppDisplay_CellDoubleClick;
             // 
             // tableLayoutPanel6
             // 
@@ -243,7 +275,7 @@
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel7.Controls.Add(tableLayoutPanel11, 0, 0);
             tableLayoutPanel7.Controls.Add(tableLayoutPanel12, 0, 2);
-            tableLayoutPanel7.Controls.Add(dataGridViewDocuments, 0, 1);
+            tableLayoutPanel7.Controls.Add(checkedListBoxDocuments, 0, 1);
             tableLayoutPanel7.Dock = DockStyle.Fill;
             tableLayoutPanel7.Location = new Point(3, 183);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -315,6 +347,15 @@
             comboBoxDocumentStatus.Size = new Size(194, 36);
             comboBoxDocumentStatus.TabIndex = 1;
             // 
+            // checkedListBoxDocuments
+            // 
+            checkedListBoxDocuments.Dock = DockStyle.Fill;
+            checkedListBoxDocuments.FormattingEnabled = true;
+            checkedListBoxDocuments.Location = new Point(3, 63);
+            checkedListBoxDocuments.Name = "checkedListBoxDocuments";
+            checkedListBoxDocuments.Size = new Size(455, 335);
+            checkedListBoxDocuments.TabIndex = 2;
+            // 
             // tableLayoutPanel8
             // 
             tableLayoutPanel8.ColumnCount = 1;
@@ -335,6 +376,10 @@
             tableLayoutPanel9.ColumnCount = 2;
             tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel9.Controls.Add(labelAppProgress, 0, 0);
+            tableLayoutPanel9.Controls.Add(labelApprovalStatus, 1, 0);
+            tableLayoutPanel9.Controls.Add(labelEligibility, 0, 1);
+            tableLayoutPanel9.Controls.Add(labelPayment, 1, 1);
             tableLayoutPanel9.Dock = DockStyle.Fill;
             tableLayoutPanel9.Location = new Point(3, 63);
             tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -344,6 +389,50 @@
             tableLayoutPanel9.Size = new Size(455, 108);
             tableLayoutPanel9.TabIndex = 0;
             // 
+            // labelAppProgress
+            // 
+            labelAppProgress.Anchor = AnchorStyles.Left;
+            labelAppProgress.AutoSize = true;
+            labelAppProgress.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            labelAppProgress.Location = new Point(3, 13);
+            labelAppProgress.Name = "labelAppProgress";
+            labelAppProgress.Size = new Size(32, 28);
+            labelAppProgress.TabIndex = 0;
+            labelAppProgress.Text = ">!";
+            // 
+            // labelApprovalStatus
+            // 
+            labelApprovalStatus.Anchor = AnchorStyles.Left;
+            labelApprovalStatus.AutoSize = true;
+            labelApprovalStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            labelApprovalStatus.Location = new Point(230, 13);
+            labelApprovalStatus.Name = "labelApprovalStatus";
+            labelApprovalStatus.Size = new Size(32, 28);
+            labelApprovalStatus.TabIndex = 1;
+            labelApprovalStatus.Text = ">!";
+            // 
+            // labelEligibility
+            // 
+            labelEligibility.Anchor = AnchorStyles.Left;
+            labelEligibility.AutoSize = true;
+            labelEligibility.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            labelEligibility.Location = new Point(3, 67);
+            labelEligibility.Name = "labelEligibility";
+            labelEligibility.Size = new Size(32, 28);
+            labelEligibility.TabIndex = 2;
+            labelEligibility.Text = ">!";
+            // 
+            // labelPayment
+            // 
+            labelPayment.Anchor = AnchorStyles.Left;
+            labelPayment.AutoSize = true;
+            labelPayment.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            labelPayment.Location = new Point(230, 67);
+            labelPayment.Name = "labelPayment";
+            labelPayment.Size = new Size(32, 28);
+            labelPayment.TabIndex = 3;
+            labelPayment.Text = ">!";
+            // 
             // tableLayoutPanel10
             // 
             tableLayoutPanel10.ColumnCount = 3;
@@ -351,7 +440,7 @@
             tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 160F));
             tableLayoutPanel10.Controls.Add(buttonEditApplicant, 2, 0);
-            tableLayoutPanel10.Controls.Add(label1, 0, 0);
+            tableLayoutPanel10.Controls.Add(labelAppInfo, 0, 0);
             tableLayoutPanel10.Dock = DockStyle.Fill;
             tableLayoutPanel10.Location = new Point(3, 3);
             tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -370,27 +459,16 @@
             buttonEditApplicant.Text = "Edit Applicant";
             buttonEditApplicant.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // labelAppInfo
             // 
-            label1.Anchor = AnchorStyles.Left;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(3, 13);
-            label1.Name = "label1";
-            label1.Size = new Size(225, 28);
-            label1.TabIndex = 1;
-            label1.Text = ">applicant name value<";
-            // 
-            // dataGridViewDocuments
-            // 
-            dataGridViewDocuments.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewDocuments.Dock = DockStyle.Fill;
-            dataGridViewDocuments.Location = new Point(3, 63);
-            dataGridViewDocuments.Name = "dataGridViewDocuments";
-            dataGridViewDocuments.RowHeadersWidth = 51;
-            dataGridViewDocuments.RowTemplate.Height = 29;
-            dataGridViewDocuments.Size = new Size(455, 335);
-            dataGridViewDocuments.TabIndex = 2;
+            labelAppInfo.Anchor = AnchorStyles.Left;
+            labelAppInfo.AutoSize = true;
+            labelAppInfo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            labelAppInfo.Location = new Point(3, 13);
+            labelAppInfo.Name = "labelAppInfo";
+            labelAppInfo.Size = new Size(32, 28);
+            labelAppInfo.TabIndex = 1;
+            labelAppInfo.Text = ">!";
             // 
             // ProgramWorkFormNew
             // 
@@ -414,9 +492,10 @@
             tableLayoutPanel11.PerformLayout();
             tableLayoutPanel12.ResumeLayout(false);
             tableLayoutPanel8.ResumeLayout(false);
+            tableLayoutPanel9.ResumeLayout(false);
+            tableLayoutPanel9.PerformLayout();
             tableLayoutPanel10.ResumeLayout(false);
             tableLayoutPanel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewDocuments).EndInit();
             ResumeLayout(false);
         }
 
@@ -439,13 +518,19 @@
         private RadioButton radioButtonShowAll;
         private RadioButton radioButtonShowEligible;
         private Button buttonEditApplicant;
-        private Label label1;
+        private Label labelAppInfo;
         private TableLayoutPanel tableLayoutPanel11;
         private CheckBox checkBoxShowPending;
         private DataGridView dataGridViewAppDisplay;
         private TableLayoutPanel tableLayoutPanel12;
         private Button buttonUpdateSelected;
         private ComboBox comboBoxDocumentStatus;
-        private DataGridView dataGridViewDocuments;
+        private Button buttonTest;
+        private RichTextBox richTextBoxTest;
+        private CheckedListBox checkedListBoxDocuments;
+        private Label labelAppProgress;
+        private Label labelApprovalStatus;
+        private Label labelEligibility;
+        private Label labelPayment;
     }
 }
