@@ -54,11 +54,12 @@
             // textBoxSearchValue
             // 
             textBoxSearchValue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxSearchValue.Location = new Point(81, 13);
+            textBoxSearchValue.Location = new Point(95, 15);
             textBoxSearchValue.Margin = new Padding(4);
             textBoxSearchValue.Name = "textBoxSearchValue";
             textBoxSearchValue.Size = new Size(369, 34);
             textBoxSearchValue.TabIndex = 1;
+            textBoxSearchValue.TextChanged += textBoxSearchValue_TextChanged;
             // 
             // labelSearchText
             // 

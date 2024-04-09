@@ -19,6 +19,14 @@ namespace WelfareAppClassLibrary.Models
             }
         }
 
+        public int ApplicantId
+        {
+            get
+            {
+                return input.applicantId;
+            }
+        }
+
         public string AppliedProgram { get; set; }
         public string ManagingAgency { get; set; }
         public string ReceivedByAgent { get; set; }

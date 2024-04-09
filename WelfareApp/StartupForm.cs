@@ -8,7 +8,7 @@ namespace WelfareApp
     {
         AgentModel userAgent;
 
-        List<ProgramModel> programs= new List<ProgramModel>();
+        List<ProgramModel> programs = new List<ProgramModel>();
         ProgramModel selectedProgram = new ProgramModel();
 
         public StartupForm(AgentModel agentInput)
@@ -19,6 +19,8 @@ namespace WelfareApp
 
             InitializeList();
             UpdateBinding();
+
+            this.Text = "Dashboard";
         }
 
         private void buttonCreateNewProgram_Click(object sender, EventArgs e)
@@ -46,9 +48,10 @@ namespace WelfareApp
         {
             selectedProgram = (ProgramModel)listBoxListOfPrograms.SelectedItem;
 
-            ProgramWorkFormNew programWorkForm
-                = new ProgramWorkFormNew(selectedProgram);
-            programWorkForm.Show();
+            ProgramWorkFormNew form
+                = new ProgramWorkFormNew(selectedProgram, userAgent);
+
+            form.Show();
         }
 
         private void InitializeList()
@@ -57,14 +60,24 @@ namespace WelfareApp
 
             programs = sql.GetAllPrograms();
 
-            
         }
 
         private void UpdateBinding()
         {
+            listBoxListOfPrograms.DataSource = null;
             listBoxListOfPrograms.DataSource = programs;
             listBoxListOfPrograms.DisplayMember = "programName";
         }
+
+        private void textBoxSearchValue_TextChanged(object sender, EventArgs e)
+        {
+            SqlConnector sql = new SqlConnector();
+            programs = sql.ProgramSearch(textBoxSearchValue.Text);
+
+            UpdateBinding();
+
+
+        }       
 
     }
 }

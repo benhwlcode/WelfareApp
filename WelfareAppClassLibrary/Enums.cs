@@ -32,8 +32,11 @@ namespace WelfareAppClassLibrary
         rentalexpense, utilityexpense, foodexpense, tuitionexpense,
         iscitizen, isindigenous, isdisabled, 
         numberofchildren, numberofelderly, 
-        employmenttype, employmentincome, spouseincome, donationincome, cashsavings
+        employmenttype, employmentincome, spouseincome, donationincome, cashsavings,
+        spouseId
         }
     public enum TrueFalse { False, True }
+
+    public enum AgeFilter { All, Adult, Elderly, Both}
 
 }

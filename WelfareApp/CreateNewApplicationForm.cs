@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Identity.Client.NativeInterop;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -47,7 +48,7 @@ namespace WelfareApp
             UpdateInitialBindings();
             GetDocumentsList();
 
-
+            this.Text = "Create New Application";
         }
 
         private void buttonLoadApplicantData_Click(object sender, EventArgs e)
@@ -129,6 +130,22 @@ namespace WelfareApp
 
         private void buttonCreateNewApplication_Click(object sender, EventArgs e)
         {
+
+            bool isEmpty = FormSubmissionCheck.CheckEmptyTextBox(this.Controls);
+
+            if (isEmpty)
+            {
+                return;
+            }
+
+            bool isError = FormSubmissionCheck.CheckErrorProvider(this.Controls, applicantInput.error);
+
+            if (isError)
+            {
+                return;
+            }
+
+
             Logic logic = new Logic();
 
             applicationToSave = FillApplicationToSaveInfo();
@@ -151,8 +168,10 @@ namespace WelfareApp
             }
 
 
-            logic.ApplicationInsertAndUpdate(labelApplicantIdValue.Text, applicationToSave,
+            logic.ApplicationInsertUpdateControl(labelApplicantIdValue.Text, applicationToSave,
                 applicantToSave, spouseToSave, loadedApplicant);
+
+            this.Close();
             
         }
 
@@ -412,6 +431,8 @@ namespace WelfareApp
 
 
 
-        }
+        }        
     }
+
+
 }

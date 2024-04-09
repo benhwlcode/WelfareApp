@@ -11,12 +11,16 @@ using System.Windows.Forms;
 using WelfareAppClassLibrary;
 using WelfareAppClassLibrary.DataConnection;
 using WelfareAppClassLibrary.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace WelfareApp
 {
     public partial class ProgramWorkFormNew : Form
     {
+        BindingSource bindApps = new BindingSource();
+
         ProgramModel currentProgram = new ProgramModel();
+        AgentModel currentAgent = new AgentModel();
 
         List<ApplicationDisplay> programApplications = new List<ApplicationDisplay>();
 
@@ -28,30 +32,114 @@ namespace WelfareApp
 
         public string customQuery = "";
 
-
-
         public string testQuery = "";
 
-        // TODO: sp that gets one app based on display appId v
-        // TODO: sp that updates app doc v
-        // TODO: sp that updates app status depending on check v?
 
-        public ProgramWorkFormNew(ProgramModel selectedProgram)
+        public ProgramWorkFormNew(ProgramModel selectedProgram, AgentModel userAgent)
         {
-            InitializeComponent();
             currentProgram = selectedProgram;
-
+            currentAgent = userAgent;
+            InitializeComponent();
             InitializeComboBox();
             UpdateGrid();
+            HideTestElements();
+
+            this.Text = $"{currentProgram.programName} ({currentProgram.programId})";
+        }
+
+        private void dataGridViewAppDisplay_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetDisplayAsApplication();
+
+            selectedDocuments = GetDocuments(selectedApplication.applicationId);
+            UpdateDocumentsBinding();
+
+            UpdateWorkLabels(selectedApplication);
+            // TestUpdate(selectedDocuments);
+
+        }
+
+        private void checkBoxShowEligible_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBoxUpdate();
+        }
+
+        private void buttonUpdateSelected_Click(object sender, EventArgs e)
+        {
+            foreach (DocumentModel p in checkedListBoxDocuments.CheckedItems)
+            {
+                p.status = (DocumentStatus)comboBoxDocumentStatus.SelectedItem;
+            }
+
+            selectedApplication.listOfDocuments = SerializeDocuments(selectedDocuments);
+            CheckDocs(selectedDocuments);
+
+            SqlConnector sql = new SqlConnector();
+            sql.UpdateApplication(selectedApplication);
+
+            UpdateWorkLabels(selectedApplication);
+            // TestUpdate(selectedDocuments);
+
+            FullRefreshGridAndUpdateInfo();
+
+        }
+
+        private void buttonEditEligibility_Click(object sender, EventArgs e)
+        {
+            EditEligibilityForm edit = new EditEligibilityForm(this);
+            edit.Show();
+        }
+
+        private void buttonEditProgram_Click(object sender, EventArgs e)
+        {
+            EditProgramForm form = new EditProgramForm(currentProgram, currentAgent);
+            form.parent = this;
+            form.Show();
+        }
+
+        private void buttonEditApplicant_Click(object sender, EventArgs e)
+        {
+            selectedApplicant = selectedApplication.applicant;
+
+            if (selectedApplicant == null)
+            {
+                return;
+            }
+
+            EditApplicantForm editApplicant = new EditApplicantForm(selectedApplicant);
+            editApplicant.Show();
+            editApplicant.FormClosed += EditApplicant_FormClosed;
+        }
+
+        private void EditApplicant_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            FullRefreshGridAndUpdateInfo();
+            GetDisplayAsApplication();
+            UpdateWorkLabels(selectedApplication);
+        }
+
+        private void dataGridViewAppDisplay_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            GridHighlight();
+        }
+
+        private void buttonTest_Click(object sender, EventArgs e)
+        {
+            UpdateGrid();
+        }
+
+        public void HideTestElements()
+        {
+            richTextBoxTest.Hide();
+            buttonTest.Hide();
         }
 
         private void InitializeComboBox()
         {
             comboBoxDocumentStatus.DataSource = Enum.GetValues(typeof(DocumentStatus));
-
         }
 
-        private void UpdateGrid()
+        public void UpdateGrid()
         {
             SqlConnector sql = new SqlConnector();
             List<ApplicationModel> apps = sql.GetAllApplications(currentProgram.programId);
@@ -69,13 +157,16 @@ namespace WelfareApp
 
             UpdateApplicationsBinding();
             GridHighlight();
-
         }
 
         private void UpdateApplicationsBinding()
         {
+            bindApps.DataSource = null;
+            bindApps.DataSource = programApplications;
+
+
             dataGridViewAppDisplay.DataSource = null;
-            dataGridViewAppDisplay.DataSource = programApplications;
+            dataGridViewAppDisplay.DataSource = bindApps;
 
             HideColumns();
         }
@@ -88,33 +179,20 @@ namespace WelfareApp
                 {
                     r.DefaultCellStyle.BackColor = Color.LightGreen;
                 }
+                else
+                {
+                    r.DefaultCellStyle.BackColor = Color.LightPink;
+                }
             }
         }
 
-        private void buttonTest_Click(object sender, EventArgs e)
-        {
-            UpdateGrid();
-        }
-
-        private void dataGridViewAppDisplay_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void GetDisplayAsApplication()
         {
             selectedDisplay = dataGridViewAppDisplay.SelectedRows[0].DataBoundItem as ApplicationDisplay;
             selectedApplication = selectedDisplay.inputApplication;
-
-            selectedDocuments = GetDocuments(selectedApplication.applicationId);
-            UpdateDocumentsBinding();
-
-            UpdateWorkLabels(selectedApplication);
-            TestUpdate(selectedDocuments);
-
         }
 
-        private void checkBoxShowEligible_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBoxUpdate();
-        }
-
-        private void CheckBoxUpdate()
+        public void CheckBoxUpdate()
         {
             CurrencyManager m = (CurrencyManager)BindingContext[dataGridViewAppDisplay.DataSource];
             m.SuspendBinding();
@@ -138,26 +216,6 @@ namespace WelfareApp
             }
 
             m.ResumeBinding();
-        }
-
-        private void buttonUpdateSelected_Click(object sender, EventArgs e)
-        {
-            foreach (DocumentModel p in checkedListBoxDocuments.CheckedItems)
-            {
-                p.status = (DocumentStatus)comboBoxDocumentStatus.SelectedItem;
-            }
-
-            selectedApplication.listOfDocuments = SerializeDocuments(selectedDocuments);
-            CheckDocs(selectedDocuments);
-
-            SqlConnector sql = new SqlConnector();
-            sql.UpdateApplication(selectedApplication);
-
-            UpdateWorkLabels(selectedApplication);
-            TestUpdate(selectedDocuments);
-
-            UpdateGrid();
-            UpdateDocumentsBinding();
 
         }
 
@@ -181,10 +239,7 @@ namespace WelfareApp
             return output;
         }
 
-
-
-
-        private void UpdateDocumentsBinding()
+        public void UpdateDocumentsBinding()
         {
             checkedListBoxDocuments.DataSource = null;
             checkedListBoxDocuments.DataSource = selectedDocuments;
@@ -197,18 +252,28 @@ namespace WelfareApp
             labelAppInfo.Text = $"{appInput.applicant.firstName} {appInput.applicant.lastName} " +
                 $"({appInput.applicationId.ToString()})";
 
-            labelAppProgress.Text = appInput.applicationProgress.ToString();
-            labelEligibility.Text = appInput.eligibilityStatus.ToString();
-            labelApprovalStatus.Text = appInput.approvalStatus.ToString();
-            labelPayment.Text = appInput.paymentStatus.ToString();
+            labelAppProgress.Text = $"{appInput.applicationProgress.ToString()}";
+            labelEligibility.Text = $"{appInput.eligibilityStatus.ToString()}";
+            labelApprovalStatus.Text = $"{appInput.approvalStatus.ToString()}";
+            labelPayment.Text = $"{appInput.paymentStatus.ToString()}";
 
         }
-
 
         private void HideColumns()
         {
             dataGridViewAppDisplay.Columns["inputApplication"].Visible = false;
             dataGridViewAppDisplay.Columns["inputApplicant"].Visible = false;
+
+            ResizeColumns();
+        }
+
+        private void ResizeColumns()
+        {
+            for (int i = 0; i < dataGridViewAppDisplay.ColumnCount; i++)
+            {
+                dataGridViewAppDisplay.Columns[i].AutoSizeMode
+                    = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            }
         }
 
         private void CheckDocs(List<DocumentModel> docInput)
@@ -226,9 +291,6 @@ namespace WelfareApp
 
         }
 
-
-
-
         private void TestUpdate(List<DocumentModel> input)
         {
             string output = "";
@@ -242,19 +304,14 @@ namespace WelfareApp
 
         }
 
-        private void buttonEditEligibility_Click(object sender, EventArgs e)
-        {
-            EditEligibilityForm edit = new EditEligibilityForm(this);
-            edit.Show();
-        }
-
-
-
         public void ApplyEligibility()
         {
             SqlConnector sql = new SqlConnector();
             sql.UpdateEligibility(currentProgram.programId, customQuery);
             UpdateGrid();
+
+            UpdateDocumentsBinding();
+            CheckBoxUpdate();
         }
 
         public void TestText(string input)
@@ -262,17 +319,11 @@ namespace WelfareApp
             richTextBoxTest.Text = input;
         }
 
-        private void buttonEditApplicant_Click(object sender, EventArgs e)
+        private void FullRefreshGridAndUpdateInfo()
         {
-            selectedApplicant = selectedApplication.applicant;
-
-            if (selectedApplicant== null)
-            {
-                return;
-            }
-
-            EditApplicantForm editApplicant = new EditApplicantForm(selectedApplicant);
-            editApplicant.Show();
+            UpdateGrid();
+            UpdateDocumentsBinding();
+            CheckBoxUpdate();
         }
     }
 }

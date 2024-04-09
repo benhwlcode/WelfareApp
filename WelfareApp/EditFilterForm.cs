@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WelfareAppClassLibrary.Models;
 
 namespace WelfareApp
 {
-    public partial class EditEligibilityForm : Form
+    public partial class EditFilterForm : Form
     {
+        public ListOfAppsForm parent;
 
-        public ProgramWorkFormNew parent;
+        public uEditApplicant subEc;
 
         string constructedQuery = "";
 
@@ -25,58 +25,61 @@ namespace WelfareApp
 
         List<uEligibilityCondition> conditions = new List<uEligibilityCondition>();
 
-        public EditEligibilityForm(ProgramWorkFormNew parentInput)
+
+        public EditFilterForm(ListOfAppsForm parentInput)
         {
             InitializeComponent();
             parent = parentInput;
-
         }
+
+
 
         
 
-        private void buttonAddCondition_Click(object sender, EventArgs e)
+        private void buttonAdd_Click(object sender, EventArgs e)
         {
             AddQueryCondition();
         }
 
-        private void buttonRemoveCondition_Click(object sender, EventArgs e)
+        private void buttonRemove_Click(object sender, EventArgs e)
         {
             RemoveQueryCondition();
         }
 
-        private void buttonApplyCondition_Click(object sender, EventArgs e)
+        private void buttonApply_Click(object sender, EventArgs e)
         {
             constructedQuery = "";
             ReturnQuery();
-            parent.customQuery = constructedQuery;
-            parent.ApplyEligibility();
+            parent.filterCustom = constructedQuery;
+
 
             this.Close();
+
         }
 
         private void AddQueryCondition()
         {
-            int row = tableLayoutPanelConditions.RowCount - 1;
-            
-            uEligibilityCondition ec = new uEligibilityCondition();
-            tableLayoutPanelConditions.Controls.Add(ec, 0, row);
+            int row = tableLayoutPanelFilters.RowCount - 1;
 
-            tableLayoutPanelConditions.RowCount = tableLayoutPanelConditions.RowCount + 1;
-            tableLayoutPanelConditions.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            uEligibilityCondition ec = new uEligibilityCondition();
+            tableLayoutPanelFilters.Controls.Add(ec, 0, row);
+
+            tableLayoutPanelFilters.RowCount = tableLayoutPanelFilters.RowCount + 1;
+            tableLayoutPanelFilters.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
 
         }
 
         private void RemoveQueryCondition()
         {
-            int row = tableLayoutPanelConditions.RowCount - 2;            
-            tableLayoutPanelConditions.Controls.RemoveAt(row);
-            tableLayoutPanelConditions.RowCount = tableLayoutPanelConditions.RowCount - 1;
+            int row = tableLayoutPanelFilters.RowCount - 2;
+            tableLayoutPanelFilters.Controls.RemoveAt(row);
+            tableLayoutPanelFilters.RowCount = tableLayoutPanelFilters.RowCount - 1;
         }
 
         private void GetConditions(int input)
         {
             uEligibilityCondition ec =
-                tableLayoutPanelConditions.GetControlFromPosition(0, input) as uEligibilityCondition;
+                tableLayoutPanelFilters.GetControlFromPosition(0, input) as uEligibilityCondition;
 
             prop = ec.selectedProperty;
             cond = ec.selectedCondition;
@@ -85,24 +88,22 @@ namespace WelfareApp
 
             if (constructedQuery == "")
             {
-                constructedQuery += $"{prop} {cond} {dyna}{numb} ";
+                constructedQuery += $"ap.{prop} {cond} {dyna}{numb} ";
                 return;
             }
 
-            constructedQuery += $"AND {prop} {cond} {dyna}{numb} ";
+            constructedQuery += $"AND ap.{prop} {cond} {dyna}{numb} ";
         }
 
         private void ReturnQuery()
         {
-            for (int i = 0; i < tableLayoutPanelConditions.RowCount - 1; i++)
+            for (int i = 0; i < tableLayoutPanelFilters.RowCount - 1; i++)
             {
                 GetConditions(i);
 
             }
         }
 
-
-
-
+        
     }
 }

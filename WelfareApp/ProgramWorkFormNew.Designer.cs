@@ -153,6 +153,7 @@
             buttonEditProgram.TabIndex = 1;
             buttonEditProgram.Text = "Edit Program";
             buttonEditProgram.UseVisualStyleBackColor = true;
+            buttonEditProgram.Click += buttonEditProgram_Click;
             // 
             // buttonTest
             // 
@@ -212,12 +213,14 @@
             dataGridViewAppDisplay.Location = new Point(3, 123);
             dataGridViewAppDisplay.Name = "dataGridViewAppDisplay";
             dataGridViewAppDisplay.ReadOnly = true;
+            dataGridViewAppDisplay.RowHeadersVisible = false;
             dataGridViewAppDisplay.RowHeadersWidth = 51;
             dataGridViewAppDisplay.RowTemplate.Height = 29;
             dataGridViewAppDisplay.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewAppDisplay.Size = new Size(697, 521);
             dataGridViewAppDisplay.TabIndex = 1;
             dataGridViewAppDisplay.CellDoubleClick += dataGridViewAppDisplay_CellDoubleClick;
+            dataGridViewAppDisplay.DataBindingComplete += dataGridViewAppDisplay_DataBindingComplete;
             // 
             // tableLayoutPanel6
             // 

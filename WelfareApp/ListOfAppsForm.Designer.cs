@@ -40,6 +40,7 @@
             checkBoxManagingAgency = new CheckBox();
             checkBoxProgramName = new CheckBox();
             checkBoxAll = new CheckBox();
+            checkBoxApplicant = new CheckBox();
             groupBoxFilter = new GroupBox();
             tableLayoutPanel5 = new TableLayoutPanel();
             checkBoxWithoutChildren = new CheckBox();
@@ -140,6 +141,7 @@
             textBoxSearchValue.Name = "textBoxSearchValue";
             textBoxSearchValue.Size = new Size(385, 34);
             textBoxSearchValue.TabIndex = 0;
+            textBoxSearchValue.TextChanged += textBoxSearchValue_TextChanged;
             // 
             // tableLayoutPanel4
             // 
@@ -153,6 +155,7 @@
             tableLayoutPanel4.Controls.Add(checkBoxManagingAgency, 1, 1);
             tableLayoutPanel4.Controls.Add(checkBoxProgramName, 0, 1);
             tableLayoutPanel4.Controls.Add(checkBoxAll, 0, 0);
+            tableLayoutPanel4.Controls.Add(checkBoxApplicant, 1, 3);
             tableLayoutPanel4.Location = new Point(3, 44);
             tableLayoutPanel4.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -176,6 +179,7 @@
             checkBoxOffice.TabIndex = 6;
             checkBoxOffice.Text = "Office";
             checkBoxOffice.UseVisualStyleBackColor = true;
+            checkBoxOffice.CheckedChanged += checkBoxOffice_CheckedChanged;
             // 
             // checkBoxSupervisor
             // 
@@ -189,6 +193,7 @@
             checkBoxSupervisor.TabIndex = 5;
             checkBoxSupervisor.Text = "Supervisor";
             checkBoxSupervisor.UseVisualStyleBackColor = true;
+            checkBoxSupervisor.CheckedChanged += checkBoxSupervisor_CheckedChanged;
             // 
             // checkBoxAgent
             // 
@@ -202,6 +207,7 @@
             checkBoxAgent.TabIndex = 4;
             checkBoxAgent.Text = "Agent";
             checkBoxAgent.UseVisualStyleBackColor = true;
+            checkBoxAgent.CheckedChanged += checkBoxAgent_CheckedChanged;
             // 
             // checkBoxManagingAgency
             // 
@@ -215,6 +221,7 @@
             checkBoxManagingAgency.TabIndex = 3;
             checkBoxManagingAgency.Text = "Managing Agency";
             checkBoxManagingAgency.UseVisualStyleBackColor = true;
+            checkBoxManagingAgency.CheckedChanged += checkBoxManagingAgency_CheckedChanged;
             // 
             // checkBoxProgramName
             // 
@@ -229,6 +236,7 @@
             checkBoxProgramName.Text = "Program Name";
             checkBoxProgramName.TextAlign = ContentAlignment.MiddleCenter;
             checkBoxProgramName.UseVisualStyleBackColor = true;
+            checkBoxProgramName.CheckedChanged += checkBoxProgramName_CheckedChanged;
             // 
             // checkBoxAll
             // 
@@ -242,6 +250,20 @@
             checkBoxAll.TabIndex = 0;
             checkBoxAll.Text = "All";
             checkBoxAll.UseVisualStyleBackColor = true;
+            checkBoxAll.CheckedChanged += checkBoxAll_CheckedChanged;
+            // 
+            // checkBoxApplicant
+            // 
+            checkBoxApplicant.Anchor = AnchorStyles.Left;
+            checkBoxApplicant.AutoSize = true;
+            checkBoxApplicant.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBoxApplicant.Location = new Point(195, 190);
+            checkBoxApplicant.Name = "checkBoxApplicant";
+            checkBoxApplicant.Size = new Size(118, 32);
+            checkBoxApplicant.TabIndex = 7;
+            checkBoxApplicant.Text = "Applicant";
+            checkBoxApplicant.UseVisualStyleBackColor = true;
+            checkBoxApplicant.CheckedChanged += checkBoxApplicant_CheckedChanged;
             // 
             // groupBoxFilter
             // 
@@ -307,6 +329,7 @@
             buttonEditCustomFilter.TabIndex = 9;
             buttonEditCustomFilter.Text = "Edit Custom Filter";
             buttonEditCustomFilter.UseVisualStyleBackColor = true;
+            buttonEditCustomFilter.Click += buttonEditCustomFilter_Click;
             // 
             // checkBoxWithChildren
             // 
@@ -418,6 +441,7 @@
             checkBoxUseCustomFilter.TabIndex = 8;
             checkBoxUseCustomFilter.Text = "Use Custom Filter";
             checkBoxUseCustomFilter.UseVisualStyleBackColor = true;
+            checkBoxUseCustomFilter.CheckedChanged += checkBoxUseCustomFilter_CheckedChanged;
             // 
             // tabControlListOfApps
             // 
@@ -454,10 +478,13 @@
             dataGridViewApps.Location = new Point(3, 4);
             dataGridViewApps.Name = "dataGridViewApps";
             dataGridViewApps.ReadOnly = true;
+            dataGridViewApps.RowHeadersVisible = false;
             dataGridViewApps.RowHeadersWidth = 51;
             dataGridViewApps.RowTemplate.Height = 29;
+            dataGridViewApps.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewApps.Size = new Size(552, 726);
             dataGridViewApps.TabIndex = 0;
+            dataGridViewApps.CellDoubleClick += dataGridViewApps_CellDoubleClick;
             // 
             // tabApplicants
             // 
@@ -481,10 +508,13 @@
             dataGridViewPeople.Location = new Point(3, 4);
             dataGridViewPeople.Name = "dataGridViewPeople";
             dataGridViewPeople.ReadOnly = true;
+            dataGridViewPeople.RowHeadersVisible = false;
             dataGridViewPeople.RowHeadersWidth = 51;
             dataGridViewPeople.RowTemplate.Height = 29;
+            dataGridViewPeople.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewPeople.Size = new Size(552, 726);
             dataGridViewPeople.TabIndex = 0;
+            dataGridViewPeople.CellDoubleClick += dataGridViewPeople_CellDoubleClick;
             // 
             // ListOfAppsForm
             // 
@@ -544,5 +574,6 @@
         private TabPage tabApplicants;
         private DataGridView dataGridViewApps;
         private DataGridView dataGridViewPeople;
+        private CheckBox checkBoxApplicant;
     }
 }

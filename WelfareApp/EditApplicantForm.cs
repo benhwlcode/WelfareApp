@@ -14,6 +14,7 @@ namespace WelfareApp
 {
     public partial class EditApplicantForm : Form
     {
+
         uEditApplicant editApplicant = new uEditApplicant();
         ApplicantModel loadedApplicant = new ApplicantModel();
 
@@ -33,12 +34,29 @@ namespace WelfareApp
 
         private void buttonUpdateApplicant_Click(object sender, EventArgs e)
         {
+            bool isEmpty = FormSubmissionCheck.CheckEmptyTextBox(this.Controls);
+
+            if (isEmpty)
+            {
+                return;
+            }
+
+            bool isError = FormSubmissionCheck.CheckErrorProvider(this.Controls, editApplicant.error);
+
+            if (isError)
+            {
+                return;
+            }
+
             Logic logic = new Logic();
 
             applicantToSave = FillApplicantToSaveInfo();
             spouseToSave = FillSpouseToSaveInfo();
 
-            logic.ApplicantUpdate(applicantToSave, spouseToSave, loadedApplicant);
+            // logic.ApplicantUpdate(applicantToSave, spouseToSave, loadedApplicant);
+            logic.ApplicationInsertUpdateControl(null, null, applicantToSave, spouseToSave, loadedApplicant);                   
+
+            this.Close();
 
         }
 
