@@ -36,11 +36,8 @@
             buttonEditProgram = new Button();
             buttonTest = new Button();
             tableLayoutPanel5 = new TableLayoutPanel();
-            panel1 = new Panel();
-            radioButtonShowDisqualified = new RadioButton();
-            radioButtonShowAll = new RadioButton();
-            radioButtonShowEligible = new RadioButton();
             richTextBoxTest = new RichTextBox();
+            checkBoxShowEligible = new CheckBox();
             dataGridViewAppDisplay = new DataGridView();
             tableLayoutPanel6 = new TableLayoutPanel();
             tableLayoutPanel7 = new TableLayoutPanel();
@@ -64,7 +61,6 @@
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAppDisplay).BeginInit();
             tableLayoutPanel6.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
@@ -146,6 +142,7 @@
             buttonEditEligibility.TabIndex = 0;
             buttonEditEligibility.Text = "Edit Eligibility";
             buttonEditEligibility.UseVisualStyleBackColor = true;
+            buttonEditEligibility.Click += buttonEditEligibility_Click;
             // 
             // buttonEditProgram
             // 
@@ -173,8 +170,8 @@
             tableLayoutPanel5.ColumnCount = 2;
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 280F));
-            tableLayoutPanel5.Controls.Add(panel1, 1, 0);
             tableLayoutPanel5.Controls.Add(richTextBoxTest, 0, 0);
+            tableLayoutPanel5.Controls.Add(checkBoxShowEligible, 1, 0);
             tableLayoutPanel5.Dock = DockStyle.Fill;
             tableLayoutPanel5.Location = new Point(3, 60);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -182,50 +179,6 @@
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel5.Size = new Size(691, 51);
             tableLayoutPanel5.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(radioButtonShowDisqualified);
-            panel1.Controls.Add(radioButtonShowAll);
-            panel1.Controls.Add(radioButtonShowEligible);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(414, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(274, 45);
-            panel1.TabIndex = 0;
-            // 
-            // radioButtonShowDisqualified
-            // 
-            radioButtonShowDisqualified.AutoSize = true;
-            radioButtonShowDisqualified.Location = new Point(107, 18);
-            radioButtonShowDisqualified.Name = "radioButtonShowDisqualified";
-            radioButtonShowDisqualified.Size = new Size(110, 24);
-            radioButtonShowDisqualified.TabIndex = 2;
-            radioButtonShowDisqualified.TabStop = true;
-            radioButtonShowDisqualified.Text = "Disqualified";
-            radioButtonShowDisqualified.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonShowAll
-            // 
-            radioButtonShowAll.AutoSize = true;
-            radioButtonShowAll.Location = new Point(223, 18);
-            radioButtonShowAll.Name = "radioButtonShowAll";
-            radioButtonShowAll.Size = new Size(48, 24);
-            radioButtonShowAll.TabIndex = 1;
-            radioButtonShowAll.TabStop = true;
-            radioButtonShowAll.Text = "All";
-            radioButtonShowAll.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonShowEligible
-            // 
-            radioButtonShowEligible.AutoSize = true;
-            radioButtonShowEligible.Location = new Point(21, 18);
-            radioButtonShowEligible.Name = "radioButtonShowEligible";
-            radioButtonShowEligible.Size = new Size(80, 24);
-            radioButtonShowEligible.TabIndex = 0;
-            radioButtonShowEligible.TabStop = true;
-            radioButtonShowEligible.Text = "Eligible";
-            radioButtonShowEligible.UseVisualStyleBackColor = true;
             // 
             // richTextBoxTest
             // 
@@ -236,6 +189,18 @@
             richTextBoxTest.Size = new Size(405, 45);
             richTextBoxTest.TabIndex = 1;
             richTextBoxTest.Text = "";
+            // 
+            // checkBoxShowEligible
+            // 
+            checkBoxShowEligible.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            checkBoxShowEligible.AutoSize = true;
+            checkBoxShowEligible.Location = new Point(567, 24);
+            checkBoxShowEligible.Name = "checkBoxShowEligible";
+            checkBoxShowEligible.Size = new Size(121, 24);
+            checkBoxShowEligible.TabIndex = 2;
+            checkBoxShowEligible.Text = "Show Eligible";
+            checkBoxShowEligible.UseVisualStyleBackColor = true;
+            checkBoxShowEligible.CheckedChanged += checkBoxShowEligible_CheckedChanged;
             // 
             // dataGridViewAppDisplay
             // 
@@ -336,6 +301,7 @@
             buttonUpdateSelected.TabIndex = 0;
             buttonUpdateSelected.Text = "Update Selected";
             buttonUpdateSelected.UseVisualStyleBackColor = true;
+            buttonUpdateSelected.Click += buttonUpdateSelected_Click;
             // 
             // comboBoxDocumentStatus
             // 
@@ -458,6 +424,7 @@
             buttonEditApplicant.TabIndex = 0;
             buttonEditApplicant.Text = "Edit Applicant";
             buttonEditApplicant.UseVisualStyleBackColor = true;
+            buttonEditApplicant.Click += buttonEditApplicant_Click;
             // 
             // labelAppInfo
             // 
@@ -483,8 +450,7 @@
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel5.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAppDisplay).EndInit();
             tableLayoutPanel6.ResumeLayout(false);
             tableLayoutPanel7.ResumeLayout(false);
@@ -513,10 +479,6 @@
         private TableLayoutPanel tableLayoutPanel10;
         private Button buttonEditEligibility;
         private Button buttonEditProgram;
-        private Panel panel1;
-        private RadioButton radioButtonShowDisqualified;
-        private RadioButton radioButtonShowAll;
-        private RadioButton radioButtonShowEligible;
         private Button buttonEditApplicant;
         private Label labelAppInfo;
         private TableLayoutPanel tableLayoutPanel11;
@@ -532,5 +494,6 @@
         private Label labelApprovalStatus;
         private Label labelEligibility;
         private Label labelPayment;
+        private CheckBox checkBoxShowEligible;
     }
 }

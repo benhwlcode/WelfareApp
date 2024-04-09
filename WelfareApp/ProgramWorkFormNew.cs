@@ -22,23 +22,78 @@ namespace WelfareApp
 
         ApplicationDisplay selectedDisplay = new ApplicationDisplay();
         ApplicationModel selectedApplication = new ApplicationModel();
-        List<DocumentModel> selectedDocuments = new List<DocumentModel>();      
+        List<DocumentModel> selectedDocuments = new List<DocumentModel>();
 
-        List<ApplicationModel> testList = new List<ApplicationModel>();
-        ApplicationDisplay testApp = new ApplicationDisplay();
+        ApplicantModel selectedApplicant = new ApplicantModel();
+
+        public string customQuery = "";
+
+
+
+        public string testQuery = "";
+
+        // TODO: sp that gets one app based on display appId v
+        // TODO: sp that updates app doc v
+        // TODO: sp that updates app status depending on check v?
 
         public ProgramWorkFormNew(ProgramModel selectedProgram)
         {
             InitializeComponent();
             currentProgram = selectedProgram;
 
-            InitializeBindings();
+            InitializeComboBox();
+            UpdateGrid();
+        }
+
+        private void InitializeComboBox()
+        {
+            comboBoxDocumentStatus.DataSource = Enum.GetValues(typeof(DocumentStatus));
+
+        }
+
+        private void UpdateGrid()
+        {
+            SqlConnector sql = new SqlConnector();
+            List<ApplicationModel> apps = sql.GetAllApplications(currentProgram.programId);
+
+            programApplications.Clear();
+
+            foreach (ApplicationModel app in apps)
+            {
+                ApplicationDisplay display = new ApplicationDisplay();
+                display.inputApplication = app;
+                display.inputApplicant = app.applicant;
+
+                programApplications.Add(display);
+            }
+
             UpdateApplicationsBinding();
+            GridHighlight();
 
+        }
 
-            // TODO: sp that gets one app based on display appId
-            // TODO: sp that updates app doc 
-            // TODO: sp that updates app status depending on check
+        private void UpdateApplicationsBinding()
+        {
+            dataGridViewAppDisplay.DataSource = null;
+            dataGridViewAppDisplay.DataSource = programApplications;
+
+            HideColumns();
+        }
+
+        private void GridHighlight()
+        {
+            foreach (DataGridViewRow r in dataGridViewAppDisplay.Rows)
+            {
+                if (r.Cells[3].Value.ToString() == EligibilityStatus.eligible.ToString())
+                {
+                    r.DefaultCellStyle.BackColor = Color.LightGreen;
+                }
+            }
+        }
+
+        private void buttonTest_Click(object sender, EventArgs e)
+        {
+            UpdateGrid();
         }
 
         private void dataGridViewAppDisplay_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -50,64 +105,60 @@ namespace WelfareApp
             UpdateDocumentsBinding();
 
             UpdateWorkLabels(selectedApplication);
-            
-
-
+            TestUpdate(selectedDocuments);
 
         }
 
-
-
-        private void buttonTest_Click(object sender, EventArgs e)
+        private void checkBoxShowEligible_CheckedChanged(object sender, EventArgs e)
         {
-            SqlConnector sql = new SqlConnector();
-            testList = sql.GetAllApplications(4012);
+            CheckBoxUpdate();
+        }
 
-            foreach (ApplicationModel app in testList)
+        private void CheckBoxUpdate()
+        {
+            CurrencyManager m = (CurrencyManager)BindingContext[dataGridViewAppDisplay.DataSource];
+            m.SuspendBinding();
+
+            if (checkBoxShowEligible.Checked)
             {
-                ApplicationDisplay display = new ApplicationDisplay();
-                display.inputApplication = app;
-                display.inputApplicant = app.applicant;
-
-                programApplications.Add(display);
-            }
-
-            dataGridViewAppDisplay.DataSource = null;
-            dataGridViewAppDisplay.DataSource = programApplications;
-
-            HideColumns();
-
-            testApp = dataGridViewAppDisplay.SelectedRows[0].DataBoundItem as ApplicationDisplay;
-
-            if (testApp.inputApplicant.spouseId != null)
-            {
-                richTextBoxTest.Text = testApp.inputApplicant.spouseId.firstName;
+                foreach (DataGridViewRow r in dataGridViewAppDisplay.Rows)
+                {
+                    if (r.Cells[3].Value.ToString() != EligibilityStatus.eligible.ToString())
+                    {
+                        r.Visible = false;
+                    }
+                }
             }
             else
             {
-                richTextBoxTest.Text = "No Spouse";
+                foreach (DataGridViewRow r in dataGridViewAppDisplay.Rows)
+                {
+                    r.Visible = true;
+                }
             }
 
-
+            m.ResumeBinding();
         }
 
-        private void InitializeBindings()
+        private void buttonUpdateSelected_Click(object sender, EventArgs e)
         {
-            SqlConnector sql = new SqlConnector();
-            List<ApplicationModel> apps = sql.GetAllApplications(currentProgram.programId);
-
-            foreach (ApplicationModel app in apps)
+            foreach (DocumentModel p in checkedListBoxDocuments.CheckedItems)
             {
-                ApplicationDisplay display = new ApplicationDisplay();
-                display.inputApplication = app;
-                display.inputApplicant = app.applicant;
-
-                programApplications.Add(display);
+                p.status = (DocumentStatus)comboBoxDocumentStatus.SelectedItem;
             }
 
-            comboBoxDocumentStatus.DataSource = Enum.GetValues(typeof(DocumentStatus)); 
+            selectedApplication.listOfDocuments = SerializeDocuments(selectedDocuments);
+            CheckDocs(selectedDocuments);
 
-            
+            SqlConnector sql = new SqlConnector();
+            sql.UpdateApplication(selectedApplication);
+
+            UpdateWorkLabels(selectedApplication);
+            TestUpdate(selectedDocuments);
+
+            UpdateGrid();
+            UpdateDocumentsBinding();
+
         }
 
         private List<DocumentModel> GetDocuments(int applicationId)
@@ -117,26 +168,27 @@ namespace WelfareApp
             SqlConnector sql = new SqlConnector();
             string json = sql.GetDocuments(applicationId);
 
-            output = JsonSerializer.Deserialize<List<DocumentModel>>(json);           
+            output = JsonSerializer.Deserialize<List<DocumentModel>>(json);
 
             return output;
 
         }
 
-
-        private void UpdateApplicationsBinding()
+        private string SerializeDocuments(List<DocumentModel> docInput)
         {
-            dataGridViewAppDisplay.DataSource = null;
-            dataGridViewAppDisplay.DataSource = programApplications;
+            string output = JsonSerializer.Serialize(docInput);
 
-            HideColumns();
+            return output;
         }
+
+
+
 
         private void UpdateDocumentsBinding()
         {
             checkedListBoxDocuments.DataSource = null;
             checkedListBoxDocuments.DataSource = selectedDocuments;
-            checkedListBoxDocuments.DisplayMember = "name";
+            checkedListBoxDocuments.DisplayMember = "display";
 
         }
 
@@ -150,8 +202,6 @@ namespace WelfareApp
             labelApprovalStatus.Text = appInput.approvalStatus.ToString();
             labelPayment.Text = appInput.paymentStatus.ToString();
 
-
-
         }
 
 
@@ -161,6 +211,68 @@ namespace WelfareApp
             dataGridViewAppDisplay.Columns["inputApplicant"].Visible = false;
         }
 
+        private void CheckDocs(List<DocumentModel> docInput)
+        {
+            foreach (DocumentModel d in docInput)
+            {
+                if (d.status != DocumentStatus.approved)
+                {
+                    selectedApplication.approvalStatus = ApprovalStatus.pending;
+                    return;
+                }
+            }
 
+            selectedApplication.approvalStatus = ApprovalStatus.approved;
+
+        }
+
+
+
+
+        private void TestUpdate(List<DocumentModel> input)
+        {
+            string output = "";
+
+            foreach (DocumentModel d in input)
+            {
+                output += $"{d.name}: {d.status.ToString()}. ";
+            }
+
+            richTextBoxTest.Text = output;
+
+        }
+
+        private void buttonEditEligibility_Click(object sender, EventArgs e)
+        {
+            EditEligibilityForm edit = new EditEligibilityForm(this);
+            edit.Show();
+        }
+
+
+
+        public void ApplyEligibility()
+        {
+            SqlConnector sql = new SqlConnector();
+            sql.UpdateEligibility(currentProgram.programId, customQuery);
+            UpdateGrid();
+        }
+
+        public void TestText(string input)
+        {
+            richTextBoxTest.Text = input;
+        }
+
+        private void buttonEditApplicant_Click(object sender, EventArgs e)
+        {
+            selectedApplicant = selectedApplication.applicant;
+
+            if (selectedApplicant== null)
+            {
+                return;
+            }
+
+            EditApplicantForm editApplicant = new EditApplicantForm(selectedApplicant);
+            editApplicant.Show();
+        }
     }
 }

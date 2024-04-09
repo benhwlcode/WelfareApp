@@ -40,6 +40,26 @@ namespace WelfareAppClassLibrary
 
         }
 
+        public void ApplicantUpdate(ApplicantModel saveApplicant, SpouseModel saveSpouse, 
+            ApplicantModel loadedApplicant)
+        {
+            SqlConnector sql = new SqlConnector();
+
+            saveApplicant.applicantId = loadedApplicant.applicantId;
+
+            if (saveSpouse != null && loadedApplicant.spouseId != null)
+            {
+                saveSpouse.spouseId = loadedApplicant.spouseId.spouseId;
+            }
+
+            if (saveSpouse != null && loadedApplicant.spouseId == null)
+            {
+                saveSpouse.spouseId = 0;
+            }
+
+            sql.UpdateApplicantEntry(saveApplicant, saveSpouse);
+        }
+
 
     }
 }
