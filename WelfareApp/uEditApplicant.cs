@@ -8,16 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WelfareAppClassLibrary;
+using WelfareAppClassLibrary.Validations;
 
 namespace WelfareApp
 {
     public partial class uEditApplicant : UserControl
     {
+
+        public ErrorProvider error = new ErrorProvider();
+
         public uEditApplicant()
         {
             InitializeComponent();
             this.Dock = DockStyle.Fill;
             UpdateInitialBindings();
+
+            
         }
 
         public void UpdateInitialBindings()
@@ -68,7 +74,7 @@ namespace WelfareApp
                 radioButtonSpouseIndigenousYes.Visible = true;
                 radioButtonSpouseIndigenousNo.Visible = true;
                 radioButtonSpouseDisabledYes.Visible = true;
-                radioButtonSpouseDisabledYes.Visible = true;
+                radioButtonSpouseDisabledNo.Visible = true;
             }
 
             else
@@ -89,13 +95,13 @@ namespace WelfareApp
                 radioButtonSpouseIndigenousYes.Visible = false;
                 radioButtonSpouseIndigenousNo.Visible = false;
                 radioButtonSpouseDisabledYes.Visible = false;
-                radioButtonSpouseDisabledYes.Visible = false;
+                radioButtonSpouseDisabledNo.Visible = false;
             }
         }
 
         private void comboBoxEmploymentTypeValue_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
 
             CheckIfEmployed((EmploymentType)comboBoxEmploymentTypeValue.SelectedItem);
         }
@@ -137,6 +143,198 @@ namespace WelfareApp
             }
 
         }
+
+        private void textBoxFirstNameValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxFirstNameValue, 
+                InputValidation.ValidLength(textBoxFirstNameValue.Text));
+        }
+
+        private void textBoxLastNameValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxLastNameValue,
+                InputValidation.ValidLength(textBoxLastNameValue.Text));
+        }
+
+        private void dateTimePickerDateOfBirthValue_ValueChanged(object sender, EventArgs e)
+        {
+            error.SetError(dateTimePickerDateOfBirthValue,
+                InputValidation.AdultsOnly(dateTimePickerDateOfBirthValue.Value));
+        }
+
+        private void textBoxSinCardValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxSinCardValue,
+                InputValidation.MustBeTenDigits(textBoxSinCardValue.Text));
+        }
+
+        private void textBoxPhoneNumberValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxPhoneNumberValue,
+                InputValidation.ValidPhoneNumber(textBoxPhoneNumberValue.Text));
+        }
+
+        private void textBoxEmailAddressValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxEmailAddressValue,
+                InputValidation.ValidEmailAddress(textBoxEmailAddressValue.Text));
+        }
+
+        private void textBoxSpouseFirstNameValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxSpouseFirstNameValue,
+                InputValidation.ValidLength(textBoxSpouseFirstNameValue.Text));
+        }
+
+        private void textBoxSpouseLastNameValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxSpouseLastNameValue,
+                InputValidation.ValidLength(textBoxSpouseLastNameValue.Text));
+        }
+
+        private void dateTimePickerSpouseDateOfBirthValue_ValueChanged(object sender, EventArgs e)
+        {
+            error.SetError(dateTimePickerSpouseDateOfBirthValue,
+                InputValidation.AdultsOnly(dateTimePickerSpouseDateOfBirthValue.Value));
+        }
+
+        private void textBoxSpouseSinCardValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxSpouseSinCardValue,
+                InputValidation.MustBeTenDigits(textBoxSpouseSinCardValue.Text));
+        }
+
+        private void textBoxSpousePhoneNumberValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxSpousePhoneNumberValue,
+                InputValidation.ValidPhoneNumber(textBoxSpousePhoneNumberValue.Text));
+        }
+
+        private void textBoxSpouseEmailAddressValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxSpouseEmailAddressValue,
+                InputValidation.ValidEmailAddress(textBoxSpouseEmailAddressValue.Text));
+        }
+
+        private void textBoxStreetAddressValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxStreetAddressValue,
+                InputValidation.ValidLength(textBoxStreetAddressValue.Text));
+        }
+
+        private void textBoxCityValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxCityValue,
+                InputValidation.ValidLength(textBoxCityValue.Text));
+        }
+
+        private void dateTimePickerMoveInDateValue_ValueChanged(object sender, EventArgs e)
+        {
+            error.SetError(dateTimePickerMoveInDateValue,
+                InputValidation.NoFutureDates(dateTimePickerMoveInDateValue.Value));
+        }
+
+        private void textBoxFamilySizeValue_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBoxNumberOfAdultsValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxNumberOfAdultsValue,
+                InputValidation.MustBeNumber(textBoxNumberOfAdultsValue.Text));
+
+            GetFamilySize(textBoxNumberOfAdultsValue.Text, textBoxNumberOfChildrenValue.Text, 
+                textBoxNumberOfElderlyValue.Text);
+        }
+
+        private void textBoxNumberOfChildrenValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxNumberOfChildrenValue,
+                InputValidation.MustBeNumber(textBoxNumberOfChildrenValue.Text));
+
+            GetFamilySize(textBoxNumberOfAdultsValue.Text, textBoxNumberOfChildrenValue.Text,
+                textBoxNumberOfElderlyValue.Text);
+        }
+
+        private void textBoxNumberOfElderlyValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxNumberOfElderlyValue,
+                InputValidation.MustBeNumber(textBoxNumberOfElderlyValue.Text));
+
+            GetFamilySize(textBoxNumberOfAdultsValue.Text, textBoxNumberOfChildrenValue.Text,
+                textBoxNumberOfElderlyValue.Text);
+        }
+
+        private void textBoxRentMortgageValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxRentMortgageValue,
+                InputValidation.OnlyTwoDecimals(textBoxRentMortgageValue.Text));
+        }
+
+        private void textBoxUtilitiesValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxUtilitiesValue,
+                InputValidation.OnlyTwoDecimals(textBoxUtilitiesValue.Text));
+        }
+
+        private void textBoxFoodValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxFoodValue,
+                InputValidation.OnlyTwoDecimals(textBoxFoodValue.Text));
+        }
+
+        private void textBoxTuitionValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxTuitionValue,
+                InputValidation.OnlyTwoDecimals(textBoxTuitionValue.Text));
+        }
+
+        private void textBoxEmployerValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxEmployerValue,
+                InputValidation.ValidLength(textBoxEmployerValue.Text));
+        }
+
+        private void textBoxPositionValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxPositionValue,
+                InputValidation.ValidLength(textBoxPositionValue.Text));
+        }
+
+        private void dateTimePickerStartOfEmploymentValue_ValueChanged(object sender, EventArgs e)
+        {
+            error.SetError(dateTimePickerStartOfEmploymentValue,
+                InputValidation.NoFutureDates(dateTimePickerStartOfEmploymentValue.Value));
+        }
+
+        private void textBoxEmploymentIncomeValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxEmploymentIncomeValue,
+                InputValidation.OnlyTwoDecimals(textBoxEmploymentIncomeValue.Text));
+        }
+
+        private void textBoxSpouseIncomeValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxSpouseIncomeValue,
+                InputValidation.OnlyTwoDecimals(textBoxSpouseIncomeValue.Text));
+        }
+
+        private void textBoxDonationIncomeValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxDonationIncomeValue,
+                InputValidation.OnlyTwoDecimals(textBoxDonationIncomeValue.Text));
+        }
+
+        private void textBoxCashSavingsValue_TextChanged(object sender, EventArgs e)
+        {
+            error.SetError(textBoxCashSavingsValue,
+                InputValidation.OnlyTwoDecimals(textBoxCashSavingsValue.Text));
+        }
+
+
+
+        
 
         public string applicantFirstName
         {
@@ -509,6 +707,23 @@ namespace WelfareApp
         {
             get { return textBoxCashSavingsValue.Text; }
             set { textBoxCashSavingsValue.Text = value; }
+        }
+
+        public void GetFamilySize(string adult, string children, string elderly)
+        {
+            int output = 0;
+            
+            int numberAdult = 0;
+            int numberChildren = 0;
+            int numberElderly = 0;
+
+            Int32.TryParse(adult, out numberAdult);
+            Int32.TryParse(children, out numberChildren);
+            Int32.TryParse(elderly, out numberElderly);
+
+            output += numberAdult + numberChildren + numberElderly;
+
+            textBoxFamilySizeValue.Text = output.ToString();
         }
 
     }

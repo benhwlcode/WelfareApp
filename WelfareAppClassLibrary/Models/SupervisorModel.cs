@@ -17,6 +17,14 @@ namespace WelfareAppClassLibrary.Models
         [MaxLength(50)]
         public string lastName { get; set; }
 
+        public string display
+        {
+            get
+            {
+                return $"{firstName} {lastName} ({supervisorId})";
+            }
+        }
+
         // insert other non essential information
 
 

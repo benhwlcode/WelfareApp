@@ -124,7 +124,13 @@ namespace WelfareAppClassLibrary.Models
         public double cashSavings { get; set; }
 
 
-
+        public string CustomDisplay
+        {
+            get
+            {
+                return $"{this.firstName} {this.lastName}: {this.sinCard}";
+            }
+        }
 
 
 

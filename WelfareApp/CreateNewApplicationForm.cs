@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Identity.Client.NativeInterop;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -47,7 +48,7 @@ namespace WelfareApp
             UpdateInitialBindings();
             GetDocumentsList();
 
-
+            this.Text = "Create New Application";
         }
 
         private void buttonLoadApplicantData_Click(object sender, EventArgs e)
@@ -63,9 +64,16 @@ namespace WelfareApp
             SqlConnector sql = new SqlConnector();
 
             programs = sql.GetAllPrograms();
+            programs.Sort((x, y) => string.Compare(x.programName, y.programName));
+
             agents = sql.GetAllAgents();
+            agents.Sort((x, y) => string.Compare(x.firstName, y.firstName));
+
             offices = sql.GetAllOffices();
+            offices.Sort((x, y) => string.Compare(x.officeName, y.officeName));
+
             supervisors = sql.GetAllSupervisors();
+            supervisors.Sort((x, y) => string.Compare(x.firstName, y.firstName));
 
             labelApplicantIdValue.Text = "0";
         }
@@ -76,13 +84,13 @@ namespace WelfareApp
             comboBoxProgramValue.DisplayMember = "programName";
 
             comboBoxAgentValue.DataSource = agents;
-            comboBoxAgentValue.DisplayMember = "firstName";
+            comboBoxAgentValue.DisplayMember = "display";
 
             comboBoxOfficeValue.DataSource = offices;
             comboBoxOfficeValue.DisplayMember = "officeName";
 
             comboBoxSupervisorValue.DataSource = supervisors;
-            comboBoxSupervisorValue.DisplayMember = "firstName";
+            comboBoxSupervisorValue.DisplayMember = "display";
         }
 
         public void GetDocumentsList()
@@ -129,6 +137,22 @@ namespace WelfareApp
 
         private void buttonCreateNewApplication_Click(object sender, EventArgs e)
         {
+
+            bool isEmpty = FormSubmissionCheck.CheckEmptyTextBox(this.Controls);
+
+            if (isEmpty)
+            {
+                return;
+            }
+
+            bool isError = FormSubmissionCheck.CheckErrorProvider(this.Controls, applicantInput.error);
+
+            if (isError)
+            {
+                return;
+            }
+
+
             Logic logic = new Logic();
 
             applicationToSave = FillApplicationToSaveInfo();
@@ -151,8 +175,10 @@ namespace WelfareApp
             }
 
 
-            logic.ApplicationInsertAndUpdate(labelApplicantIdValue.Text, applicationToSave,
+            logic.ApplicationInsertUpdateControl(labelApplicantIdValue.Text, applicationToSave,
                 applicantToSave, spouseToSave, loadedApplicant);
+
+            this.Close();
             
         }
 
@@ -412,6 +438,8 @@ namespace WelfareApp
 
 
 
-        }
+        }        
     }
+
+
 }

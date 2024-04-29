@@ -92,7 +92,7 @@
             buttonTestList.Name = "buttonTestList";
             buttonTestList.Size = new Size(264, 53);
             buttonTestList.TabIndex = 1;
-            buttonTestList.Text = "Test List";
+            buttonTestList.Text = "Test Button";
             buttonTestList.UseVisualStyleBackColor = true;
             buttonTestList.Click += buttonTestList_Click;
             // 

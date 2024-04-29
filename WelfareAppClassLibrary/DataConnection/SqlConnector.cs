@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -13,7 +14,7 @@ using WelfareAppClassLibrary.Models;
 namespace WelfareAppClassLibrary.DataConnection
 {
     public class SqlConnector : IDataConnection
-    {        
+    {
         public AgentModel GetAgent(string userInput)
         {
             AgentModel output = new AgentModel();
@@ -26,7 +27,7 @@ namespace WelfareAppClassLibrary.DataConnection
             {
                 var p = new { login = userInput };
 
-                var selected = connection.Query<AgentModel>("dbo.spAgent_GetUserInfo @login", 
+                var selected = connection.Query<AgentModel>("dbo.spAgent_GetUserInfo @login",
                     p).ToList();
                 output = selected[0];
 
@@ -34,7 +35,7 @@ namespace WelfareAppClassLibrary.DataConnection
                 return output;
             }
 
-                
+
         }
 
         public List<AgencyModel> GetAllAgencies()
@@ -113,13 +114,45 @@ namespace WelfareAppClassLibrary.DataConnection
                     splitOn: "spouseId");
 
                 foreach (var p in selected)
-                {                    
+                {
                     output.Add(p);
                 }
 
                 return output;
-            }                          
-            
+            }
+
+        }
+
+        public List<ApplicationModel> GetAllApplications(int programId)
+        {
+            List<ApplicationModel> output = new List<ApplicationModel>();
+
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                string sql = "dbo.spApplication_ReturnAll @programId";
+
+                var id = new { programId = programId };
+
+
+                var selected = connection.Query<ApplicationModel, ApplicantModel, SpouseModel,
+                    ApplicationModel>(sql, (app, ap, spo) =>
+                    {
+                        app.applicantId = ap.applicantId; app.applicant = ap;
+                        app.applicant.spouseId = spo; return app;
+                    }, id,
+                        splitOn: "applicantId, spouseId");
+
+                foreach (var p in selected)
+                {
+                    output.Add(p);
+                }
+
+                return output;
+
+            }
         }
 
         public void SaveToProgram(ProgramModel model)
@@ -139,7 +172,7 @@ namespace WelfareAppClassLibrary.DataConnection
                     officeId = model.officeId,
                     supervisorId = model.supervisorId,
                     paymentForm = model.paymentForm,
-                    paymentType = model.paymentType,                    
+                    paymentType = model.paymentType,
                     minPayment = model.minPayment,
                     maxPayment = model.maxPayment,
                     listOfDocuments = model.listOfDocuments
@@ -152,7 +185,7 @@ namespace WelfareAppClassLibrary.DataConnection
             }
         }
 
-        public void SaveToApplication(ApplicationModel applicationModel, 
+        public void SaveToApplication(ApplicationModel applicationModel,
             ApplicantModel applicantModel, SpouseModel spouseModel)
         {
             using (IDbConnection connection =
@@ -201,7 +234,7 @@ namespace WelfareAppClassLibrary.DataConnection
                 {
                     spouseIdGet = SaveToSpouse(spouseModel);
                 }
-                
+
 
                 var p = new
                 {
@@ -224,7 +257,7 @@ namespace WelfareAppClassLibrary.DataConnection
                     moveInDate = applicantModel.moveInDate,
                     familySize = applicantModel.familySize,
                     numberOfAdults = applicantModel.numberOfAdults,
-                    numberOfChildren = applicantModel.numberOfChildren, 
+                    numberOfChildren = applicantModel.numberOfChildren,
                     numberOfElderly = applicantModel.numberOfElderly,
                     rentalExpense = applicantModel.rentalExpense,
                     utilityExpense = applicantModel.utilityExpense,
@@ -310,6 +343,32 @@ namespace WelfareAppClassLibrary.DataConnection
 
         }
 
+        public void UpdateProgram(ProgramModel input)
+        {
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                var p = new
+                {
+                    programId = input.programId,
+                    programName = input.programName,
+                    agencyId = input.agencyId,
+                    agentId = input.agentId,
+                    officeId = input.officeId,
+                    supervisorId = input.supervisorId,
+                    paymentForm = input.paymentForm,
+                    paymentType = input.paymentType,
+                    minPayment = input.minPayment,
+                    maxPayment = input.maxPayment,
+                };
+
+                connection.Execute($"dbo.spProgram_UpdateProgram @programId, @programName, " +
+                    $"@agencyId, @agentId, @officeId, @supervisorId, " +
+                    $"@paymentForm, @paymentType , @minPayment , @maxPayment ", p);
+            }
+        }
+
         public void UpdateApplicantEntry(ApplicantModel applicantModel, SpouseModel spouseModel)
         {
             using (IDbConnection connection =
@@ -385,31 +444,31 @@ namespace WelfareAppClassLibrary.DataConnection
 
         public void UpdateSpouseEntry(SpouseModel spouseModel)
         {
-                using (IDbConnection connection =
-                    new Microsoft.Data.SqlClient
-                    .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                var p = new
                 {
-                    var p = new
-                    {
-                        spouseId = spouseModel.spouseId,
-                        firstName = spouseModel.firstName,
-                        lastName = spouseModel.lastName,
-                        sinCard = spouseModel.sinCard,
-                        maritalStatus = spouseModel.maritalStatus,
-                        birthday = spouseModel.birthday,
-                        gender = spouseModel.gender,
-                        email = spouseModel.email,
-                        phone = spouseModel.phone,
-                        isCitizen = spouseModel.isCitizen,
-                        isIndigenous = spouseModel.isIndigenous,
-                        isDisabled = spouseModel.isDisabled
-                    };
+                    spouseId = spouseModel.spouseId,
+                    firstName = spouseModel.firstName,
+                    lastName = spouseModel.lastName,
+                    sinCard = spouseModel.sinCard,
+                    maritalStatus = spouseModel.maritalStatus,
+                    birthday = spouseModel.birthday,
+                    gender = spouseModel.gender,
+                    email = spouseModel.email,
+                    phone = spouseModel.phone,
+                    isCitizen = spouseModel.isCitizen,
+                    isIndigenous = spouseModel.isIndigenous,
+                    isDisabled = spouseModel.isDisabled
+                };
 
-                    connection.Execute($"dbo.spSpouse_UpdateEntry @spouseId, @firstName, " +
-                    $"@lastName, @sinCard, @maritalStatus, @birthday, @gender, @email, @phone, " +
-                    $"@isCitizen, @isIndigenous, @isDisabled", p);
+                connection.Execute($"dbo.spSpouse_UpdateEntry @spouseId, @firstName, " +
+                $"@lastName, @sinCard, @maritalStatus, @birthday, @gender, @email, @phone, " +
+                $"@isCitizen, @isIndigenous, @isDisabled", p);
 
-                }
+            }
         }
 
         public void SaveToApplicationWithReturner(ApplicationModel applicationModel, int applicantId)
@@ -442,6 +501,625 @@ namespace WelfareAppClassLibrary.DataConnection
                     $"@officeId, @supervisorId, @applicationProgress, @eligibilityStatus, " +
                     $"@approvalStatus, @paymentStatus, @signatureSigned, @acceptedDate, " +
                     $"@listOfDocuments", p);
+            }
+        }
+
+        public string GetDocuments(int applicationId)
+        {
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                string output = "";
+
+                var p = new { applicationId = applicationId };
+
+
+                output = connection.QuerySingle<string>($"dbo.spApplication_GetListOfDocuments " +
+                    $"@applicationId", p);
+
+                return output;
+
+            }
+        }
+
+        public void UpdateApplication(ApplicationModel applicationModel)
+        {
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                var p = new
+                {
+                    applicationId = applicationModel.applicationId,
+                    applicationProgress = applicationModel.applicationProgress,
+                    eligibilityStatus = applicationModel.eligibilityStatus,
+                    approvalStatus = applicationModel.approvalStatus,
+                    paymentStatus = applicationModel.paymentStatus,
+                    listOfDocuments = applicationModel.listOfDocuments
+                };
+
+                connection.Execute($"dbo.spApplication_Update @applicationId, " +
+                    $"@applicationProgress, @eligibilityStatus, @approvalStatus, " +
+                    $"@paymentStatus, @listOfDocuments", p);
+            }
+        }
+
+        public void UpdateEligibility(int programIdInput, string conditionInput)
+        {
+
+            /*string output = $"UPDATE p SET p.gets_reward = 1 FROM dbo.players p " +
+                $"LEFT JOIN dbo.characters c ON p.character_id = c.id " +
+                $"WHERE ";*/
+
+
+            string sql = $"UPDATE application SET eligibilityStatus = 1 FROM dbo.application " +
+                $"LEFT JOIN dbo.applicant ON application.applicantId = applicant.applicantId " +
+                $"WHERE programId = {programIdInput} AND ";
+
+            sql += conditionInput;
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                var p = new
+                {
+                    programId = programIdInput
+                };
+
+
+                connection.Execute($"dbo.spApplication_SetAllIneligible @programId", p);
+                connection.Execute(sql);
+            }
+        }
+
+        public void ResetEligibility(int programIdInput)
+        {
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                var p = new
+                {
+                    programId = programIdInput
+                };
+
+                connection.Execute($"dbo.spApplication_SetAllIneligible @programId", p);
+            }
+        }
+
+        public List<ApplicationModel> ListAllApplications()
+        {
+            List<ApplicationModel> output = new List<ApplicationModel>();
+
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                string sql = "dbo.spApplication_Return";
+
+                var selected = connection.Query<ApplicationModel, ApplicantModel, SpouseModel,
+                    ApplicationModel>(sql, (app, ap, spo) =>
+                    {
+                        app.applicantId = ap.applicantId; app.applicant = ap;
+                        app.applicant.spouseId = spo; return app;
+                    }, splitOn: "applicantId, spouseId");
+
+                foreach (var p in selected)
+                {
+                    output.Add(p);
+                }
+
+                return output;
+
+            }
+        }
+
+        public string GetProgramName(int appIdInput)
+        {
+            string output = "";
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                var p = new
+                {
+                    applicationId = appIdInput,
+                };
+
+                output = connection.QuerySingle<string>($"dbo.spProgram_GetName", p);
+
+                return output;
+
+            }
+        }
+
+        public string GetAgencyName(int appIdInput)
+        {
+            string output = "";
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                var p = new
+                {
+                    applicationId = appIdInput,
+                };
+
+                output = connection.QuerySingle<string>($"dbo.spAgency_GetName", p);
+
+                return output;
+            }
+        }
+
+        public string GetAgentName(int appIdInput)
+        {
+            string output = "";
+            string fn = "";
+            string ln = "";
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                var p = new
+                {
+                    applicationId = appIdInput,
+                };
+
+                fn = connection.QuerySingle<string>($"dbo.spAgent_GetFirstName", p);
+                ln = connection.QuerySingle<string>($"dbo.spAgent_GetLastName", p);
+
+                output = $"{fn} {ln}";
+
+                return output;
+
+            }
+        }
+
+        public string GetOfficeName(int appIdInput)
+        {
+            string output = "";
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                var p = new
+                {
+                    applicationId = appIdInput,
+                };
+
+                output = connection.QuerySingle<string>($"dbo.spOffice_GetName", p);
+
+                return output;
+            }
+        }
+
+        public string GetSupervisorName(int appIdInput)
+        {
+
+            string output = "";
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                var p = new
+                {
+                    applicationId = appIdInput,
+                };
+
+                string fn = connection.QuerySingle<string>($"dbo.spSupervisor_GetFirstName", p);
+                string ln = connection.QuerySingle<string>($"dbo.spSupervisor_GetLastName", p);
+
+                output = $"{fn} {ln}";
+
+                return output;
+            }
+        }
+
+        public List<ApplicationModel> GetAppsTemplate()
+        {
+            List<ApplicationModel> output = new List<ApplicationModel>();
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                // store procedure name
+                string sql = "";
+
+                var selected = connection.Query<ApplicationModel, ApplicantModel, SpouseModel,
+                    ApplicationModel>(sql, (app, ap, spo) =>
+                    {
+                        app.applicantId = ap.applicantId; app.applicant = ap;
+                        app.applicant.spouseId = spo; return app;
+                    },
+                    splitOn: "applicantId, spouseId");
+
+                foreach (var p in selected)
+                {
+                    output.Add(p);
+                }
+
+                return output;
+            }
+        }
+
+        public List<ApplicationModel> GetAppsAdults()
+        {
+            List<ApplicationModel> output = new List<ApplicationModel>();
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                // store procedure name
+                string sql = "dbo.spApplication_Return";
+
+                var selected = connection.Query<ApplicationModel, ApplicantModel, SpouseModel,
+                    ApplicationModel>(sql, (app, ap, spo) =>
+                    {
+                        app.applicantId = ap.applicantId; app.applicant = ap;
+                        app.applicant.spouseId = spo; return app;
+                    },
+                    splitOn: "applicantId, spouseId");
+
+                foreach (var p in selected)
+                {
+
+                    DateTime date = DateTime.ParseExact(p.applicant.birthday, "yyyy-MM-dd",
+                        CultureInfo.InvariantCulture);
+                    DateTime adults = DateTime.Now.AddYears(-60);
+
+                    if (date > adults)
+                    {
+                        output.Add(p);
+                    }
+                }
+
+                return output;
+            }
+        }
+
+
+        public List<ApplicationModel> GetAppsElderly()
+        {
+            List<ApplicationModel> output = new List<ApplicationModel>();
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                // store procedure name
+                string sql = "dbo.spApplication_Return";
+
+                var selected = connection.Query<ApplicationModel, ApplicantModel, SpouseModel,
+                    ApplicationModel>(sql, (app, ap, spo) =>
+                    {
+                        app.applicantId = ap.applicantId; app.applicant = ap;
+                        app.applicant.spouseId = spo; return app;
+                    },
+                    splitOn: "applicantId, spouseId");
+
+                foreach (var p in selected)
+                {
+
+                    DateTime date = DateTime.ParseExact(p.applicant.birthday, "yyyy-MM-dd",
+                        CultureInfo.InvariantCulture);
+                    DateTime elderly = DateTime.Now.AddYears(-60);
+
+                    if (date < elderly)
+                    {
+                        output.Add(p);
+                    }
+
+                }
+
+                return output;
+            }
+        }
+
+        public List<ApplicationModel> GetAppsSingle()
+        {
+            List<ApplicationModel> output = new List<ApplicationModel>();
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                string sql = "dbo.spApps_ReturnSingle";
+
+                var selected = connection.Query<ApplicationModel, ApplicantModel, SpouseModel,
+                    ApplicationModel>(sql, (app, ap, spo) =>
+                    {
+                        app.applicantId = ap.applicantId; app.applicant = ap;
+                        app.applicant.spouseId = spo; return app;
+                    },
+                    splitOn: "applicantId, spouseId");
+
+                foreach (var p in selected)
+                {
+                    output.Add(p);
+                }
+
+                return output;
+            }
+
+        }
+
+        public List<ApplicationModel> GetAppsMarried()
+        {
+            List<ApplicationModel> output = new List<ApplicationModel>();
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+
+                string sql = "dbo.spApps_ReturnMarried";
+
+                var selected = connection.Query<ApplicationModel, ApplicantModel, SpouseModel,
+                    ApplicationModel>(sql, (app, ap, spo) =>
+                    {
+                        app.applicantId = ap.applicantId; app.applicant = ap;
+                        app.applicant.spouseId = spo; return app;
+                    },
+                    splitOn: "applicantId, spouseId");
+
+                foreach (var p in selected)
+                {
+                    output.Add(p);
+                }
+
+                return output;
+            }
+        }
+
+        public List<ApplicationModel> GetAppsEmployed()
+        {
+            List<ApplicationModel> output = new List<ApplicationModel>();
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                // store procedure name
+                string sql = "dbo.spApps_ReturnEmployed";
+
+                var selected = connection.Query<ApplicationModel, ApplicantModel, SpouseModel,
+                    ApplicationModel>(sql, (app, ap, spo) =>
+                    {
+                        app.applicantId = ap.applicantId; app.applicant = ap;
+                        app.applicant.spouseId = spo; return app;
+                    },
+                    splitOn: "applicantId, spouseId");
+
+                foreach (var p in selected)
+                {
+                    output.Add(p);
+                }
+
+                return output;
+            }
+        }
+
+        public List<ApplicationModel> GetAppsUnemployed()
+        {
+            List<ApplicationModel> output = new List<ApplicationModel>();
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                // store procedure name
+                string sql = "dbo.spApps_ReturnNotEmployed";
+
+                var selected = connection.Query<ApplicationModel, ApplicantModel, SpouseModel,
+                    ApplicationModel>(sql, (app, ap, spo) =>
+                    {
+                        app.applicantId = ap.applicantId; app.applicant = ap;
+                        app.applicant.spouseId = spo; return app;
+                    },
+                    splitOn: "applicantId, spouseId");
+
+                foreach (var p in selected)
+                {
+                    output.Add(p);
+                }
+
+                return output;
+            }
+        }
+
+        public List<ApplicationModel> GetAppsWithChildren()
+        {
+            List<ApplicationModel> output = new List<ApplicationModel>();
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                // store procedure name
+                string sql = "dbo.spApps_ReturnWithChildren";
+
+                var selected = connection.Query<ApplicationModel, ApplicantModel, SpouseModel,
+                    ApplicationModel>(sql, (app, ap, spo) =>
+                    {
+                        app.applicantId = ap.applicantId; app.applicant = ap;
+                        app.applicant.spouseId = spo; return app;
+                    },
+                    splitOn: "applicantId, spouseId");
+
+                foreach (var p in selected)
+                {
+                    output.Add(p);
+                }
+
+                return output;
+            }
+        }
+
+        public List<ApplicationModel> GetAppsWithoutChildren()
+        {
+            List<ApplicationModel> output = new List<ApplicationModel>();
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                // store procedure name
+                string sql = "dbo.spApps_ReturnWithNoChildren";
+
+                var selected = connection.Query<ApplicationModel, ApplicantModel, SpouseModel,
+                    ApplicationModel>(sql, (app, ap, spo) =>
+                    {
+                        app.applicantId = ap.applicantId; app.applicant = ap;
+                        app.applicant.spouseId = spo; return app;
+                    },
+                    splitOn: "applicantId, spouseId");
+
+                foreach (var p in selected)
+                {
+                    output.Add(p);
+                }
+
+                return output;
+            }
+        }
+
+        public List<ProgramModel> ProgramSearch(string input)
+        {
+            List<ProgramModel> output = new List<ProgramModel> ();
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+
+                var p = new
+                {
+                    input = input
+                
+                };
+
+                output = connection.Query<ProgramModel>("dbo.spProgram_SearchName @input", p).ToList();
+
+                return output;
+            }
+
+        }
+
+        public List<ApplicationModel> AppsSearch(string query, AgeFilter ageFilter)
+        {
+            
+
+            List<ApplicationModel> output = new List<ApplicationModel>();            
+
+            string cond = $"{query}";
+
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {              
+                string sql = $"SELECT app.applicationId, app.programId, app.agentId, app.officeId, " +
+                    $"app.supervisorId, app.applicationProgress, app.eligibilityStatus, " +
+                    $"app.approvalStatus, app.paymentStatus, app.signatureSigned, app.acceptedDate, " +
+                    $"app.listOfDocuments, app.applicantId, ap.applicantId, ap.firstName, ap.lastName, " +
+                    $"ap.gender, ap.birthday, ap.sinCard, ap.maritalStatus, ap.email, ap.phone, " +
+                    $"ap.isCitizen, ap.isIndigenous, ap.isDisabled, ap.residenceStatus, ap.streetAddress, " +
+                    $"ap.city, ap.province, ap.moveInDate, ap.familySize, ap.numberOfAdults, " +
+                    $"ap.numberOfChildren, ap.numberOfElderly, ap.rentalExpense, ap.utilityExpense, " +
+                    $"ap.foodExpense, ap.tuitionExpense, ap.employmentType, ap.employer, ap.position, " +
+                    $"ap.employmentStartDate, ap.employmentIncome, ap.spouseIncome, ap.donationIncome, " +
+                    $"ap.cashSavings, sp.* " +
+                    $"FROM application AS app " +
+                    $"LEFT JOIN applicant AS ap ON app.applicantId = ap.applicantId " +
+                    $"LEFT JOIN spouse AS sp ON ap.spouseId = sp.spouseId " +
+                    $"LEFT JOIN program AS pro ON app.programId = pro.programId " +
+                    $"LEFT JOIN agency AS agg ON agg.agencyId = pro.agencyId " +
+                    $"LEFT JOIN agent AS ag ON ag.agentId = app.agentId " +
+                    $"LEFT JOIN office AS ofc ON ofc.officeId = app.officeId " +
+                    $"LEFT JOIN supervisor AS sup ON sup.supervisorId = app.supervisorId " +
+                    $"{cond}";
+
+                var selected = connection.Query<ApplicationModel, ApplicantModel, SpouseModel,
+                    ApplicationModel>(sql, (app, ap, spo) =>
+                    {
+                        app.applicantId = ap.applicantId; app.applicant = ap;
+                        app.applicant.spouseId = spo; return app;
+                    },
+                    splitOn: "applicantId, spouseId");
+
+                foreach (var p in selected)
+                {
+                    if (ageFilter == AgeFilter.All)
+                    {
+                        output.Add(p);
+                    }
+
+                    if (ageFilter == AgeFilter.Both)
+                    {
+                        DateTime date = DateTime.ParseExact(p.applicant.birthday, "yyyy-MM-dd",
+                        CultureInfo.InvariantCulture);
+                        DateTime both = DateTime.Now.AddYears(-65);
+
+                        if (date > both && date < both)
+                        {
+                            output.Add(p);
+                        }
+
+                    }
+
+                    if (ageFilter == AgeFilter.Adult)
+                    {
+                        DateTime date = DateTime.ParseExact(p.applicant.birthday, "yyyy-MM-dd",
+                        CultureInfo.InvariantCulture);
+                        DateTime adults = DateTime.Now.AddYears(-65);
+
+                        if (date > adults)
+                        {
+                            output.Add(p);
+                        }
+                    }
+
+                    if (ageFilter == AgeFilter.Elderly)
+                    {
+                        DateTime date = DateTime.ParseExact(p.applicant.birthday, "yyyy-MM-dd",
+                        CultureInfo.InvariantCulture);
+                        DateTime elderly = DateTime.Now.AddYears(-65);
+
+                        if (date < elderly)
+                        {
+                            output.Add(p);
+                        }
+                    }
+
+                }
+
+                return output;
+            }
+        }
+
+
+        public void DeleteDuplicateApp(int programId, int applicantId)
+        {
+            using (IDbConnection connection =
+                new Microsoft.Data.SqlClient
+                .SqlConnection(GlobalConfig.CnnString("WelfareApplication")))
+            {
+                var p = new
+                {
+                    programIdInput = programId,
+                    applicantIdInput = applicantId,
+                };
+
+                connection.Execute($"dbo.spApplication_DeleteDuplicate @programIdInput, @applicantIdInput", p);
             }
         }
     }

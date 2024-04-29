@@ -10,8 +10,15 @@ namespace WelfareAppClassLibrary.Validations
     public static class ValidationHelper
     {
         public static List<ValidationResult> Validate<T>(T input) where T : class
-        {
+        {           
+
+
             List<ValidationResult> output = new List<ValidationResult>();
+
+            if (input == null)
+            {
+                return output;
+            }
 
             ValidationContext context = new(input);
             Validator.TryValidateObject(input, context, output, true);
