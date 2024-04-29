@@ -165,6 +165,7 @@
             // comboBoxManagingAgency
             // 
             comboBoxManagingAgency.Dock = DockStyle.Fill;
+            comboBoxManagingAgency.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxManagingAgency.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxManagingAgency.FormattingEnabled = true;
             comboBoxManagingAgency.Location = new Point(3, 119);
@@ -315,6 +316,7 @@
             // comboBoxPaymentType
             // 
             comboBoxPaymentType.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxPaymentType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxPaymentType.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxPaymentType.FormattingEnabled = true;
             comboBoxPaymentType.Location = new Point(163, 21);
@@ -492,6 +494,7 @@
             // comboBoxOffice
             // 
             comboBoxOffice.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxOffice.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxOffice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxOffice.FormattingEnabled = true;
             comboBoxOffice.Location = new Point(163, 66);
@@ -503,6 +506,7 @@
             // comboBoxSupervisor
             // 
             comboBoxSupervisor.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxSupervisor.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxSupervisor.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxSupervisor.FormattingEnabled = true;
             comboBoxSupervisor.Location = new Point(163, 122);

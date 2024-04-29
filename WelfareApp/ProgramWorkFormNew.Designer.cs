@@ -309,6 +309,7 @@
             // comboBoxDocumentStatus
             // 
             comboBoxDocumentStatus.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxDocumentStatus.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxDocumentStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxDocumentStatus.FormattingEnabled = true;
             comboBoxDocumentStatus.Location = new Point(98, 9);

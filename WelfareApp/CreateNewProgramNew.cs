@@ -48,8 +48,14 @@ namespace WelfareApp
             SqlConnector sql = new SqlConnector();
 
             agencies = sql.GetAllAgencies();
+            agencies.Sort((x, y) => string.Compare(x.agencyName, y.agencyName));
+
             offices = sql.GetAllOffices();
+            offices.Sort((x, y) => string.Compare(x.officeName, y.officeName));
+
             supervisors = sql.GetAllSupervisors();
+            supervisors.Sort((x, y) => string.Compare(x.firstName, y.firstName));
+
         }
 
         private void buttonCreateNewProgram_Click(object sender, EventArgs e)
@@ -87,7 +93,7 @@ namespace WelfareApp
             comboBoxOffice.DisplayMember = "officeName";
 
             comboBoxSupervisor.DataSource = supervisors;
-            comboBoxSupervisor.DisplayMember = "firstName";
+            comboBoxSupervisor.DisplayMember = "display";
 
             comboBoxPaymentType.DataSource = Enum.GetValues(typeof(PaymentForm));
 

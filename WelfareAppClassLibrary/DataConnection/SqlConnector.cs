@@ -1067,7 +1067,7 @@ namespace WelfareAppClassLibrary.DataConnection
                     {
                         DateTime date = DateTime.ParseExact(p.applicant.birthday, "yyyy-MM-dd",
                         CultureInfo.InvariantCulture);
-                        DateTime both = DateTime.Now.AddYears(-60);
+                        DateTime both = DateTime.Now.AddYears(-65);
 
                         if (date > both && date < both)
                         {
@@ -1080,7 +1080,7 @@ namespace WelfareAppClassLibrary.DataConnection
                     {
                         DateTime date = DateTime.ParseExact(p.applicant.birthday, "yyyy-MM-dd",
                         CultureInfo.InvariantCulture);
-                        DateTime adults = DateTime.Now.AddYears(-60);
+                        DateTime adults = DateTime.Now.AddYears(-65);
 
                         if (date > adults)
                         {
@@ -1092,7 +1092,7 @@ namespace WelfareAppClassLibrary.DataConnection
                     {
                         DateTime date = DateTime.ParseExact(p.applicant.birthday, "yyyy-MM-dd",
                         CultureInfo.InvariantCulture);
-                        DateTime elderly = DateTime.Now.AddYears(-60);
+                        DateTime elderly = DateTime.Now.AddYears(-65);
 
                         if (date < elderly)
                         {

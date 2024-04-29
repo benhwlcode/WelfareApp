@@ -66,6 +66,14 @@ namespace WelfareApp
 
         private void buttonUpdateSelected_Click(object sender, EventArgs e)
         {
+            if (labelAppInfo.Text == ">!")
+            {
+                MessageBox.Show("Please select application to update.");
+                return;
+            }
+
+
+
             foreach (DocumentModel p in checkedListBoxDocuments.CheckedItems)
             {
                 p.status = (DocumentStatus)comboBoxDocumentStatus.SelectedItem;
@@ -182,6 +190,11 @@ namespace WelfareApp
                 else
                 {
                     r.DefaultCellStyle.BackColor = Color.LightPink;
+                }
+
+                if (r.Cells[5].Value.ToString() == ApprovalStatus.approved.ToString())
+                {
+                    r.DefaultCellStyle.BackColor = Color.LightBlue;
                 }
             }
         }

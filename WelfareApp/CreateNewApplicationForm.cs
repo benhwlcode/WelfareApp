@@ -64,9 +64,16 @@ namespace WelfareApp
             SqlConnector sql = new SqlConnector();
 
             programs = sql.GetAllPrograms();
+            programs.Sort((x, y) => string.Compare(x.programName, y.programName));
+
             agents = sql.GetAllAgents();
+            agents.Sort((x, y) => string.Compare(x.firstName, y.firstName));
+
             offices = sql.GetAllOffices();
+            offices.Sort((x, y) => string.Compare(x.officeName, y.officeName));
+
             supervisors = sql.GetAllSupervisors();
+            supervisors.Sort((x, y) => string.Compare(x.firstName, y.firstName));
 
             labelApplicantIdValue.Text = "0";
         }
@@ -77,13 +84,13 @@ namespace WelfareApp
             comboBoxProgramValue.DisplayMember = "programName";
 
             comboBoxAgentValue.DataSource = agents;
-            comboBoxAgentValue.DisplayMember = "firstName";
+            comboBoxAgentValue.DisplayMember = "display";
 
             comboBoxOfficeValue.DataSource = offices;
             comboBoxOfficeValue.DisplayMember = "officeName";
 
             comboBoxSupervisorValue.DataSource = supervisors;
-            comboBoxSupervisorValue.DisplayMember = "firstName";
+            comboBoxSupervisorValue.DisplayMember = "display";
         }
 
         public void GetDocumentsList()

@@ -48,8 +48,13 @@ namespace WelfareApp
             SqlConnector sql = new SqlConnector();
 
             agencies = sql.GetAllAgencies();
+            agencies.Sort((x, y) => string.Compare(x.agencyName, y.agencyName));
+
             offices = sql.GetAllOffices();
+            offices.Sort((x, y) => string.Compare(x.officeName, y.officeName));
+
             supervisors = sql.GetAllSupervisors();
+            supervisors.Sort((x, y) => string.Compare(x.firstName, y.firstName));
 
             comboBoxAgencyValue.DataSource = agencies;
             comboBoxAgencyValue.DisplayMember = "agencyName";
@@ -58,7 +63,7 @@ namespace WelfareApp
             comboBoxOfficeValue.DisplayMember = "officeName";
 
             comboBoxSupervisorValue.DataSource = supervisors;
-            comboBoxSupervisorValue.DisplayMember = "firstName";
+            comboBoxSupervisorValue.DisplayMember = "display";
 
             comboBoxPaymentTypeValue.DataSource = Enum.GetValues(typeof(PaymentForm));
 
@@ -139,29 +144,29 @@ namespace WelfareApp
 
             output += $"Details and Edit: \r\n \r\n";
 
-            output += $"Program Name: {currentProgram.programName}" +
-                $" \r\n     => {textBoxProgramNameValue.Text} \r\n \r\n";
+            output += $"Program Name: \r\n{currentProgram.programName}" +
+                $" \r\n => {textBoxProgramNameValue.Text} \r\n \r\n";
 
-            output += $"Managing Agency: {defaultAgency.agencyName} ({defaultAgency.agencyCode})" +
-                $" \r\n     => {agency.agencyName} ({agency.agencyCode}) \r\n \r\n";
+            output += $"Managing Agency: \r\n{defaultAgency.agencyName} ({defaultAgency.agencyCode})" +
+                $" \r\n => {agency.agencyName} ({agency.agencyCode}) \r\n \r\n";
 
-            output += $"Office: {defaultOffice.officeName}" +
-                $" \r\n     => {office.officeName} \r\n \r\n";
+            output += $"Office: \r\n{defaultOffice.officeName}" +
+                $" \r\n => {office.officeName} \r\n \r\n";
 
-            output += $"Supervisor: {defaultSupervisor.firstName} {defaultSupervisor.lastName}" +
-                $" \r\n     => {supervisor.firstName} {supervisor.lastName} \r\n \r\n";
+            output += $"Supervisor: \r\n{defaultSupervisor.firstName} {defaultSupervisor.lastName}" +
+                $" \r\n => {supervisor.firstName} {supervisor.lastName} \r\n \r\n";
 
-            output += $"Payment: {currentProgram.paymentType} {currentProgram.paymentForm} " +
+            output += $"Payment: \r\n{currentProgram.paymentType} {currentProgram.paymentForm} " +
                 $"(min: {currentProgram.minPayment:C2} max: {currentProgram.maxPayment:C2})";
 
             if (radioButtonFlatAmount.Checked)
             {
-                output += $"\r\n    => flat {comboBoxPaymentTypeValue.SelectedItem} " +
+                output += $"\r\n => flat {comboBoxPaymentTypeValue.SelectedItem} " +
                     $"(min: {textBoxMinPaymentValue.Text:C2} max: {textBoxMaxPaymentValue.Text:C2}) \r\n \r\n";
             }
             if (radioButtonPercentageAmount.Checked)
             {
-                output += $"\r\n    => percentage {comboBoxPaymentTypeValue.SelectedItem} " +
+                output += $"\r\n => percentage {comboBoxPaymentTypeValue.SelectedItem} " +
                     $"(min: {textBoxMinPaymentValue.Text:C2} max: {textBoxMaxPaymentValue.Text:C2}) \r\n \r\n";
             }
 

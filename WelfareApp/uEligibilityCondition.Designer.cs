@@ -41,8 +41,8 @@
             tableLayoutPanel1.ColumnCount = 4;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 98F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2F));
             tableLayoutPanel1.Controls.Add(comboBoxProperty, 0, 0);
             tableLayoutPanel1.Controls.Add(comboBoxCondition, 1, 0);
             tableLayoutPanel1.Controls.Add(comboBoxDynamic, 2, 0);
@@ -79,20 +79,21 @@
             // comboBoxDynamic
             // 
             comboBoxDynamic.Dock = DockStyle.Fill;
+            comboBoxDynamic.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxDynamic.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxDynamic.FormattingEnabled = true;
             comboBoxDynamic.Location = new Point(263, 3);
             comboBoxDynamic.Name = "comboBoxDynamic";
-            comboBoxDynamic.Size = new Size(194, 36);
+            comboBoxDynamic.Size = new Size(386, 36);
             comboBoxDynamic.TabIndex = 2;
             // 
             // textBoxInput
             // 
             textBoxInput.Dock = DockStyle.Fill;
             textBoxInput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxInput.Location = new Point(463, 3);
+            textBoxInput.Location = new Point(655, 3);
             textBoxInput.Name = "textBoxInput";
-            textBoxInput.Size = new Size(194, 34);
+            textBoxInput.Size = new Size(2, 34);
             textBoxInput.TabIndex = 3;
             // 
             // uEligibilityCondition

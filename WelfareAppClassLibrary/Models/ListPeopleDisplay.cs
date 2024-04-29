@@ -36,18 +36,31 @@ namespace WelfareAppClassLibrary.Models
                     return $"{input.spouseId.firstName} {input.spouseId.lastName}";
                 }
 
-                return "no spouse";
+                return "-no spouse";
             }
         }
 
-        public string TestValue
+        public string Age
         {
             get
             {
-                string output = $"{input.employmentType}, age {GetAge()}, " +
-                    $"with {input.numberOfChildren} children";
+                return $"{GetAge()} ({input.birthday})";
+            }
+        }
 
-                return output;
+        public int Children
+        {
+            get
+            {
+                return input.numberOfChildren;
+            }
+        }
+
+        public string Employment
+        {
+            get
+            {
+                return input.employmentType.ToString();
             }
         }
 
@@ -69,6 +82,8 @@ namespace WelfareAppClassLibrary.Models
 
             return (age - 1).ToString();
         }
+
+
 
     }
 }

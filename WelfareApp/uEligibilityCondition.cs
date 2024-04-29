@@ -69,11 +69,10 @@ namespace WelfareApp
             InitializeFields();
 
             if ((QueryProperty)comboBoxProperty.SelectedItem is QueryProperty.numberofchildren or 
-                QueryProperty.numberofelderly or QueryProperty.rentalexpense or 
-                QueryProperty.foodexpense or QueryProperty.tuitionexpense or 
-                QueryProperty.utilityexpense or QueryProperty.spouseincome or
-                QueryProperty.employmentincome or QueryProperty.donationincome or 
-                QueryProperty.cashsavings)
+                QueryProperty.numberofelderly or QueryProperty.rentalexpense or QueryProperty.foodexpense or 
+                QueryProperty.tuitionexpense or QueryProperty.utilityexpense or QueryProperty.spouseincome or
+                QueryProperty.employmentincome or QueryProperty.donationincome or QueryProperty.cashsavings or 
+                QueryProperty.applicantId)
             {
 
                 conditions = ReturnAllConditions();
@@ -208,6 +207,7 @@ namespace WelfareApp
             set { comboBoxDynamic.SelectedItem = value; }
         }
 
+        
        
     }
 }

@@ -64,6 +64,8 @@ namespace WelfareApp
 
         private void UpdateBinding()
         {
+            programs.Sort((x, y) => string.Compare(x.programName, y.programName));
+
             listBoxListOfPrograms.DataSource = null;
             listBoxListOfPrograms.DataSource = programs;
             listBoxListOfPrograms.DisplayMember = "programName";

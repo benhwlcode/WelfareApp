@@ -67,7 +67,8 @@ namespace WelfareAppClassLibrary.DataConnection
 
         public List<ApplicationModel> GetAppsWithoutChildren();
 
-
-
+        public List<ProgramModel> ProgramSearch(string input);
+        public List<ApplicationModel> AppsSearch(string query, AgeFilter ageFilter);
+        public void DeleteDuplicateApp(int programId, int applicantId);
     }
 }

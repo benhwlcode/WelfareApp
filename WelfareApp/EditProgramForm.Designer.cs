@@ -316,8 +316,9 @@
             // comboBoxAgencyValue
             // 
             comboBoxAgencyValue.Anchor = AnchorStyles.Left;
+            comboBoxAgencyValue.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxAgencyValue.FormattingEnabled = true;
-            comboBoxAgencyValue.Location = new Point(192, 84);
+            comboBoxAgencyValue.Location = new Point(192, 86);
             comboBoxAgencyValue.Margin = new Padding(3, 4, 3, 4);
             comboBoxAgencyValue.Name = "comboBoxAgencyValue";
             comboBoxAgencyValue.Size = new Size(279, 36);
@@ -327,8 +328,9 @@
             // comboBoxPaymentTypeValue
             // 
             comboBoxPaymentTypeValue.Anchor = AnchorStyles.Left;
+            comboBoxPaymentTypeValue.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxPaymentTypeValue.FormattingEnabled = true;
-            comboBoxPaymentTypeValue.Location = new Point(192, 124);
+            comboBoxPaymentTypeValue.Location = new Point(192, 126);
             comboBoxPaymentTypeValue.Margin = new Padding(3, 4, 3, 4);
             comboBoxPaymentTypeValue.Name = "comboBoxPaymentTypeValue";
             comboBoxPaymentTypeValue.Size = new Size(279, 36);
@@ -395,8 +397,9 @@
             // comboBoxOfficeValue
             // 
             comboBoxOfficeValue.Anchor = AnchorStyles.Left;
+            comboBoxOfficeValue.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxOfficeValue.FormattingEnabled = true;
-            comboBoxOfficeValue.Location = new Point(192, 324);
+            comboBoxOfficeValue.Location = new Point(192, 326);
             comboBoxOfficeValue.Margin = new Padding(3, 4, 3, 4);
             comboBoxOfficeValue.Name = "comboBoxOfficeValue";
             comboBoxOfficeValue.Size = new Size(279, 36);
@@ -406,8 +409,9 @@
             // comboBoxSupervisorValue
             // 
             comboBoxSupervisorValue.Anchor = AnchorStyles.Left;
+            comboBoxSupervisorValue.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxSupervisorValue.FormattingEnabled = true;
-            comboBoxSupervisorValue.Location = new Point(192, 364);
+            comboBoxSupervisorValue.Location = new Point(192, 366);
             comboBoxSupervisorValue.Margin = new Padding(3, 4, 3, 4);
             comboBoxSupervisorValue.Name = "comboBoxSupervisorValue";
             comboBoxSupervisorValue.Size = new Size(279, 36);

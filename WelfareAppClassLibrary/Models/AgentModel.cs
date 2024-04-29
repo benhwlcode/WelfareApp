@@ -23,7 +23,17 @@ namespace WelfareAppClassLibrary.Models
         [MaxLength(50)]
         public string password { get; set; }
 
+        public string display
+        {
+            get
+            {
+                return $"{firstName} {lastName} ({agentId})";
+            }
+        }
+
         // insert other non essential information
+
+        
 
 
     }

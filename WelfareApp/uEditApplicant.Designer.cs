@@ -523,8 +523,9 @@
             // comboBoxResidenceStatusValue
             // 
             comboBoxResidenceStatusValue.Anchor = AnchorStyles.Left;
+            comboBoxResidenceStatusValue.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxResidenceStatusValue.FormattingEnabled = true;
-            comboBoxResidenceStatusValue.Location = new Point(223, 1004);
+            comboBoxResidenceStatusValue.Location = new Point(223, 1006);
             comboBoxResidenceStatusValue.Margin = new Padding(3, 4, 8, 4);
             comboBoxResidenceStatusValue.Name = "comboBoxResidenceStatusValue";
             comboBoxResidenceStatusValue.Size = new Size(236, 36);
@@ -758,8 +759,9 @@
             // comboBoxSpouseGenderValue
             // 
             comboBoxSpouseGenderValue.Anchor = AnchorStyles.Left;
+            comboBoxSpouseGenderValue.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxSpouseGenderValue.FormattingEnabled = true;
-            comboBoxSpouseGenderValue.Location = new Point(223, 604);
+            comboBoxSpouseGenderValue.Location = new Point(223, 606);
             comboBoxSpouseGenderValue.Margin = new Padding(3, 4, 8, 4);
             comboBoxSpouseGenderValue.Name = "comboBoxSpouseGenderValue";
             comboBoxSpouseGenderValue.Size = new Size(236, 36);
@@ -1009,8 +1011,9 @@
             // comboBoxGenderValue
             // 
             comboBoxGenderValue.Anchor = AnchorStyles.Left;
+            comboBoxGenderValue.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxGenderValue.FormattingEnabled = true;
-            comboBoxGenderValue.Location = new Point(223, 124);
+            comboBoxGenderValue.Location = new Point(223, 126);
             comboBoxGenderValue.Margin = new Padding(3, 4, 8, 4);
             comboBoxGenderValue.Name = "comboBoxGenderValue";
             comboBoxGenderValue.Size = new Size(236, 36);
@@ -1019,8 +1022,9 @@
             // comboBoxMaritalStatusValue
             // 
             comboBoxMaritalStatusValue.Anchor = AnchorStyles.Left;
+            comboBoxMaritalStatusValue.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxMaritalStatusValue.FormattingEnabled = true;
-            comboBoxMaritalStatusValue.Location = new Point(223, 244);
+            comboBoxMaritalStatusValue.Location = new Point(223, 246);
             comboBoxMaritalStatusValue.Margin = new Padding(3, 4, 8, 4);
             comboBoxMaritalStatusValue.Name = "comboBoxMaritalStatusValue";
             comboBoxMaritalStatusValue.Size = new Size(236, 36);
@@ -1197,8 +1201,9 @@
             // comboBoxProvinceValue
             // 
             comboBoxProvinceValue.Anchor = AnchorStyles.Left;
+            comboBoxProvinceValue.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxProvinceValue.FormattingEnabled = true;
-            comboBoxProvinceValue.Location = new Point(223, 1124);
+            comboBoxProvinceValue.Location = new Point(223, 1126);
             comboBoxProvinceValue.Margin = new Padding(3, 4, 8, 4);
             comboBoxProvinceValue.Name = "comboBoxProvinceValue";
             comboBoxProvinceValue.Size = new Size(236, 36);
@@ -1357,8 +1362,9 @@
             // comboBoxEmploymentTypeValue
             // 
             comboBoxEmploymentTypeValue.Anchor = AnchorStyles.Left;
+            comboBoxEmploymentTypeValue.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxEmploymentTypeValue.FormattingEnabled = true;
-            comboBoxEmploymentTypeValue.Location = new Point(223, 1644);
+            comboBoxEmploymentTypeValue.Location = new Point(223, 1646);
             comboBoxEmploymentTypeValue.Margin = new Padding(3, 4, 8, 4);
             comboBoxEmploymentTypeValue.Name = "comboBoxEmploymentTypeValue";
             comboBoxEmploymentTypeValue.Size = new Size(236, 36);

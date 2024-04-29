@@ -14,6 +14,7 @@ namespace WelfareAppClassLibrary.Models
         public int Application { get { return inputApplication.applicationId; } }
         public EligibilityStatus Eligibility {get {return inputApplication.eligibilityStatus;} }
         public ApplicationProgress Progress { get { return inputApplication.applicationProgress;} }
+        public ApprovalStatus Approval { get { return inputApplication.approvalStatus;} }
 
         public int Applicant { get { return inputApplication.applicantId; } }
         public string FirstName { get { return inputApplicant.firstName; } }
