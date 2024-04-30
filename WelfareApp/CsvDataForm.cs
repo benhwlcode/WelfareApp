@@ -46,7 +46,7 @@ namespace WelfareApp
                 insertApplicant = app;
                 insertSpouse = app.spouseId;
 
-                logic.ApplicationInsertAndUpdate("0", insertApplication, insertApplicant, 
+                logic.ApplicationInsertUpdateControl("0", insertApplication, insertApplicant, 
                     insertSpouse, noLoadedApplicant);
             }
 
