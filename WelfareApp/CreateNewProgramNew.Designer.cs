@@ -156,19 +156,24 @@
             textBoxProgramName.Dock = DockStyle.Fill;
             textBoxProgramName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxProgramName.Location = new Point(3, 36);
+            textBoxProgramName.Margin = new Padding(3, 3, 22, 3);
             textBoxProgramName.Name = "textBoxProgramName";
-            textBoxProgramName.Size = new Size(626, 34);
+            textBoxProgramName.Size = new Size(607, 34);
             textBoxProgramName.TabIndex = 0;
+            textBoxProgramName.TextChanged += textBoxProgramName_TextChanged;
             // 
             // comboBoxManagingAgency
             // 
             comboBoxManagingAgency.Dock = DockStyle.Fill;
+            comboBoxManagingAgency.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxManagingAgency.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxManagingAgency.FormattingEnabled = true;
             comboBoxManagingAgency.Location = new Point(3, 119);
+            comboBoxManagingAgency.Margin = new Padding(3, 3, 22, 3);
             comboBoxManagingAgency.Name = "comboBoxManagingAgency";
-            comboBoxManagingAgency.Size = new Size(626, 36);
+            comboBoxManagingAgency.Size = new Size(607, 36);
             comboBoxManagingAgency.TabIndex = 1;
+            comboBoxManagingAgency.SelectedIndexChanged += comboBoxManagingAgency_SelectedIndexChanged;
             // 
             // labelProgramName
             // 
@@ -311,12 +316,14 @@
             // comboBoxPaymentType
             // 
             comboBoxPaymentType.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxPaymentType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxPaymentType.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxPaymentType.FormattingEnabled = true;
             comboBoxPaymentType.Location = new Point(163, 21);
             comboBoxPaymentType.Name = "comboBoxPaymentType";
             comboBoxPaymentType.Size = new Size(260, 36);
             comboBoxPaymentType.TabIndex = 0;
+            comboBoxPaymentType.SelectedIndexChanged += comboBoxPaymentType_SelectedIndexChanged;
             // 
             // labelPaymentType
             // 
@@ -349,6 +356,7 @@
             radioButtonPercentage.TabStop = true;
             radioButtonPercentage.Text = "Percentage";
             radioButtonPercentage.UseVisualStyleBackColor = true;
+            radioButtonPercentage.CheckedChanged += radioButtonPercentage_CheckedChanged;
             // 
             // radioButtonFlat
             // 
@@ -360,6 +368,7 @@
             radioButtonFlat.TabStop = true;
             radioButtonFlat.Text = "Flat";
             radioButtonFlat.UseVisualStyleBackColor = true;
+            radioButtonFlat.CheckedChanged += radioButtonFlat_CheckedChanged;
             // 
             // tableLayoutPanel7
             // 
@@ -387,18 +396,22 @@
             textBoxMinAmount.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxMinAmount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxMinAmount.Location = new Point(223, 22);
+            textBoxMinAmount.Margin = new Padding(3, 3, 22, 3);
             textBoxMinAmount.Name = "textBoxMinAmount";
-            textBoxMinAmount.Size = new Size(167, 34);
+            textBoxMinAmount.Size = new Size(148, 34);
             textBoxMinAmount.TabIndex = 0;
+            textBoxMinAmount.TextChanged += textBoxMinAmount_TextChanged;
             // 
             // textBoxMaxAmount
             // 
             textBoxMaxAmount.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxMaxAmount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxMaxAmount.Location = new Point(456, 22);
+            textBoxMaxAmount.Margin = new Padding(3, 3, 22, 3);
             textBoxMaxAmount.Name = "textBoxMaxAmount";
-            textBoxMaxAmount.Size = new Size(167, 34);
+            textBoxMaxAmount.Size = new Size(148, 34);
             textBoxMaxAmount.TabIndex = 1;
+            textBoxMaxAmount.TextChanged += textBoxMaxAmount_TextChanged;
             // 
             // labelMin
             // 
@@ -481,22 +494,26 @@
             // comboBoxOffice
             // 
             comboBoxOffice.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxOffice.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxOffice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxOffice.FormattingEnabled = true;
             comboBoxOffice.Location = new Point(163, 66);
             comboBoxOffice.Name = "comboBoxOffice";
             comboBoxOffice.Size = new Size(348, 36);
             comboBoxOffice.TabIndex = 0;
+            comboBoxOffice.SelectedIndexChanged += comboBoxOffice_SelectedIndexChanged;
             // 
             // comboBoxSupervisor
             // 
             comboBoxSupervisor.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxSupervisor.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxSupervisor.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxSupervisor.FormattingEnabled = true;
             comboBoxSupervisor.Location = new Point(163, 122);
             comboBoxSupervisor.Name = "comboBoxSupervisor";
             comboBoxSupervisor.Size = new Size(348, 36);
             comboBoxSupervisor.TabIndex = 1;
+            comboBoxSupervisor.SelectedIndexChanged += comboBoxSupervisor_SelectedIndexChanged;
             // 
             // labelAgent
             // 
@@ -596,6 +613,7 @@
             // 
             richTextBoxSummary.BackColor = SystemColors.Control;
             richTextBoxSummary.Dock = DockStyle.Fill;
+            richTextBoxSummary.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             richTextBoxSummary.Location = new Point(3, 63);
             richTextBoxSummary.Name = "richTextBoxSummary";
             richTextBoxSummary.Size = new Size(388, 449);

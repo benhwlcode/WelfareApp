@@ -10,6 +10,44 @@ namespace WelfareAppClassLibrary
 {
     public class Logic
     {
+
+        public void ApplicationInsertUpdateControl
+            (string applicantInt, ApplicationModel saveApplication, 
+            ApplicantModel saveApplicant, SpouseModel saveSpouse, ApplicantModel loadedApplicant)
+        {
+            SqlConnector sql = new SqlConnector();          
+
+
+            if (applicantInt == "0" && saveApplication != null)
+            {             
+                sql.SaveToApplication(saveApplication, saveApplicant, saveSpouse);
+                return;
+            }
+
+            saveApplicant.applicantId = loadedApplicant.applicantId;
+
+            if (saveApplication != null)
+            {
+                sql.DeleteDuplicateApp(saveApplication.programId, saveApplicant.applicantId);
+                sql.SaveToApplicationWithReturner(saveApplication, saveApplicant.applicantId);
+            }
+
+            if (saveSpouse != null && loadedApplicant.spouseId != null)
+            {
+                saveSpouse.spouseId = loadedApplicant.spouseId.spouseId;
+            }
+
+            if (saveSpouse != null && loadedApplicant.spouseId == null)
+            {
+                saveSpouse.spouseId = 0;
+            }
+
+            sql.UpdateApplicantEntry(saveApplicant, saveSpouse);
+
+        }
+
+        
+
         public void ApplicationInsertAndUpdate
             (string applicantInt, ApplicationModel saveApplication, ApplicantModel saveApplicant,
             SpouseModel saveSpouse, ApplicantModel loadedApplicant)
@@ -38,6 +76,26 @@ namespace WelfareAppClassLibrary
 
             sql.UpdateApplicantEntry(saveApplicant, saveSpouse);
 
+        }
+
+        public void ApplicantUpdate(ApplicantModel saveApplicant, SpouseModel saveSpouse, 
+            ApplicantModel loadedApplicant)
+        {
+            SqlConnector sql = new SqlConnector();
+
+            saveApplicant.applicantId = loadedApplicant.applicantId;
+
+            if (saveSpouse != null && loadedApplicant.spouseId != null)
+            {
+                saveSpouse.spouseId = loadedApplicant.spouseId.spouseId;
+            }
+
+            if (saveSpouse != null && loadedApplicant.spouseId == null)
+            {
+                saveSpouse.spouseId = 0;
+            }
+
+            sql.UpdateApplicantEntry(saveApplicant, saveSpouse);
         }
 
 

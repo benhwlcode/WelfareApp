@@ -32,6 +32,43 @@ namespace WelfareAppClassLibrary.DataConnection
 
         public string RetrieveRequiredList(ProgramModel programModel);
 
-              
+        public List<ApplicationModel> GetAllApplications(int programId);
+
+        public string GetDocuments(int applicationId);
+
+        public void UpdateApplication(ApplicationModel applicationModel);
+
+        public void UpdateEligibility(int programIdInput, string conditionInput);
+
+        public void ResetEligibility(int programIdInput);
+
+        public List<ApplicationModel> ListAllApplications();
+
+        public string GetProgramName(int appIdInput);
+
+        public string GetAgencyName(int appIdInput);
+        public string GetAgentName(int appIdInput);
+        public string GetOfficeName(int appIdInput);
+        public string GetSupervisorName(int appIdInput);
+
+        public List<ApplicationModel> GetAppsAdults();
+
+        public List<ApplicationModel> GetAppsElderly();
+
+        public List<ApplicationModel> GetAppsSingle();
+
+        public List<ApplicationModel> GetAppsMarried();
+
+        public List<ApplicationModel> GetAppsEmployed();
+
+        public List<ApplicationModel> GetAppsUnemployed();
+
+        public List<ApplicationModel> GetAppsWithChildren();
+
+        public List<ApplicationModel> GetAppsWithoutChildren();
+
+        public List<ProgramModel> ProgramSearch(string input);
+        public List<ApplicationModel> AppsSearch(string query, AgeFilter ageFilter);
+        public void DeleteDuplicateApp(int programId, int applicantId);
     }
 }

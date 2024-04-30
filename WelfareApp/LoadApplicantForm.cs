@@ -27,26 +27,34 @@ namespace WelfareApp
             SqlConnector sql = new SqlConnector();
             selectionList = sql.GetAllApplicants();
             UpdateBindings();
+
+            buttonTestList.Enabled = false;
         }
 
         private void buttonLoadApplicant_Click(object sender, EventArgs e)
         {
             parentCreateNewApp.loadedApplicant = (ApplicantModel)listBoxListOfApplicants.SelectedItem;
             parentCreateNewApp.LoadApplicantAndSpouseInfo();
+
+            this.Close();
         }
 
 
         private void buttonTestList_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void UpdateBindings()
         {
+            selectionList.Sort((x, y) => string.Compare(x.firstName, y.firstName));
+
             listBoxListOfApplicants.DataSource = null;
             listBoxListOfApplicants.DataSource = selectionList;
-            listBoxListOfApplicants.DisplayMember = "firstName";
+            listBoxListOfApplicants.DisplayMember = "CustomDisplay";
         }
+
+        
 
 
     }

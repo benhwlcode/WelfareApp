@@ -1,4 +1,5 @@
-﻿using System.Security.Principal;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Security.Principal;
 
 namespace WelfareAppClassLibrary.Models
 {
@@ -26,6 +27,9 @@ namespace WelfareAppClassLibrary.Models
         public string acceptedDate { get; set; }
 
         public string listOfDocuments { get; set; }
+
+        public ApplicantModel applicant { get; set; }   
+
 
     }
 }

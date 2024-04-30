@@ -198,6 +198,7 @@
             // comboBoxProgramValue
             // 
             comboBoxProgramValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxProgramValue.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxProgramValue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxProgramValue.FormattingEnabled = true;
             comboBoxProgramValue.Location = new Point(140, 14);
@@ -210,6 +211,7 @@
             // comboBoxAgentValue
             // 
             comboBoxAgentValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxAgentValue.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxAgentValue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxAgentValue.FormattingEnabled = true;
             comboBoxAgentValue.Location = new Point(140, 106);
@@ -221,6 +223,7 @@
             // comboBoxOfficeValue
             // 
             comboBoxOfficeValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxOfficeValue.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxOfficeValue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxOfficeValue.FormattingEnabled = true;
             comboBoxOfficeValue.Location = new Point(140, 171);
@@ -232,6 +235,7 @@
             // comboBoxSupervisorValue
             // 
             comboBoxSupervisorValue.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxSupervisorValue.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxSupervisorValue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxSupervisorValue.FormattingEnabled = true;
             comboBoxSupervisorValue.Location = new Point(140, 237);

@@ -20,9 +20,18 @@ namespace WelfareApp
         public LoginForm()
         {
             InitializeComponent();
+            this.Text = "Agent Login";
 
+            HideTestElements();
+
+            // fast login 
             textBoxUsernameValue.Text = "user";
             textBoxPasswordValue.Text = "password";
+
+            // data tests
+            buttonCsvForm.Visible = false;
+
+            
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -52,6 +61,12 @@ namespace WelfareApp
         {
             CsvDataForm csvDataForm = new CsvDataForm();
             csvDataForm.Show();
+        }
+
+        private void HideTestElements()
+        {
+            buttonCsvForm.Enabled = false;
+            buttonCsvForm.Visible = false;
         }
     }
 }
