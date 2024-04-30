@@ -53,21 +53,6 @@ namespace WelfareApp
 
         }
 
-        private void buttonCount_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void buttonShowValid_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonShowInvalid_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public ApplicationModel GetApplicationInformation()
         {
             Helper helper = new Helper();
@@ -239,11 +224,9 @@ namespace WelfareApp
                     output.Add(app);
                 }
 
-                
             }
 
             return output;
-
 
         }
 
@@ -404,8 +387,6 @@ namespace WelfareApp
             output = allProvinces[rng.Next(allProvinces.Count)];
             return output;
         }
-
-
 
     }
 }
