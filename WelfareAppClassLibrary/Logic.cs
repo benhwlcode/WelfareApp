@@ -47,8 +47,9 @@ namespace WelfareAppClassLibrary
         }
 
         
+        // old logics 
 
-        public void ApplicationInsertAndUpdate
+        /*public void ApplicationInsertAndUpdate
             (string applicantInt, ApplicationModel saveApplication, ApplicantModel saveApplicant,
             SpouseModel saveSpouse, ApplicantModel loadedApplicant)
         {
@@ -96,7 +97,7 @@ namespace WelfareAppClassLibrary
             }
 
             sql.UpdateApplicantEntry(saveApplicant, saveSpouse);
-        }
+        }*/
 
 
     }

@@ -52,7 +52,7 @@ namespace WelfareApp
                     }
                 }
 
-                if (!control.HasChildren && control is TextBox)
+                if (!control.HasChildren && control is TextBox && control.Visible == true)
                 {
                     if (control.Text == "")
                     {

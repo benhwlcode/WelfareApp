@@ -19,7 +19,6 @@ namespace WelfareApp
         {
             InitializeComponent();
 
-            
         }
 
         private void buttonTestFunctionOne_Click(object sender, EventArgs e)

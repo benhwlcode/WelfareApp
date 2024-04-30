@@ -108,7 +108,6 @@ namespace WelfareApp
             for (int i = 0; i < testingRang; i++)
             {             
 
-
                 string[] person = people[i].Split(',');
                 string[] spouse = people[testingRang+i].Split(",");
                 string[] address = addresses[i].Split(',');
@@ -241,7 +240,6 @@ namespace WelfareApp
 
             output = bools[rng.Next(bools.Count)];
 
-
             return output;
         }
 
@@ -276,8 +274,6 @@ namespace WelfareApp
             {
                 output += rng.Next(0, 10).ToString();
             }
-
-
 
             return output;
         }

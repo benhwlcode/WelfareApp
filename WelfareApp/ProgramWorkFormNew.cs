@@ -55,7 +55,6 @@ namespace WelfareApp
             UpdateDocumentsBinding();
 
             UpdateWorkLabels(selectedApplication);
-            // TestUpdate(selectedDocuments);
 
         }
 
@@ -86,7 +85,6 @@ namespace WelfareApp
             sql.UpdateApplication(selectedApplication);
 
             UpdateWorkLabels(selectedApplication);
-            // TestUpdate(selectedDocuments);
 
             FullRefreshGridAndUpdateInfo();
 
@@ -304,18 +302,6 @@ namespace WelfareApp
 
         }
 
-        private void TestUpdate(List<DocumentModel> input)
-        {
-            string output = "";
-
-            foreach (DocumentModel d in input)
-            {
-                output += $"{d.name}: {d.status.ToString()}. ";
-            }
-
-            richTextBoxTest.Text = output;
-
-        }
 
         public void ApplyEligibility()
         {
