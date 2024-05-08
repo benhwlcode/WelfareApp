@@ -23,7 +23,7 @@ namespace WelfareApp
             this.Dock = DockStyle.Fill;
             UpdateInitialBindings();
 
-            
+            error.BlinkStyle = ErrorBlinkStyle.NeverBlink;
         }
 
         public void UpdateInitialBindings()

@@ -197,7 +197,8 @@ namespace WelfareApp
                 }
                 else
                 {
-                    r.DefaultCellStyle.BackColor = Color.LightPink;
+                    // no need to highlight 
+                    // r.DefaultCellStyle.BackColor = Color.LightPink;
                 }
 
                 if (r.Cells[3].Value.ToString() == EligibilityStatus.eligible.ToString() &&

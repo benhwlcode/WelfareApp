@@ -41,6 +41,8 @@ namespace WelfareApp
 
             this.Text = "Create New Program";
             radioButtonFlat.Checked = true;
+
+            error.BlinkStyle = ErrorBlinkStyle.NeverBlink;
         }
 
         public void InitializeLists()

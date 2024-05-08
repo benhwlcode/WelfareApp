@@ -41,6 +41,11 @@ namespace WelfareApp
             InitializeBindings();
             InitializeFields();
             ConstructSummary();
+
+            this.Text = $"{programInput.programName} (ID: {programInput.programId})";
+
+            error.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+
         }
 
         private void InitializeBindings()
