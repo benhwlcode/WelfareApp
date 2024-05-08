@@ -35,6 +35,7 @@
             buttonAddCondition = new Button();
             buttonRemoveCondition = new Button();
             buttonApplyCondition = new Button();
+            buttonTest = new Button();
             tableLayoutPanel1.SuspendLayout();
             groupBoxConditions.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -90,6 +91,7 @@
             tableLayoutPanel2.Controls.Add(buttonAddCondition, 0, 0);
             tableLayoutPanel2.Controls.Add(buttonRemoveCondition, 1, 0);
             tableLayoutPanel2.Controls.Add(buttonApplyCondition, 4, 0);
+            tableLayoutPanel2.Controls.Add(buttonTest, 3, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(3, 496);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -131,6 +133,17 @@
             buttonApplyCondition.UseVisualStyleBackColor = true;
             buttonApplyCondition.Click += buttonApplyCondition_Click;
             // 
+            // buttonTest
+            // 
+            buttonTest.Dock = DockStyle.Fill;
+            buttonTest.Location = new Point(559, 3);
+            buttonTest.Name = "buttonTest";
+            buttonTest.Size = new Size(154, 48);
+            buttonTest.TabIndex = 3;
+            buttonTest.Text = "Test Function";
+            buttonTest.UseVisualStyleBackColor = true;
+            buttonTest.Click += buttonTest_Click;
+            // 
             // EditEligibilityForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -155,5 +168,6 @@
         private Button buttonRemoveCondition;
         private Button buttonApplyCondition;
         private TableLayoutPanel tableLayoutPanelConditions;
+        private Button buttonTest;
     }
 }

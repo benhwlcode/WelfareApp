@@ -196,6 +196,7 @@ namespace WelfareApp
             sql.UpdateProgram(programToSave);
             parent.Text = programToSave.programName;
 
+            parent.parent.ChildCall();
 
             this.Close();
         }

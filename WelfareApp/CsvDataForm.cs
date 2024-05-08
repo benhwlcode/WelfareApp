@@ -26,7 +26,7 @@ namespace WelfareApp
         public ApplicantModel noLoadedApplicant = new ApplicantModel();
 
         public int testProgramId = 4012;
-        public int testingRang = 200;
+        public int testingRange = 200;
 
 
         public CsvDataForm()
@@ -105,11 +105,11 @@ namespace WelfareApp
             employments.Remove(employments[0]);
 
 
-            for (int i = 0; i < testingRang; i++)
+            for (int i = 0; i < testingRange; i++)
             {             
 
                 string[] person = people[i].Split(',');
-                string[] spouse = people[testingRang+i].Split(",");
+                string[] spouse = people[testingRange+i].Split(",");
                 string[] address = addresses[i].Split(',');
                 string[] income = incomes[i].Split(',');
                 string[] family = families[i].Split(',');

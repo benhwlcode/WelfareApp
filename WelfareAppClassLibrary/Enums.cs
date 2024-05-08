@@ -29,7 +29,7 @@ namespace WelfareAppClassLibrary
     public enum ApplicantSpouse { applicant, spouse}
     public enum QueryProperty 
         { 
-        applicantId, spouseId,
+        spouseId,
         rentalexpense, utilityexpense, foodexpense, tuitionexpense,
         iscitizen, isindigenous, isdisabled, 
         numberofchildren, numberofelderly, 

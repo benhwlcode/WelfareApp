@@ -26,15 +26,25 @@ namespace WelfareApp
         List<uEligibilityCondition> conditions = new List<uEligibilityCondition>();
 
 
-        public EditFilterForm(ListOfAppsForm parentInput)
+        public EditFilterForm(ListOfAppsForm parentInput, List<uEligibilityCondition> listInput)
         {
             InitializeComponent();
             parent = parentInput;
+
+            conditions = new List<uEligibilityCondition>();
+            conditions = listInput;
+
+            this.Shown += EditFilterForm_Shown;
         }
 
-
-
-        
+        private void EditFilterForm_Shown(object? sender, EventArgs e)
+        {
+            if (conditions.Count != 0)
+            {
+                CallSessionFilters();
+                conditions.Clear();
+            }
+        }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -48,7 +58,17 @@ namespace WelfareApp
 
         private void buttonApply_Click(object sender, EventArgs e)
         {
+            if (tableLayoutPanelFilters.RowCount == 1)
+            {
+                MessageBox.Show("Please add conditions.");
+
+                return;
+            }
+
             constructedQuery = "";
+
+            SaveSessioFilters();
+
             ReturnQuery();
             parent.filterCustom = constructedQuery;
 
@@ -71,6 +91,11 @@ namespace WelfareApp
 
         private void RemoveQueryCondition()
         {
+            if (tableLayoutPanelFilters.RowCount == 1)
+            {
+                return;
+            }
+
             int row = tableLayoutPanelFilters.RowCount - 2;
             tableLayoutPanelFilters.Controls.RemoveAt(row);
             tableLayoutPanelFilters.RowCount = tableLayoutPanelFilters.RowCount - 1;
@@ -104,6 +129,38 @@ namespace WelfareApp
             }
         }
 
-        
+        private void SaveSessioFilters()
+        {
+            for (int i = 0; i < tableLayoutPanelFilters.RowCount - 1; i++)
+            {
+                uEligibilityCondition ec =
+                    tableLayoutPanelFilters.GetControlFromPosition(0, i) as uEligibilityCondition;
+
+                uEligibilityCondition newEc = new uEligibilityCondition();
+                newEc.SetFromControlInput(ec);
+
+                parent.sessionFilters.Add(newEc);
+            }
+        }
+
+        private void CallSessionFilters()
+        {
+
+            foreach (uEligibilityCondition ec in conditions)
+            {
+
+                uEligibilityCondition newEc = new uEligibilityCondition();
+
+                newEc.SetFromControlInput(ec);
+
+                int row = tableLayoutPanelFilters.RowCount - 1;
+
+                tableLayoutPanelFilters.Controls.Add(newEc, 0, row);
+
+                tableLayoutPanelFilters.RowCount = tableLayoutPanelFilters.RowCount + 1;
+                tableLayoutPanelFilters.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            }
+        }
+
     }
 }

@@ -41,9 +41,12 @@ namespace WelfareApp
 
         AgeFilter ageFilter = AgeFilter.All;
 
+        public List<uEligibilityCondition> sessionFilters = new List<uEligibilityCondition>();
+
         public ListOfAppsForm()
         {
             InitializeComponent();
+
             GetInitialLists();
             ModifyDisplayGrid();
             UpdateBindingSource();
@@ -102,8 +105,16 @@ namespace WelfareApp
 
         }
 
+        public void SortLists()
+        {
+            appsDisplay.Sort((x, y) => x.Id.CompareTo(y.Id));
+            peopleDisplay.Sort((x, y) => x.Id.CompareTo(y.Id));
+        }
+
         public void UpdateBindingSource()
         {
+            SortLists();
+
             bindApps.DataSource = null;
             bindPeople.DataSource = null;
             bindApps.DataSource = appsDisplay;
@@ -134,7 +145,7 @@ namespace WelfareApp
             for (int i = 0; i < dataGridViewApps.ColumnCount; i++)
             {
                 dataGridViewApps.Columns[i].AutoSizeMode
-                    = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    = DataGridViewAutoSizeColumnMode.ColumnHeader;
 
                 // AllowDgvAppResize(i);
             }
@@ -142,7 +153,7 @@ namespace WelfareApp
             for (int i = 0; i < dataGridViewPeople.ColumnCount; i++)
             {
                 dataGridViewPeople.Columns[i].AutoSizeMode
-                    = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    = DataGridViewAutoSizeColumnMode.ColumnHeader;
 
                 // AllowDgvPeopleResize(i);
 
@@ -395,7 +406,7 @@ namespace WelfareApp
 
         private void buttonEditCustomFilter_Click(object sender, EventArgs e)
         {
-            EditFilterForm edit = new EditFilterForm(this);
+            EditFilterForm edit = new EditFilterForm(this, sessionFilters);
             edit.Show();
 
             edit.FormClosed += Form_FormClosed;
@@ -499,8 +510,16 @@ namespace WelfareApp
 
         private void dataGridViewApps_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+
+
             ListAppsDisplay app = new ListAppsDisplay();
             app = dataGridViewApps.SelectedRows[0].DataBoundItem as ListAppsDisplay;
+
+            // for select mode = cell select
+            // int rowIndex = dataGridViewApps.SelectedCells[0].RowIndex;
+            // DataGridViewRow selectedRow = dataGridViewApps.Rows[rowIndex];
+            // app = selectedRow.DataBoundItem as ListAppsDisplay;
+
 
             ApplicantModel input = app.input.applicant;
 
@@ -512,8 +531,15 @@ namespace WelfareApp
 
         private void dataGridViewPeople_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+
             ListPeopleDisplay person = new ListPeopleDisplay();
             person = dataGridViewPeople.SelectedRows[0].DataBoundItem as ListPeopleDisplay;
+
+            // for select mode = cell select
+            // int rowIndex = dataGridViewPeople.SelectedCells[0].RowIndex;
+            // DataGridViewRow selectedRow = dataGridViewPeople.Rows[rowIndex];
+            // person = selectedRow.DataBoundItem as ListPeopleDisplay;
+
 
             ApplicantModel input = person.input;
 
@@ -528,6 +554,77 @@ namespace WelfareApp
             ApplyQuery();
         }
 
-        
+        private void dataGridViewApps_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+        }
+
+        private void dataGridViewApps_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                DataGridViewColumn leftColumn = dataGridViewApps.Columns[e.ColumnIndex];
+                leftColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            }
+        }
+
+
+        private void dataGridViewApps_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                DataGridViewColumn clickedColumn = dataGridViewApps.Columns[e.ColumnIndex];
+                clickedColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewRow row = dataGridViewApps.Rows[e.RowIndex];
+                DataGridViewCell clickedCell = row.Cells[e.ColumnIndex];
+
+                // Check if the clicked cell is the last cell in the row
+                if (e.ColumnIndex == row.Cells.Count - 1)
+                {
+                    // Scroll to the right
+                    dataGridViewApps.FirstDisplayedScrollingColumnIndex = dataGridViewApps.Columns.Count - 1;
+                }
+            }
+            
+        }
+
+        private void dataGridViewApps_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            /*if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                DataGridViewColumn leftColumn = dataGridViewApps.Columns[e.ColumnIndex];
+                leftColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            }*/
+        }
+
+        private void TestingScroller(DataGridViewCell e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewRow row = dataGridViewApps.Rows[e.RowIndex];
+                DataGridViewCell clickedCell = row.Cells[e.ColumnIndex];
+
+                // Check if the clicked cell is the last visible cell in the row
+                if (clickedCell.ColumnIndex == dataGridViewApps.Columns.GetLastColumn(DataGridViewElementStates.Visible, DataGridViewElementStates.None).Index)
+                {
+                    // Calculate the width of the clicked cell's content
+                    int cellContentWidth = TextRenderer.MeasureText(clickedCell.Value?.ToString(), dataGridViewApps.Font).Width;
+
+                    // Get the width of the visible area of the DataGridView
+                    int visibleWidth = dataGridViewApps.ClientSize.Width - dataGridViewApps.RowHeadersWidth;
+
+                    // If the cell content width exceeds the visible width, scroll to the right
+                    if (cellContentWidth > visibleWidth)
+                    {
+                        dataGridViewApps.FirstDisplayedScrollingColumnIndex = dataGridViewApps.Columns.Count - 1;
+                    }
+                }
+            }
+        }
     }
 }

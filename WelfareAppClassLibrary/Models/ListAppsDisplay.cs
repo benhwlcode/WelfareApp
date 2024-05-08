@@ -11,7 +11,7 @@ namespace WelfareAppClassLibrary.Models
     {
         public ApplicationModel input {  get; set; }
 
-        public int ApplicationId
+        public int Id
         {
             get
             {
@@ -19,13 +19,6 @@ namespace WelfareAppClassLibrary.Models
             }
         }
 
-        public int ApplicantId
-        {
-            get
-            {
-                return input.applicantId;
-            }
-        }
 
         public string AppliedProgram { get; set; }
         public string ManagingAgency { get; set; }
@@ -39,8 +32,6 @@ namespace WelfareAppClassLibrary.Models
                 return $"{input.applicant.firstName} {input.applicant.lastName}";
             }
         }
-
-
 
     }
 }

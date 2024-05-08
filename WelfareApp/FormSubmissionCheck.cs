@@ -52,14 +52,16 @@ namespace WelfareApp
                     }
                 }
 
-                if (!control.HasChildren && control is TextBox && control.Visible == true)
+                if (control is TextBox textBox && textBox.Visible && string.IsNullOrEmpty(textBox.Text))
                 {
-                    if (control.Text == "")
-                    {
-                        MessageBox.Show("Please fill in empty fields.");
-                        return true;
-                    }
+                    textBox.Text = " ";
+                    textBox.Text = "";
+
+                    // MessageBox.Show("Please fill in empty fields.");
+                    // return true;
+                    
                 }
+
             }
 
             return false;

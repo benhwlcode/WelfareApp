@@ -42,7 +42,6 @@
             tableLayoutPanel6 = new TableLayoutPanel();
             tableLayoutPanel7 = new TableLayoutPanel();
             tableLayoutPanel11 = new TableLayoutPanel();
-            checkBoxShowPending = new CheckBox();
             tableLayoutPanel12 = new TableLayoutPanel();
             buttonUpdateSelected = new Button();
             comboBoxDocumentStatus = new ComboBox();
@@ -64,7 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewAppDisplay).BeginInit();
             tableLayoutPanel6.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
-            tableLayoutPanel11.SuspendLayout();
             tableLayoutPanel12.SuspendLayout();
             tableLayoutPanel8.SuspendLayout();
             tableLayoutPanel9.SuspendLayout();
@@ -259,7 +257,6 @@
             tableLayoutPanel11.ColumnCount = 2;
             tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 140F));
-            tableLayoutPanel11.Controls.Add(checkBoxShowPending, 1, 0);
             tableLayoutPanel11.Dock = DockStyle.Fill;
             tableLayoutPanel11.Location = new Point(3, 3);
             tableLayoutPanel11.Name = "tableLayoutPanel11";
@@ -267,17 +264,6 @@
             tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel11.Size = new Size(455, 54);
             tableLayoutPanel11.TabIndex = 0;
-            // 
-            // checkBoxShowPending
-            // 
-            checkBoxShowPending.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            checkBoxShowPending.AutoSize = true;
-            checkBoxShowPending.Location = new Point(328, 27);
-            checkBoxShowPending.Name = "checkBoxShowPending";
-            checkBoxShowPending.Size = new Size(124, 24);
-            checkBoxShowPending.TabIndex = 0;
-            checkBoxShowPending.Text = "Show Pending";
-            checkBoxShowPending.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel12
             // 
@@ -458,8 +444,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewAppDisplay).EndInit();
             tableLayoutPanel6.ResumeLayout(false);
             tableLayoutPanel7.ResumeLayout(false);
-            tableLayoutPanel11.ResumeLayout(false);
-            tableLayoutPanel11.PerformLayout();
             tableLayoutPanel12.ResumeLayout(false);
             tableLayoutPanel8.ResumeLayout(false);
             tableLayoutPanel9.ResumeLayout(false);
@@ -486,7 +470,6 @@
         private Button buttonEditApplicant;
         private Label labelAppInfo;
         private TableLayoutPanel tableLayoutPanel11;
-        private CheckBox checkBoxShowPending;
         private DataGridView dataGridViewAppDisplay;
         private TableLayoutPanel tableLayoutPanel12;
         private Button buttonUpdateSelected;

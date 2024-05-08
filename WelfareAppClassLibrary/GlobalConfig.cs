@@ -20,8 +20,6 @@ namespace WelfareAppClassLibrary
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
 
-        
-
 
     }
 }

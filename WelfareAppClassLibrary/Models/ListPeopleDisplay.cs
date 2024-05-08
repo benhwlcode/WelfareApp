@@ -11,7 +11,7 @@ namespace WelfareAppClassLibrary.Models
     {
         public ApplicantModel input {  get; set; }
 
-        public int ApplicantId
+        public int Id
         {
             get
             {
@@ -19,7 +19,7 @@ namespace WelfareAppClassLibrary.Models
             }
         }
 
-        public string ApplicantName
+        public string Applicant
         {
             get
             {
@@ -27,7 +27,15 @@ namespace WelfareAppClassLibrary.Models
             }
         }
 
-        public string SpouseName
+        public string Birthday
+        {
+            get
+            {
+                return $"{input.birthday} ({GetAge()})";
+            }
+        }
+
+        public string Spouse
         {
             get
             {
@@ -37,14 +45,6 @@ namespace WelfareAppClassLibrary.Models
                 }
 
                 return "-no spouse";
-            }
-        }
-
-        public string Age
-        {
-            get
-            {
-                return $"{GetAge()} ({input.birthday})";
             }
         }
 

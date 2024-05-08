@@ -473,8 +473,10 @@
             // 
             dataGridViewApps.AllowUserToAddRows = false;
             dataGridViewApps.AllowUserToDeleteRows = false;
+            dataGridViewApps.AllowUserToResizeRows = false;
             dataGridViewApps.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewApps.Dock = DockStyle.Fill;
+            dataGridViewApps.EditMode = DataGridViewEditMode.EditOnEnter;
             dataGridViewApps.Location = new Point(3, 4);
             dataGridViewApps.Name = "dataGridViewApps";
             dataGridViewApps.ReadOnly = true;
@@ -484,7 +486,11 @@
             dataGridViewApps.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewApps.Size = new Size(552, 726);
             dataGridViewApps.TabIndex = 0;
+            dataGridViewApps.CellClick += dataGridViewApps_CellClick;
             dataGridViewApps.CellDoubleClick += dataGridViewApps_CellDoubleClick;
+            dataGridViewApps.CellLeave += dataGridViewApps_CellLeave;
+            dataGridViewApps.CellMouseEnter += dataGridViewApps_CellMouseEnter;
+            dataGridViewApps.CellMouseLeave += dataGridViewApps_CellMouseLeave;
             // 
             // tabApplicants
             // 
@@ -503,8 +509,10 @@
             // 
             dataGridViewPeople.AllowUserToAddRows = false;
             dataGridViewPeople.AllowUserToDeleteRows = false;
+            dataGridViewPeople.AllowUserToResizeRows = false;
             dataGridViewPeople.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewPeople.Dock = DockStyle.Fill;
+            dataGridViewPeople.EditMode = DataGridViewEditMode.EditOnEnter;
             dataGridViewPeople.Location = new Point(3, 4);
             dataGridViewPeople.Name = "dataGridViewPeople";
             dataGridViewPeople.ReadOnly = true;

@@ -17,6 +17,9 @@ namespace WelfareApp
 {
     public partial class ProgramWorkFormNew : Form
     {
+        public EditProgramForm editPro;
+        public StartupForm parent;
+
         BindingSource bindApps = new BindingSource();
 
         ProgramModel currentProgram = new ProgramModel();
@@ -31,6 +34,7 @@ namespace WelfareApp
         ApplicantModel selectedApplicant = new ApplicantModel();
 
         public string customQuery = "";
+        public List<uEligibilityCondition> sessionConditions = new List<uEligibilityCondition>();
 
         public string testQuery = "";
 
@@ -92,15 +96,15 @@ namespace WelfareApp
 
         private void buttonEditEligibility_Click(object sender, EventArgs e)
         {
-            EditEligibilityForm edit = new EditEligibilityForm(this);
+            EditEligibilityForm edit = new EditEligibilityForm(this, sessionConditions);
             edit.Show();
         }
 
         private void buttonEditProgram_Click(object sender, EventArgs e)
         {
-            EditProgramForm form = new EditProgramForm(currentProgram, currentAgent);
-            form.parent = this;
-            form.Show();
+            editPro = new EditProgramForm(currentProgram, currentAgent);
+            editPro.parent = this;
+            editPro.Show();
         }
 
         private void buttonEditApplicant_Click(object sender, EventArgs e)
@@ -122,6 +126,12 @@ namespace WelfareApp
             FullRefreshGridAndUpdateInfo();
             GetDisplayAsApplication();
             UpdateWorkLabels(selectedApplication);
+
+            if (customQuery != "")
+            {
+                ApplyEligibility();
+            }
+
         }
 
         private void dataGridViewAppDisplay_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -190,7 +200,8 @@ namespace WelfareApp
                     r.DefaultCellStyle.BackColor = Color.LightPink;
                 }
 
-                if (r.Cells[5].Value.ToString() == ApprovalStatus.approved.ToString())
+                if (r.Cells[3].Value.ToString() == EligibilityStatus.eligible.ToString() &&
+                    r.Cells[5].Value.ToString() == ApprovalStatus.approved.ToString())
                 {
                     r.DefaultCellStyle.BackColor = Color.LightBlue;
                 }
@@ -324,5 +335,7 @@ namespace WelfareApp
             UpdateDocumentsBinding();
             CheckBoxUpdate();
         }
+
+        
     }
 }

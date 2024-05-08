@@ -28,6 +28,14 @@ namespace WelfareApp
             CreateNewProgramNew createNewProgramNew
                 = new CreateNewProgramNew(userAgent);
             createNewProgramNew.Show();
+
+            createNewProgramNew.FormClosed += CreateNewProgramNew_FormClosed;
+        }
+
+        private void CreateNewProgramNew_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            InitializeList();
+            UpdateBinding();
         }
 
         private void buttonCreateNewApplication_Click(object sender, EventArgs e)
@@ -50,8 +58,9 @@ namespace WelfareApp
 
             ProgramWorkFormNew form
                 = new ProgramWorkFormNew(selectedProgram, userAgent);
-
+            form.parent = this;
             form.Show();
+
         }
 
         private void InitializeList()
@@ -71,14 +80,18 @@ namespace WelfareApp
             listBoxListOfPrograms.DisplayMember = "programName";
         }
 
+        public void ChildCall()
+        {
+            InitializeList();
+            UpdateBinding();
+        }
+
         private void textBoxSearchValue_TextChanged(object sender, EventArgs e)
         {
             SqlConnector sql = new SqlConnector();
             programs = sql.ProgramSearch(textBoxSearchValue.Text);
 
             UpdateBinding();
-
-
         }       
 
     }
