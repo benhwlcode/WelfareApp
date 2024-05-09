@@ -9,47 +9,32 @@
 
 This is a demo application for my portfolio. This application is designed for social workers and welfare organizations to streamline workflow, keep track of and sort applications, and save relevant information. The application uses a Windows Forms .Net interface and connects to a SQL server.
 
-## Login:
+## Features:
 
-A login window that ensures only those with the appropriate cridentials can use the application. 
+Search Functions:
+- A dashboard search function for users to quickly find the program they wish to work on.
+- A detailed search filter for users to find the applications and applicants that fit their desired criteria.
 
-## Dashboard:
+Query Constructors:
+- An easy-to-use query constructor for users to construct complicated Sql queries without in-depth knowledge of the syntax.
 
-The main window for the user to choose what work needs to be done. Double click on the desired program to start work on its applications.
+Error Checkers
+- Inform users of the specific error.
+- Ensures fields are not empty and the inputs are correct.
 
-- search program by name
+Applicant Information Retention
+- Applicant information is saved for future use.
+- Users can auto-fill applications with the information of previous applicants.
+- The application will ensure no duplicate applications are submitted.
 
-## Program Work:
-
-Shows the recieved applications for the program and determines their eligibility and approval.
-
-- simplified sql queries for the user to determine eligibility conditions
-- quieries are saved during session
-- determines approval status based on eligiblity and document status
-- can edit applicant information and table updates accordingly 
-
-## Create New Program:
-
-Allows user to create a new welfare program.
-
-- error checker that ensures all fields are filled are valid
-- summary that reflects inputs and acts as update to supervisor
-
-## Create New Application:
-
-Allows user to enter enter application information for new or previous applicant.
-
-- error checker that ensures all fields are filled are valid
-- select previous applicant and auto fills fields
-- stores new applicant information or updates previous applicant information
-- prevents duplicate application for the same applicant 
+Real-Time Updates
+- User edits are updated in real-time to ensure the accurate information is always displayed.
+- Table filters and conditions will always reflect user changes. 
 
 
-## List of Applications and Applicants:
 
-Shows a list of applications and applicants and allows user to search and filter list.
 
-- search application or applicant by selected fields
-- filter with common or custom conditions
-- table reflects all search and filter conditions
-- can double click on entry to edit applicant
+
+
+
+
