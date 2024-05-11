@@ -1,9 +1,8 @@
 ## Video Preview:
 
-(placeholder video)
+(unedited video)
 
-[![Bob_Tabor_Introduction_to_c_Sharp](https://img.youtube.com/vi/4vHBgwcz_I4/0.jpg)](https://www.youtube.com/watch?v=4vHBgwcz_I4)
-
+[Demo Video Web.webm](https://github.com/benhwlcode/WelfareApp/assets/141098928/0622714c-8b28-455f-bcf0-0d735b6f95f4)
 
 ## Introduction:
 
@@ -22,15 +21,22 @@ Error Checkers
 - Inform users of the specific error.
 - Ensures fields are not empty and the inputs are correct.
 
+![error_feature](https://github.com/benhwlcode/WelfareApp/assets/141098928/e89a5e3f-c87c-4d7d-81e7-ddca8ec9cdb1)
+
+
 Applicant Information Retention
 - Applicant information is saved for future use.
 - Users can auto-fill applications with the information of previous applicants.
 - The application will ensure no duplicate applications are submitted.
 
+![apply_feature](https://github.com/benhwlcode/WelfareApp/assets/141098928/498088e2-1f2d-4c91-9b30-232f4e7e3726)
+
+
 Real-Time Updates
 - User edits are updated in real-time to ensure the accurate information is always displayed.
 - Table filters and conditions will always reflect user changes. 
 
+![update_feature](https://github.com/benhwlcode/WelfareApp/assets/141098928/152b5266-8ccc-4f2e-89dd-a9cff5c37893)
 
 
 
