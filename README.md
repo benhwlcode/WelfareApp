@@ -4,7 +4,7 @@ This is a demo application for my portfolio. This application is designed for so
 
 ## Workflow
 
-![WorkFlowChart](https://github.com/benhwlcode/WelfareApp/assets/141098928/8f52b778-2df1-484c-ac2e-99691f7d76a7)
+![WorkFlowChart](https://github.com/benhwlcode/WelfareApp/assets/141098928/d6dce082-27d9-45a3-9773-a8728cf0747f)
 
 When an application is submitted, the information will be saved to different tables in the database. The application will link to its corresponding applicant and the program it applied to. Applications can then be queried to be worked on based on their shared program link. 
 
@@ -14,34 +14,34 @@ When an application is submitted, the information will be saved to different tab
 - Quickly find the program they wish to work on.
 - Filter applications and applicants that fit the criteria.
 
-![search_feature](https://github.com/benhwlcode/WelfareApp/assets/141098928/b68eb044-2093-40ce-a49c-a43661091dc5)
+![search_feat](https://github.com/benhwlcode/WelfareApp/assets/141098928/85cfe5bb-fb45-4b30-9f88-c6baa20a6e38)
 
 ### Query Constructors:
-- Construct complex SQL queries without expert knowledge.
+Construct complex SQL queries without expert knowledge.
 
-![eligibility_feature](https://github.com/benhwlcode/WelfareApp/assets/141098928/e338d820-a140-4e9c-bdea-90c61b05df64)
+![query_feat](https://github.com/benhwlcode/WelfareApp/assets/141098928/1683dc7e-e4d3-44c4-b34f-40624af88372)
 
 ### Error Checkers
-- Inform users of the specific error.
+Inform users of the specific error.
 
-![errorcheck_feature](https://github.com/benhwlcode/WelfareApp/assets/141098928/cb34201b-f83f-4534-9608-1b979ffda5ea)
+![errorcheck_feat](https://github.com/benhwlcode/WelfareApp/assets/141098928/51990127-0bbb-4eec-99ab-7f6839e8a9ad)
 
 ### Applicant Information Retention
 - Store applicant information to the database.
 - Load stored applicant information from the database.
 - Checks for duplicate applicants and applications.
 
-![noduplicate_feature](https://github.com/benhwlcode/WelfareApp/assets/141098928/be5e58ba-3ba6-43fd-b640-2ffabc60b33e)
+![retention_feat](https://github.com/benhwlcode/WelfareApp/assets/141098928/ec61ffbc-67fd-406f-9bfa-d99f04eb383b)
 
 ### Real-Time Updates
-- Ensures latest information is always insync with database.
-- Will always reflect the latest updated information.
+Ensures information is always in sync with database
 
-![alwayslatest_feature](https://github.com/benhwlcode/WelfareApp/assets/141098928/e66f774e-a48a-4664-9e5a-b824da36896d)
+![latest_feat](https://github.com/benhwlcode/WelfareApp/assets/141098928/54231365-05b2-4502-a272-d51a82455168)
 
 ## Demo Video
 
-[demo_video_webm.webm](https://github.com/benhwlcode/WelfareApp/assets/141098928/b03abd94-60d1-47d1-8128-c5cd2650bbe8)
+[WebmFinalDraftWebM.webm](https://github.com/benhwlcode/WelfareApp/assets/141098928/a47db24e-e2ca-4984-be7b-cdd33f3f5e8e)
+
 
 
 
