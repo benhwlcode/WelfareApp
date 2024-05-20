@@ -6,7 +6,7 @@
   - [Query Constructors](#query-constructors)
   - [Error Checkers](#error-checkers)
   - [Applicant Information Retention](#applicant-information-retention)
-  - [Real Time Updates](#real-time-updates)
+  - [Real-Time Updates](#real-time-updates)
 - [Demo Video](#demo-video)
 
 ## Introduction
