@@ -19,12 +19,8 @@ namespace WelfareAppClassLibrary.Models
             }
         }
 
-
-        public string AppliedProgram { get; set; }
-        public string ManagingAgency { get; set; }
         public string ReceivedByAgent { get; set; }
-        public string ReceivedByOffice { get; set; }    
-        public string SupervisorName { get; set; }
+
         public string ApplicantName
         {
             get
@@ -32,6 +28,12 @@ namespace WelfareAppClassLibrary.Models
                 return $"{input.applicant.firstName} {input.applicant.lastName}";
             }
         }
+
+        public string AppliedProgram { get; set; }
+        public string ManagingAgency { get; set; }
+        public string ReceivedByOffice { get; set; }    
+        public string SupervisorName { get; set; }
+        
 
     }
 }

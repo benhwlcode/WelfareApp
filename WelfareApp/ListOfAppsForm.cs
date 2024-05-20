@@ -53,6 +53,20 @@ namespace WelfareApp
             UpdateGridSource();
 
             this.Text = "List of Apps";
+
+            ResizeForm();
+            SetStartPosition();
+        }
+
+        private void ResizeForm()
+        {
+            this.Size = new Size(1400, 900);
+        }
+
+        private void SetStartPosition()
+        {
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(40, 80);
         }
 
 
@@ -554,11 +568,7 @@ namespace WelfareApp
             ApplyQuery();
         }
 
-        private void dataGridViewApps_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
 
-
-        }
 
         private void dataGridViewApps_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
@@ -583,48 +593,19 @@ namespace WelfareApp
                 DataGridViewRow row = dataGridViewApps.Rows[e.RowIndex];
                 DataGridViewCell clickedCell = row.Cells[e.ColumnIndex];
 
-                // Check if the clicked cell is the last cell in the row
+                
                 if (e.ColumnIndex == row.Cells.Count - 1)
                 {
-                    // Scroll to the right
+                    
                     dataGridViewApps.FirstDisplayedScrollingColumnIndex = dataGridViewApps.Columns.Count - 1;
                 }
             }
             
-        }
-
-        private void dataGridViewApps_CellLeave(object sender, DataGridViewCellEventArgs e)
+        }   
+        
+        public void AutoCheckUseFilter()
         {
-            /*if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
-            {
-                DataGridViewColumn leftColumn = dataGridViewApps.Columns[e.ColumnIndex];
-                leftColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            }*/
-        }
-
-        private void TestingScroller(DataGridViewCell e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                DataGridViewRow row = dataGridViewApps.Rows[e.RowIndex];
-                DataGridViewCell clickedCell = row.Cells[e.ColumnIndex];
-
-                // Check if the clicked cell is the last visible cell in the row
-                if (clickedCell.ColumnIndex == dataGridViewApps.Columns.GetLastColumn(DataGridViewElementStates.Visible, DataGridViewElementStates.None).Index)
-                {
-                    // Calculate the width of the clicked cell's content
-                    int cellContentWidth = TextRenderer.MeasureText(clickedCell.Value?.ToString(), dataGridViewApps.Font).Width;
-
-                    // Get the width of the visible area of the DataGridView
-                    int visibleWidth = dataGridViewApps.ClientSize.Width - dataGridViewApps.RowHeadersWidth;
-
-                    // If the cell content width exceeds the visible width, scroll to the right
-                    if (cellContentWidth > visibleWidth)
-                    {
-                        dataGridViewApps.FirstDisplayedScrollingColumnIndex = dataGridViewApps.Columns.Count - 1;
-                    }
-                }
-            }
+            checkBoxUseCustomFilter.Checked = true;
         }
     }
 }

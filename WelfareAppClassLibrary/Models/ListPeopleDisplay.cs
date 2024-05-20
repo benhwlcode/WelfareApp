@@ -31,7 +31,7 @@ namespace WelfareAppClassLibrary.Models
         {
             get
             {
-                return $"{input.birthday} ({GetAge()})";
+                return $"{input.birthday} (age {GetAge()})";
             }
         }
 
@@ -44,7 +44,7 @@ namespace WelfareAppClassLibrary.Models
                     return $"{input.spouseId.firstName} {input.spouseId.lastName}";
                 }
 
-                return "-no spouse";
+                return "";
             }
         }
 
@@ -63,6 +63,23 @@ namespace WelfareAppClassLibrary.Models
                 return input.employmentType.ToString();
             }
         }
+
+        public string RentExpense
+        {
+            get
+            {
+                return input.rentalExpense.ToString("C2", CultureInfo.CurrentCulture);
+            }
+        }
+
+        public string WorkIncome
+        {
+            get
+            {
+                return input.employmentIncome.ToString("C2", CultureInfo.CurrentCulture);
+            }
+        }
+
 
         public string GetAge()
         {

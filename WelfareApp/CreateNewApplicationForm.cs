@@ -49,6 +49,14 @@ namespace WelfareApp
             GetDocumentsList();
 
             this.Text = "Create New Application";
+
+            SetStartPosition();
+        }
+
+        private void SetStartPosition()
+        {
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(40, 80);
         }
 
         private void buttonLoadApplicantData_Click(object sender, EventArgs e)

@@ -21,6 +21,14 @@ namespace WelfareApp
             UpdateBinding();
 
             this.Text = "Dashboard";
+
+            SetStartPosition();
+        }
+
+        private void SetStartPosition()
+        {
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(20, 40);
         }
 
         private void buttonCreateNewProgram_Click(object sender, EventArgs e)

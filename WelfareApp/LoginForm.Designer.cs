@@ -31,13 +31,13 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             buttonLogin = new Button();
+            buttonCsvForm = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
             tableLayoutPanel4 = new TableLayoutPanel();
             labelUsernameText = new Label();
             labelPasswordText = new Label();
             textBoxUsernameValue = new TextBox();
             textBoxPasswordValue = new TextBox();
-            buttonCsvForm = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -87,6 +87,17 @@
             buttonLogin.Text = "Login";
             buttonLogin.UseVisualStyleBackColor = true;
             buttonLogin.Click += buttonLogin_Click;
+            // 
+            // buttonCsvForm
+            // 
+            buttonCsvForm.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCsvForm.Location = new Point(423, 118);
+            buttonCsvForm.Name = "buttonCsvForm";
+            buttonCsvForm.Size = new Size(94, 29);
+            buttonCsvForm.TabIndex = 1;
+            buttonCsvForm.Text = "CSV";
+            buttonCsvForm.UseVisualStyleBackColor = true;
+            buttonCsvForm.Click += buttonCsvForm_Click;
             // 
             // tableLayoutPanel3
             // 
@@ -139,11 +150,11 @@
             labelPasswordText.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelPasswordText.AutoSize = true;
             labelPasswordText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelPasswordText.Location = new Point(41, 74);
+            labelPasswordText.Location = new Point(37, 74);
             labelPasswordText.Name = "labelPasswordText";
-            labelPasswordText.Size = new Size(93, 28);
+            labelPasswordText.Size = new Size(97, 28);
             labelPasswordText.TabIndex = 1;
-            labelPasswordText.Text = "Password";
+            labelPasswordText.Text = "Password:";
             // 
             // textBoxUsernameValue
             // 
@@ -163,17 +174,6 @@
             textBoxPasswordValue.Name = "textBoxPasswordValue";
             textBoxPasswordValue.Size = new Size(306, 34);
             textBoxPasswordValue.TabIndex = 3;
-            // 
-            // buttonCsvForm
-            // 
-            buttonCsvForm.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonCsvForm.Location = new Point(423, 118);
-            buttonCsvForm.Name = "buttonCsvForm";
-            buttonCsvForm.Size = new Size(94, 29);
-            buttonCsvForm.TabIndex = 1;
-            buttonCsvForm.Text = "CSV";
-            buttonCsvForm.UseVisualStyleBackColor = true;
-            buttonCsvForm.Click += buttonCsvForm_Click;
             // 
             // LoginForm
             // 

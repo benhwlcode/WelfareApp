@@ -76,7 +76,7 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.Controls.Add(buttonTestList, 0, 0);
-            tableLayoutPanel2.Controls.Add(buttonLoadApplicant, 0, 0);
+            tableLayoutPanel2.Controls.Add(buttonLoadApplicant, 1, 0);
             tableLayoutPanel2.Location = new Point(49, 693);
             tableLayoutPanel2.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -87,7 +87,7 @@
             // 
             // buttonTestList
             // 
-            buttonTestList.Location = new Point(274, 4);
+            buttonTestList.Location = new Point(3, 4);
             buttonTestList.Margin = new Padding(3, 4, 3, 4);
             buttonTestList.Name = "buttonTestList";
             buttonTestList.Size = new Size(264, 53);
@@ -98,7 +98,7 @@
             // 
             // buttonLoadApplicant
             // 
-            buttonLoadApplicant.Location = new Point(3, 4);
+            buttonLoadApplicant.Location = new Point(274, 4);
             buttonLoadApplicant.Margin = new Padding(3, 4, 3, 4);
             buttonLoadApplicant.Name = "buttonLoadApplicant";
             buttonLoadApplicant.Size = new Size(264, 53);
@@ -115,6 +115,7 @@
             Controls.Add(tableLayoutPanel1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "LoadApplicantForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "LoadApplicantForm";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);

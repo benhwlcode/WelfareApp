@@ -321,6 +321,7 @@
             // checkedListBoxListOfDocumentsReceived
             // 
             checkedListBoxListOfDocumentsReceived.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            checkedListBoxListOfDocumentsReceived.CheckOnClick = true;
             checkedListBoxListOfDocumentsReceived.FormattingEnabled = true;
             checkedListBoxListOfDocumentsReceived.Location = new Point(3, 4);
             checkedListBoxListOfDocumentsReceived.Margin = new Padding(3, 4, 3, 4);
@@ -417,6 +418,7 @@
             Controls.Add(buttonCreateNewApplication);
             Margin = new Padding(3, 4, 3, 4);
             Name = "CreateNewApplicationForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "CreateNewApplicationForm";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);

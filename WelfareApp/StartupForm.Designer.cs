@@ -135,6 +135,7 @@
             Margin = new Padding(4);
             MinimumSize = new Size(600, 700);
             Name = "StartupForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "StartupForm";
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);

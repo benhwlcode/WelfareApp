@@ -69,6 +69,7 @@
             // 
             // tableLayoutPanelConditions
             // 
+            tableLayoutPanelConditions.AllowDrop = true;
             tableLayoutPanelConditions.AutoScroll = true;
             tableLayoutPanelConditions.ColumnCount = 1;
             tableLayoutPanelConditions.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));

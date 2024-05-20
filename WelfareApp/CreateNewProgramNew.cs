@@ -43,6 +43,14 @@ namespace WelfareApp
             radioButtonFlat.Checked = true;
 
             error.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+
+            SetStartPosition();
+        }
+
+        private void SetStartPosition()
+        {
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(40, 80);
         }
 
         public void InitializeLists()

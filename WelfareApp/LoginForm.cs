@@ -24,18 +24,22 @@ namespace WelfareApp
 
             HideTestElements();
 
-            // fast login 
-            textBoxUsernameValue.Text = "user";
-            textBoxPasswordValue.Text = "password";
+            FastLogin();
 
-            // data tests
-            buttonCsvForm.Visible = false;
+            SetStartPosition();
+        }
 
-            
+        private void SetStartPosition()
+        {
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(0, 0);
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+
+
+
             SqlConnector sql = new SqlConnector();
             Helper helper = new Helper();
 
@@ -60,13 +64,19 @@ namespace WelfareApp
         private void buttonCsvForm_Click(object sender, EventArgs e)
         {
             CsvDataForm csvDataForm = new CsvDataForm();
-            csvDataForm.Show();
+            csvDataForm.Show();            
         }
 
         private void HideTestElements()
         {
             buttonCsvForm.Enabled = false;
             buttonCsvForm.Visible = false;
+        }
+
+        private void FastLogin()
+        {
+            textBoxUsernameValue.Text = "user";
+            textBoxPasswordValue.Text = "password";
         }
     }
 }

@@ -25,8 +25,10 @@ namespace WelfareApp
 
         public ApplicantModel noLoadedApplicant = new ApplicantModel();
 
-        public int testProgramId = 4012;
-        public int testingRange = 200;
+        public int testProgramId = 9013;
+        public int testingRange = 600;
+
+        public int startingLine = 1280;
 
 
         public CsvDataForm()
@@ -63,9 +65,9 @@ namespace WelfareApp
             output.applicationId = 0;
 
             output.programId = testProgramId;
-            output.agentId = 1;
-            output.officeId = 1;
-            output.supervisorId = 1;
+            output.agentId = RandomizeId("agent");
+            output.officeId = RandomizeId("office");
+            output.supervisorId = RandomizeId("supervisor");
 
             output.applicationProgress = ApplicationProgress.ongoing;
             output.eligibilityStatus = EligibilityStatus.pending;
@@ -105,11 +107,11 @@ namespace WelfareApp
             employments.Remove(employments[0]);
 
 
-            for (int i = 0; i < testingRange; i++)
+            for (int i = startingLine; i < (startingLine + testingRange); i++)
             {             
 
                 string[] person = people[i].Split(',');
-                string[] spouse = people[testingRange+i].Split(",");
+                string[] spouse = people[testingRange + i].Split(",");
                 string[] address = addresses[i].Split(',');
                 string[] income = incomes[i].Split(',');
                 string[] family = families[i].Split(',');
@@ -154,7 +156,7 @@ namespace WelfareApp
 
                 app.streetAddress = address[2];
                 app.city = address[0];
-                app.province = ProvinceName.ON;
+                app.province = ProvinceName.BC;
                 app.moveInDate = GenerateRandomDate();
 
                 app.familySize = currentAdults + Int32.Parse(family[4]);
@@ -357,6 +359,39 @@ namespace WelfareApp
 
             output = date.ToString("yyyy-MM-dd");
             return output;
+        }
+
+        private int RandomizeId(string input)
+        {
+            Random rng = new Random();
+
+            int output = 1;
+
+            List<int> ids;
+
+            if (input == "agent")
+            {
+                ids = new List<int> { 1, 2, 1002, 1003, 1004, 2003};
+                int idRng = rng.Next(0, 6);
+                output = ids[idRng];
+            }
+
+            else if (input == "supervisor")
+            {
+                ids = new List<int> { 1, 2, 7, 8, 9 };
+                int idRng = rng.Next(0, 5);
+                output = ids[idRng];
+            }
+
+            else if (input == "office")
+            {
+                ids = new List<int> { 1, 2, 3, 4, 5 };
+                int idRng = rng.Next(0, 5);
+                output = ids[idRng];
+            }
+                     
+            return output;
+
         }
 
         private ProvinceName RandomizeProvince()

@@ -28,7 +28,7 @@ namespace WelfareApp
             selectionList = sql.GetAllApplicants();
             UpdateBindings();
 
-            buttonTestList.Enabled = false;
+            buttonTestList.Visible = false;
         }
 
         private void buttonLoadApplicant_Click(object sender, EventArgs e)

@@ -488,8 +488,6 @@
             dataGridViewApps.TabIndex = 0;
             dataGridViewApps.CellClick += dataGridViewApps_CellClick;
             dataGridViewApps.CellDoubleClick += dataGridViewApps_CellDoubleClick;
-            dataGridViewApps.CellLeave += dataGridViewApps_CellLeave;
-            dataGridViewApps.CellMouseEnter += dataGridViewApps_CellMouseEnter;
             dataGridViewApps.CellMouseLeave += dataGridViewApps_CellMouseLeave;
             // 
             // tabApplicants

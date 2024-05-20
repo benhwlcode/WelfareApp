@@ -45,7 +45,7 @@ namespace WelfareAppClassLibrary.Models
                 }
                 else
                 {
-                    return "No Spouse";
+                    return "";
                 }
             }
         }

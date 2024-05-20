@@ -305,6 +305,7 @@
             // 
             // checkedListBoxDocuments
             // 
+            checkedListBoxDocuments.CheckOnClick = true;
             checkedListBoxDocuments.Dock = DockStyle.Fill;
             checkedListBoxDocuments.FormattingEnabled = true;
             checkedListBoxDocuments.Location = new Point(3, 63);
@@ -352,9 +353,9 @@
             labelAppProgress.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelAppProgress.Location = new Point(3, 13);
             labelAppProgress.Name = "labelAppProgress";
-            labelAppProgress.Size = new Size(32, 28);
+            labelAppProgress.Size = new Size(41, 28);
             labelAppProgress.TabIndex = 0;
-            labelAppProgress.Text = ">!";
+            labelAppProgress.Text = "n/a";
             // 
             // labelApprovalStatus
             // 
@@ -363,9 +364,9 @@
             labelApprovalStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelApprovalStatus.Location = new Point(230, 13);
             labelApprovalStatus.Name = "labelApprovalStatus";
-            labelApprovalStatus.Size = new Size(32, 28);
+            labelApprovalStatus.Size = new Size(41, 28);
             labelApprovalStatus.TabIndex = 1;
-            labelApprovalStatus.Text = ">!";
+            labelApprovalStatus.Text = "n/a";
             // 
             // labelEligibility
             // 
@@ -374,9 +375,9 @@
             labelEligibility.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelEligibility.Location = new Point(3, 67);
             labelEligibility.Name = "labelEligibility";
-            labelEligibility.Size = new Size(32, 28);
+            labelEligibility.Size = new Size(41, 28);
             labelEligibility.TabIndex = 2;
-            labelEligibility.Text = ">!";
+            labelEligibility.Text = "n/a";
             // 
             // labelPayment
             // 
@@ -385,9 +386,9 @@
             labelPayment.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelPayment.Location = new Point(230, 67);
             labelPayment.Name = "labelPayment";
-            labelPayment.Size = new Size(32, 28);
+            labelPayment.Size = new Size(41, 28);
             labelPayment.TabIndex = 3;
-            labelPayment.Text = ">!";
+            labelPayment.Text = "n/a";
             // 
             // tableLayoutPanel10
             // 
@@ -423,9 +424,9 @@
             labelAppInfo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelAppInfo.Location = new Point(3, 13);
             labelAppInfo.Name = "labelAppInfo";
-            labelAppInfo.Size = new Size(32, 28);
+            labelAppInfo.Size = new Size(117, 28);
             labelAppInfo.TabIndex = 1;
-            labelAppInfo.Text = ">!";
+            labelAppInfo.Text = "no selection";
             // 
             // ProgramWorkFormNew
             // 
@@ -434,6 +435,7 @@
             ClientSize = new Size(1182, 653);
             Controls.Add(tableLayoutPanel1);
             Name = "ProgramWorkFormNew";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "ProgramWorkFormNew";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);

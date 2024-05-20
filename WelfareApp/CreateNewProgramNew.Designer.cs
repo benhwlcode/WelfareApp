@@ -263,6 +263,7 @@
             // 
             // checkedListBoxRequiredDocuments
             // 
+            checkedListBoxRequiredDocuments.CheckOnClick = true;
             checkedListBoxRequiredDocuments.Dock = DockStyle.Fill;
             checkedListBoxRequiredDocuments.FormattingEnabled = true;
             checkedListBoxRequiredDocuments.Location = new Point(3, 3);
@@ -627,6 +628,7 @@
             ClientSize = new Size(1182, 753);
             Controls.Add(tableLayoutPanel1);
             Name = "CreateNewProgramNew";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "CreateNewProgramNew";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);

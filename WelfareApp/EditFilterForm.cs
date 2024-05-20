@@ -71,6 +71,7 @@ namespace WelfareApp
 
             ReturnQuery();
             parent.filterCustom = constructedQuery;
+            parent.AutoCheckUseFilter();
 
 
             this.Close();

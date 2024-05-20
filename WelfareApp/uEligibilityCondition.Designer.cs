@@ -58,6 +58,7 @@
             // comboBoxProperty
             // 
             comboBoxProperty.Dock = DockStyle.Fill;
+            comboBoxProperty.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxProperty.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxProperty.FormattingEnabled = true;
             comboBoxProperty.Location = new Point(3, 3);
@@ -69,6 +70,7 @@
             // comboBoxCondition
             // 
             comboBoxCondition.Dock = DockStyle.Fill;
+            comboBoxCondition.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxCondition.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxCondition.FormattingEnabled = true;
             comboBoxCondition.Location = new Point(203, 3);

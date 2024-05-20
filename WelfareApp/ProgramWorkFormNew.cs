@@ -49,6 +49,15 @@ namespace WelfareApp
             HideTestElements();
 
             this.Text = $"{currentProgram.programName} ({currentProgram.programId})";
+
+            SetStartPosition();
+
+        }
+
+        private void SetStartPosition()
+        {
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(40, 80);
         }
 
         private void dataGridViewAppDisplay_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -69,7 +78,7 @@ namespace WelfareApp
 
         private void buttonUpdateSelected_Click(object sender, EventArgs e)
         {
-            if (labelAppInfo.Text == ">!")
+            if (labelAppInfo.Text == "no selection")
             {
                 MessageBox.Show("Please select application to update.");
                 return;
@@ -170,6 +179,12 @@ namespace WelfareApp
 
                 programApplications.Add(display);
             }
+
+            // customObjects.Sort((obj1, obj2) => obj1.Age.CompareTo(obj2.Age));
+            // customObjects.Sort((x, y) => x.Age.CompareTo(y.Age));
+
+            programApplications.Sort((x, y) 
+                => x.inputApplication.applicationId.CompareTo(y.inputApplication.applicationId));
 
             UpdateApplicationsBinding();
             GridHighlight();
