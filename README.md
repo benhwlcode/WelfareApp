@@ -2,12 +2,12 @@
 - [Introduction](#introduction)
 - [Overview](#overview)
 - [Features](#features)
-  - [Search Functions](#search_functions)
-  - [Query Constructors](#query_constructors)
-  - [Error Checkers](#error_checkers)
-  - [Applicant Information Retention](#applicant_information_retention)
-  - [Real Time Updates](#real_time_updates)
-- [Demo Video](#demo_video)
+  - [Search Functions](#search-functions)
+  - [Query Constructors](#query-constructors)
+  - [Error Checkers](#error-checkers)
+  - [Applicant Information Retention](#applicant-information-retention)
+  - [Real Time Updates](#real-time-updates)
+- [Demo Video](#demo-video)
 
 ## Introduction
 
