@@ -58,9 +58,6 @@ Ensures information is always in sync with database
 
 [Final_Cut_Webm.webm](https://github.com/benhwlcode/WelfareApp/assets/141098928/c3ef6aaf-5597-408b-b48d-6cc081e11d32)
 
-## Testing Small File Size Video
-
-[TestingLowResolutionAndSizeWebM.webm](https://github.com/benhwlcode/WelfareApp/assets/141098928/edd54a87-a0f7-4381-a02c-d80561a03813)
 
 
 
