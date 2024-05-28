@@ -44,7 +44,7 @@ Inform users of the specific error.
 ![errorcheck_feat_new](https://github.com/benhwlcode/WelfareApp/assets/141098928/9d8e4fad-88eb-438f-a85e-eb313f6e2d17)
 
 ### Applicant Information Retention
-- Store and load applicant information to and fron the database.
+- Store and load applicant information to and from the database.
 - Checks for duplicate applicants and applications.
 
 ![retention_feat_new](https://github.com/benhwlcode/WelfareApp/assets/141098928/f61501b7-7b24-45e4-bb35-c8181ad3d5fe)
